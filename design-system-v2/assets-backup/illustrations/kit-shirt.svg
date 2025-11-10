@@ -1,0 +1,39 @@
+<svg width="1200" height="825" viewBox="0 0 1200 825" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1200" y2="825" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF0F5"/>
+      <stop offset="1" stop-color="#FFE0EA"/>
+    </linearGradient>
+    <linearGradient id="shirtGradient" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FF9BC1"/>
+      <stop offset="1" stop-color="#FF6F9E"/>
+    </linearGradient>
+    <linearGradient id="bagGradient" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFC857"/>
+      <stop offset="1" stop-color="#FF9D57"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="825" rx="48" fill="url(#bgGradient)"/>
+  <circle cx="280" cy="180" r="90" fill="#FFEFF7"/>
+  <circle cx="940" cy="210" r="130" fill="#FFE6F1"/>
+  <circle cx="1030" cy="640" r="110" fill="#FFF4C8"/>
+
+  <!-- Shirt -->
+  <g transform="translate(320 170)">
+    <path d="M160 0C136 32 104 48 72 52L52 170C48 196 62 220 86 228L118 238V470C118 494 138 514 162 514H282C306 514 326 494 326 470V238L358 228C382 220 396 196 392 170L372 52C340 48 308 32 284 0H160Z" fill="url(#shirtGradient)" stroke="#FF4C93" stroke-width="6" stroke-linejoin="round"/>
+    <rect x="190" y="92" width="78" height="46" rx="12" fill="#FFE6F5" stroke="#FF4C93" stroke-width="4"/>
+    <path d="M226 95V133" stroke="#FF4C93" stroke-width="4" stroke-linecap="round"/>
+    <path d="M206 118H252" stroke="#FF4C93" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Bag -->
+  <g transform="translate(640 300)">
+    <rect x="20" y="18" width="260" height="280" rx="36" fill="url(#bagGradient)" stroke="#FF8A33" stroke-width="6"/>
+    <rect x="70" y="80" width="180" height="120" rx="20" fill="#fff" opacity="0.8"/>
+    <path d="M70 80C70 58 90 40 120 40H210C240 40 260 58 260 80" stroke="#FF8A33" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="110" cy="220" r="18" fill="#FFBC4D"/>
+    <circle cx="210" cy="220" r="18" fill="#FFBC4D"/>
+    <rect x="120" y="116" width="80" height="48" rx="14" fill="#FFEEDA"/>
+  </g>
+
+</svg>
