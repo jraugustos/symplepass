@@ -1,0 +1,48 @@
+<svg width="1200" height="825" viewBox="0 0 1200 825" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="825" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF7E1"/>
+      <stop offset="1" stop-color="#FFE5D2"/>
+    </linearGradient>
+    <linearGradient id="medal" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFD66B"/>
+      <stop offset="1" stop-color="#FFB347"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FF7AB5"/>
+      <stop offset="1" stop-color="#FF4C93"/>
+    </linearGradient>
+    <linearGradient id="box" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F3F2F5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="825" rx="48" fill="url(#bg)"/>
+  <circle cx="280" cy="180" r="110" fill="#FFF2D7"/>
+  <circle cx="980" cy="220" r="150" fill="#FFEADD"/>
+  <circle cx="960" cy="640" r="120" fill="#FFF2CC"/>
+
+  <!-- Medal -->
+  <g transform="translate(360 140)">
+    <path d="M120 0L40 240H120L160 110L200 240H280L200 0H120Z" fill="url(#ribbon)"/>
+    <path d="M280 0L200 240H280L320 110L360 240H440L360 0H280Z" fill="#FF9BC1" opacity="0.8"/>
+    <circle cx="240" cy="360" r="150" fill="url(#medal)" stroke="#FF9D31" stroke-width="10"/>
+    <circle cx="240" cy="360" r="98" fill="#FFE9B4" stroke="#FFCB66" stroke-width="12"/>
+    <path d="M170 360H310" stroke="#FF9D31" stroke-width="12" stroke-linecap="round"/>
+    <path d="M240 290V430" stroke="#FF9D31" stroke-width="12" stroke-linecap="round"/>
+    <path d="M205 325L250 370L275 345" stroke="#FF9D31" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Brindes -->
+  <g transform="translate(130 480)">
+    <rect x="0" y="0" width="220" height="220" rx="32" fill="url(#box)" stroke="#F2D4A6" stroke-width="6"/>
+    <rect x="36" y="40" width="148" height="40" rx="20" fill="#FFE3B8"/>
+    <rect x="36" y="96" width="148" height="32" rx="16" fill="#FFEFD6"/>
+    <rect x="36" y="144" width="78" height="32" rx="16" fill="#FFEFD6"/>
+  </g>
+  <g transform="translate(780 460)">
+    <rect x="0" y="0" width="280" height="220" rx="36" fill="#FFF8F0" stroke="#F2D4A6" stroke-width="6"/>
+    <rect x="36" y="56" width="208" height="40" rx="20" fill="#FFD9E8"/>
+    <rect x="36" y="116" width="208" height="72" rx="30" fill="#FFEBCD"/>
+  </g>
+</svg>
