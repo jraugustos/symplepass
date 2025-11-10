@@ -1,0 +1,685 @@
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forge — Encontre eventos esportivos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<meta name="disabled-font-classes" content="font-roboto,font-montserrat,font-poppins,font-playfair,font-instrument-serif,font-mweather,font-bricolage,font-space-grotesk,font-work-sans,font-pt-serif,font-geist-mono,font-space-mono,font-quicksand,font-manrope,font-nunito,font-jakarta">
+  <script src="https://www.aura.build/FxFilter.js"></script>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="httpsfonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">
+.font-geist {
+font-family: 'Geist', sans-serif !important;
+}
+</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style></head>
+
+<body class="min-h-screen antialiased overflow-x-hidden text-neutral-900 bg-white" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';"><div class="fixed bg-center opacity-100 w-full h-screen bg-[url(https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/8e6e4c25-3797-4330-ae99-2f6a5284e22a_3840w.jpg)] bg-cover top-0" style="animation: scrollBlur linear both; animation-timeline: view(); animation-range: entry 100% entry 200%"></div>
+
+<style class="">
+  @keyframes fadeSlideIn {
+    0% { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+    100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+  }
+</style>
+<style class="">
+  @keyframes scrollBlur { from {opacity: 1; filter: blur(0px); transform: translateY(0px);} to {opacity: 0; filter: blur(100px); transform: translateY(-800px);} }
+</style>
+<script class="">
+  (function () {
+    const style = document.createElement("style");
+    style.textContent = `
+      .animate-on-scroll { animation-play-state: paused !important; }
+      .animate-on-scroll.animate { animation-play-state: running !important; }
+    `;
+    document.head.appendChild(style);
+    const once = true;
+    if (!window.__inViewIO) {
+      window.__inViewIO = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+            if (once) window.__inViewIO.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
+    }
+    window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+      document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+    };
+    document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+  })();
+</script>
+
+  
+  <!-- Navegação -->
+  <header class="relative">
+  <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+    <div class="flex pt-6 pb-6 items-center justify-between">
+      <a href="/" class="inline-flex items-center justify-center bg-center w-[220px] h-[40px] bg-[url(https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/aeedd709-9da0-43b6-b8a0-e717ad6fc23d_320w.png)] bg-cover rounded" aria-label="Forge - Início"></a>
+
+      <!-- Navegação Desktop -->
+      <nav class="hidden lg:flex gap-8 items-center">
+        <a href="/eventos" class="hover:text-neutral-900 transition text-sm font-normal text-white font-geist">Eventos</a>
+        <a href="/modalidades" class="hover:text-neutral-900 transition text-sm font-normal text-white font-geist">Modalidades</a>
+        <a href="/como-funciona" class="hover:text-neutral-900 transition text-sm font-normal text-white font-geist">Sobre nós</a>
+        <a href="/precos" class="hover:text-neutral-900 transition text-sm font-normal text-white font-geist">Clube de
+          benefícios</a>
+        <a href="/suporte" class="hover:text-neutral-900 transition text-sm font-normal text-white font-geist">Suporte</a>
+        <button class="inline-flex transition hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 text-sm font-semibold text-neutral-900 font-geist bg-white border-0 rounded-full pt-2 pr-4 pb-2 pl-4 backdrop-blur gap-x-2 gap-y-2 items-center">
+          Entrar
+        </button>
+      </nav>
+
+      <!-- Botão Menu Mobile -->
+      <button id="mobile-menu-button" class="lg:hidden inline-flex transition hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 text-sm font-normal text-neutral-900 font-geist bg-white border-neutral-200 border rounded-full pt-2 pr-4 pb-2 pl-4 backdrop-blur gap-x-2 gap-y-2 items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="menu-icon" class="lucide lucide-menu w-[16px] h-[16px]" style="width: 16px; height: 16px; color: rgb(17, 24, 39);"><path d="M4 5h16"></path><path d="M4 12h16"></path><path dm4="" 19h16"=""></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="close-icon" class="lucide lucide-x w-[16px] h-[16px] hidden" style="width: 16px; height: 16px; color: rgb(17, 24, 39);"><path d="m18 6-12 12"></path><path d="m6 6 12 12"></path></svg>
+        <span id="menu-text">Menu</span>
+      </button>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-white/95 backdrop-blur-xl z-50 opacity-0 invisible transition-all duration-300 ease-out">
+      <div class="flex flex-col h-full pt-6 pb-8 px-6">
+        <!-- Botão Fechar -->
+        <div class="flex justify-end mb-8">
+          <button id="mobile-close-button" class="inline-flex transition hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 text-sm font-normal text-neutral-900 font-geist bg-white border-neutral-200 border rounded-full pt-3 pr-3 pb-3 pl-3 backdrop-blur" aria-label="Fechar menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x" style="color: rgb(17, 24, 39);"><path d="m18 6-12 12"></path><path d="m6 6 12 12"></path></svg>
+          </button>
+        </div>
+
+        <nav class="flex-1">
+          <div class="space-y-6">
+            <a href="/eventos" class="block hover:text-neutral-900 transition text-2xl font-normal text-neutral-700 font-geist">Eventos</a>
+            <a href="/modalidades" class="block hover:text-neutral-900 transition text-2xl font-normal text-neutral-700 font-geist">Modalidades</a>
+            <a href="/como-funciona" class="block hover:text-neutral-900 transition text-2xl font-normal text-neutral-700 font-geist">Como funciona</a>
+            <a href="/precos" class="block hover:text-neutral-900 transition text-2xl font-normal text-neutral-700 font-geist">Preços</a>
+            <a href="/suporte" class="block text-2xl font-normal text-neutral-700 hover:text-neutral-900 transition font-geist">Suporte</a>
+          </div>
+
+          <div class="mt-12 pt-8 border-t border-neutral-200">
+            <button class="w-full inline-flex gap-2 transition hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 text-base font-normal text-neutral-900 font-geist bg-white border-neutral-200 border rounded-full pt-3 pr-6 pb-3 pl-6 backdrop-blur items-center justify-center">
+              Entrar
+            </button>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <script class="">
+      (function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileCloseButton = document.getElementById('mobile-close-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const menuText = document.getElementById('menu-text');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+          isMenuOpen = !isMenuOpen;
+          if (isMenuOpen) {
+            mobileMenu.classList.remove('opacity-0', 'invisible');
+            mobileMenu.classList.add('opacity-100', 'visible');
+            menuIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+            menuText.textContent = 'Fechar';
+            document.body.style.overflow = 'hidden';
+          } else {
+            mobileMenu.classList.remove('opacity-100', 'visible');
+            mobileMenu.classList.add('opacity-0', 'invisible');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            menuText.textContent = 'Menu';
+            document.body.style.overflow = '';
+          }
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMenu);
+        mobileCloseButton.addEventListener('click', toggleMenu);
+
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (isMenuOpen) toggleMenu();
+          });
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && isMenuOpen) toggleMenu();
+        });
+
+        mobileMenu.addEventListener('click', (e) => {
+          if (e.target === mobileMenu && isMenuOpen) toggleMenu();
+        });
+      })();
+    </script>
+  </div>
+</header>
+
+  <!-- Hero -->
+  <section class="flex min-h-[90vh] z-20 relative items-center" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'">
+  <div class="lg:px-8 max-w-7xl mr-auto ml-auto pt-20 pr-6 pb-20 pl-6">
+    <div class="grid grid-cols-1 gap-12 lg:gap-16 animate-[fadeInUp_1s_ease-out_0.2s_forwards] opacity-0 gap-x-12 gap-y-12 items-center justify-items-center">
+      <!-- Coluna Única - Título e Busca -->
+      <div class="order-2 lg:order-1 animate-[slideInBlur_1.2s_ease-out_0.4s_forwards] text-center opacity-0 max-w-3xl mr-auto ml-auto" style="transform: translateX(-30px); filter: blur(10px)">
+
+        <div class="order-1 lg:order-2">
+          <div class="animate-[fadeInSlide_0.8s_ease-out_0.6s_forwards] opacity-0" style="transform: translateX(20px)">
+            <h1 class="leading-[0.9] bg-clip-text sm:text-7xl lg:text-8xl xl:text-7xl text-6xl font-semibold text-transparent tracking-tighter font-geist bg-[#ffffff]">encontre seu próximo desafio</h1>
+          </div>
+          <p class="leading-relaxed animate-[fadeInUp_0.8s_ease-out_0.8s_forwards] sm:text-xl text-lg text-white font-geist opacity-0 mt-3 mb-3" style="transform: translateY(20px); filter: blur(5px)">Descubra e participe dos melhores eventos esportivos próximo de você.</p>
+        </div>
+
+        <div class="flex gap-3 text-xs text-neutral-600 mb-5 gap-x-3 gap-y-3 items-center justify-center">
+          <div class="flex border-neutral-200 border rounded-full pt-1 pr-3 pb-1 pl-3 backdrop-blur gap-x-1.5 gap-y-1.5 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin text-white w-[14px] h-[14px]">
+              <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" class=""></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span class="font-normal text-white font-geist">327</span>
+            <span class="font-medium text-white font-geist">eventos ativos</span>
+          </div>
+          <div class="hidden md:block w-px h-4 bg-neutral-200"></div>
+          <span class="hidden md:inline font-normal text-white font-geist">Busque por cidade, modalidade ou data</span>
+        </div>
+
+        <div class="text-left bg-white/20 max-w-2xl border-0 rounded-2xl mr-auto ml-auto pt-4 pr-4 pb-4 pl-4 backdrop-blur">
+          <label for="search" class="sr-only">Pesquisar eventos</label>
+          <div class="flex gap-2 gap-x-2 gap-y-2 items-stretch">
+            <div class="flex flex-1 bg-white border-neutral-200 border rounded-xl pr-3 pl-3 gap-x-2 gap-y-2 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search text-neutral-600">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </svg>
+              <input type="text" placeholder="Ex.: São Paulo, corrida 10k, amanhã" class="outline-none placeholder-neutral-400 text-sm text-neutral-900 font-geist bg-transparent w-full pt-2 pb-2" id="search">
+            </div>
+            <button class="inline-flex hover:bg-neutral-100 transition text-sm font-semibold font-geist bg-white border-0 rounded-xl pt-2 pr-4 pb-2 pl-4 gap-x-2 gap-y-2 items-center">
+                Buscar
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-[18px] h-[18px]" data-icon-replaced="true" style="width: 18px; height: 18px">
+                  <path d="M5 12h14" class=""></path><path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </button>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2 justify-center">
+            <span class="text-xs text-white border-neutral-200 border rounded-full pt-1 pr-2 pb-1 pl-2">Corrida de rua</span>
+            <span class="text-xs text-white border-neutral-200 border rounded-full pt-1 pr-2 pb-1 pl-2">Crossfit</span>
+            <span class="text-xs text-white border-neutral-200 border rounded-full pt-1 pr-2 pb-1 pl-2">Beach tennis</span>
+            <span class="text-xs text-white border-neutral-200 border rounded-full pt-1 pr-2 pb-1 pl-2">Ciclismo</span>
+          </div>
+        
+                
+                
+            
+                
+                
+            </div>
+
+        <div class="border-neutral-200 border-t mt-6 pt-4">
+  <p class="text-sm text-white font-geist text-center">Encontre corridas de rua, futebol, beach tennis e muito mais — perto de você.</p>
+</div>
+      </div>
+
+      <!-- Coluna Direita - Título -->
+
+
+      <style class="">
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+            filter: blur(8px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+          }
+        }
+
+        @keyframes slideInBlur {
+          from {
+            opacity: 0;
+            transform: translateX(-30px);
+            filter: blur(8px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateX(0);
+            filter: blur(0px);
+          }
+        }
+
+        @keyframes fadeInSlide {
+          from {
+            opacity: 0;
+            transform: translateX(20px);
+            filter: blur(4px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateX(0);
+            filter: blur(0px);
+          }
+        }
+
+        @keyframes fadeInScale {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+            filter: blur(3px);
+          }
+
+          to {
+            opacity: 1;
+            transform: scale(1);
+            filter: blur(0px);
+          }
+        }
+      </style>
+    </div>
+  </div>
+</section>
+
+  <!-- Seções antigas ocultas para priorizar fluxo solicitado -->
+  <section class="hidden" style="visibility: hidden; display: none;"></section>
+  <section class="hidden"></section>
+
+  <!-- Eventos em destaque (reutiliza "Meet the Coaches") -->
+  <section class="z-20 border-neutral-200 border-t relative">
+    <div class="lg:px-8 max-w-7xl mr-auto ml-auto pt-16 pr-6 pb-6 pl-6">
+      <div class="mb-10 flex items-end justify-between gap-6">
+        <div class="animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.1s both;">
+          <h2 class="sm:text-4xl sm:bg-clip-text sm:text-transparent text-3xl font-semibold tracking-tight font-geist bg-gradient-to-br from-orange-400 to-orange-600">Eventos em destaque</h2>
+          <p class="text-neutral-600 font-geist mt-2">Curadoria Symplepass</p>
+        </div>
+        <a href="/eventos" class="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-neutral-900 border border-neutral-200 rounded-full px-4 py-2 hover:bg-neutral-100 transition animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.2s both;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar h-4 w-4">
+            <path d="M8 2v4"></path><path d="M16 2v4"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M3 10h18"></path>
+          </svg>
+          Ver todos os eventos
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 gap-x-6 gap-y-6">
+        <!-- Evento 1 -->
+        <div class="group overflow-hidden hover:bg-neutral-50 transition-colors animate-on-scroll bg-white/50 border-neutral-200 border rounded-2xl backdrop-blur" style="animation: fadeSlideIn 1.0s ease-out 0.3s both">
+          <div class="relative h-56">
+            <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&amp;q=80" alt="Corrida das Estrelas 10K - São Paulo" class="transition-transform duration-500 group-hover:scale-105 w-full h-full object-cover">
+            <div class="bg-gradient-to-t from-black/20 via-black/0 to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
+          </div>
+          <div class="pt-5 pr-5 pb-5 pl-5">
+            <div class="flex items-center justify-between">
+              <div class="">
+                <p class="text-lg font-semibold tracking-tight font-geist">Corrida das Estrelas 10K</p>
+                <p class="text-sm text-neutral-600 font-geist">São Paulo, SP • Corrida de rua</p>
+              </div>
+              <a href="#" class="inline-flex items-center gap-1.5 hover:bg-neutral-100 transition text-xs text-gray-50 bg-gradient-to-br from-orange-400 to-orange-600 border-0 rounded-full pt-1.5 pr-3 pb-1.5 pl-3">
+                Inscrever-se
+              </a>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1">10K</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1">Dom • 07:00</span>
+              <span class="text-xs text-neutral-700 border-neutral-200 border rounded-full pt-1 pr-2 pb-1 pl-2">Largadas por pelotão</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 2 -->
+        <div class="group overflow-hidden hover:bg-neutral-50 transition-colors animate-on-scroll bg-white/50 border-neutral-200 border rounded-2xl backdrop-blur" style="animation: fadeSlideIn 1.0s ease-out 0.4s both">
+          <div class="relative h-56">
+            <img src="https://images.unsplash.com/photo-1519505907962-0a6cb0167c73?w=800&amp;q=80" alt="Open de Cross Training - Curitiba" class="transition-transform duration-500 group-hover:scale-105 w-full h-full object-cover">
+            <div class="bg-gradient-to-t from-black/20 via-black/0 to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
+          </div>
+          <div class="pt-5 pr-5 pb-5 pl-5">
+            <div class="flex gap-x-1.5 gap-y-1.5 items-center justify-between">
+              <div class="gap-x-1.5 gap-y-1.5">
+                <p class="text-lg font-semibold tracking-tight font-geist">Open de Cross Training</p>
+                <p class="text-sm text-neutral-600 font-geist">Campinas, SP • Cross training</p>
+              </div>
+              <a href="#" class="inline-flex items-center gap-1.5 hover:bg-neutral-100 transition text-xs text-gray-50 bg-gradient-to-br from-orange-400 to-orange-600 border-0 rounded-full pt-1.5 pr-3 pb-1.5 pl-3">
+                Ver detalhes
+              </a>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4 gap-x-2 gap-y-2">
+              <span class="text-xs text-neutral-700 bg-[#ffffff]/30 border-neutral-200 border rounded-full px-2 py-1">Rx / Scaled</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1">Sáb • 08:30</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1">Times e individual</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evento 3 -->
+        <div class="group overflow-hidden hover:bg-neutral-50 transition-colors animate-on-scroll bg-white/50 border-neutral-200 border rounded-2xl backdrop-blur" style="animation: fadeSlideIn 1.0s ease-out 0.5s both">
+          <div class="relative h-56">
+            <img src="https://images.unsplash.com/photo-1638873194946-ae8c1aced4c4?w=800&amp;q=80" alt="Beach Tennis Summer Cup - Rio de Janeiro" class="transition-transform duration-500 group-hover:scale-105 w-full h-full object-cover">
+            <div class="bg-gradient-to-t from-black/20 via-black/0 to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
+          </div>
+          <div class="pt-5 pr-5 pb-5 pl-5">
+            <div class="flex items-center justify-between">
+              <div class="">
+                <p class="text-lg font-semibold tracking-tight font-geist">Beach Tennis Summer Cup</p>
+                <p class="text-sm text-neutral-600 font-geist">Santos, SP • Beach tennis</p>
+              </div>
+              <a href="#" class="inline-flex items-center gap-1.5 hover:bg-neutral-100 transition text-xs text-gray-50 bg-gradient-to-br from-orange-400 to-orange-600 border-0 rounded-full pt-1.5 pr-3 pb-1.5 pl-3">
+                Inscrever-se
+              </a>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1">Duplas</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1">Sáb • 09:00</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1">Areia • Praia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+  <!-- Lista de eventos (menos destaque) - Reutiliza seção "Programs" -->
+  <section class="animate-on-scroll z-20 relative" style="animation: fadeSlideIn 1.0s ease-out 0.1s both">
+    <div class="lg:px-8 max-w-7xl mr-auto ml-auto pt-8 pr-6 pb-16 pl-6">
+      <div class="flex mb-8 gap-x-6 gap-y-6 items-end justify-between">
+        <div class="animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.2s both;">
+          <h2 class="text-3xl font-semibold tracking-tight font-geist bg-gradient-to-br from-orange-400 to-orange-600 sm:text-4xl sm:bg-clip-text sm:text-transparent">Próximos eventos</h2>
+          
+        </div>
+        <a href="/eventos" class="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-neutral-900 border border-neutral-200 rounded-full px-4 py-2 hover:bg-neutral-100 transition animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.3s both;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list">
+            <path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path>
+          </svg>
+          Ver agenda
+        </a>
+      </div>
+
+      <div class="space-y-3">
+        <!-- Item -->
+        <div class="bg-white border border-neutral-200 rounded-xl p-4 hover:bg-neutral-50 transition-colors animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.4s both;">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div class="md:col-span-2">
+              <p class="text-sm text-neutral-600 font-geist">Sáb, 12 Abr</p>
+            </div>
+            <div class="md:col-span-4">
+              <p class="font-semibold tracking-tight font-geist">Meia Maratona do Centro Histórico</p>
+            </div>
+            <div class="md:col-span-3">
+              <p class="text-sm text-neutral-700 font-geist">São Paulo, SP</p>
+            </div>
+            <div class="md:col-span-2">
+              <p class="text-sm text-neutral-700 font-geist">Corrida de rua</p>
+            </div>
+            <div class="md:col-span-1 flex md:justify-end">
+              <a href="#" class="inline-flex items-center gap-1.5 hover:bg-neutral-100 transition text-xs text-gray-50 bg-gradient-to-br from-orange-400 to-orange-600 border-0 rounded-full pt-1.5 pr-3 pb-1.5 pl-3">Detalhes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-neutral-200 rounded-xl p-4 hover:bg-neutral-50 transition-colors animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.45s both;">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div class="md:col-span-2">
+              <p class="text-sm text-neutral-600 font-geist">Dom, 20 Abr</p>
+            </div>
+            <div class="md:col-span-4">
+              <p class="font-semibold tracking-tight font-geist">Desafio MTB Serra do Mar</p>
+            </div>
+            <div class="md:col-span-3">
+              <p class="text-sm text-neutral-700 font-geist">Santos, SP</p>
+            </div>
+            <div class="md:col-span-2">
+              <p class="text-sm text-neutral-700 font-geist">Ciclismo MTB</p>
+            </div>
+            <div class="md:col-span-1 flex md:justify-end">
+              <a href="#" class="inline-flex items-center gap-1.5 hover:bg-neutral-100 transition text-xs text-gray-50 bg-gradient-to-br from-orange-400 to-orange-600 border-0 rounded-full pt-1.5 pr-3 pb-1.5 pl-3">Inscrever</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-neutral-200 rounded-xl p-4 hover:bg-neutral-50 transition-colors animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.5s both;">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div class="md:col-span-2">
+              <p class="text-sm text-neutral-600 font-geist">Sáb, 03 Mai</p>
+            </div>
+            <div class="md:col-span-4">
+              <p class="font-semibold tracking-tight font-geist">Arena Cross Experience</p>
+            </div>
+            <div class="md:col-span-3">
+              <p class="text-sm text-neutral-700 font-geist">Campinas, SP</p>
+            </div>
+            <div class="md:col-span-2">
+              <p class="text-sm text-neutral-700 font-geist">Cross training</p>
+            </div>
+            <div class="md:col-span-1 flex md:justify-end">
+              <a href="#" class="inline-flex items-center gap-1.5 hover:bg-neutral-100 transition text-xs text-gray-50 bg-gradient-to-br from-orange-400 to-orange-600 border-0 rounded-full pt-1.5 pr-3 pb-1.5 pl-3">Detalhes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-neutral-200 rounded-xl p-4 hover:bg-neutral-50 transition-colors animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.55s both;">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div class="md:col-span-2">
+              <p class="text-sm text-neutral-600 font-geist">Dom, 11 Mai</p>
+            </div>
+            <div class="md:col-span-4">
+              <p class="font-semibold tracking-tight font-geist">Beach Tennis Open</p>
+            </div>
+            <div class="md:col-span-3">
+              <p class="text-sm text-neutral-700 font-geist">São Sebastião, SP</p>
+            </div>
+            <div class="md:col-span-2">
+              <p class="text-sm text-neutral-700 font-geist">Beach tennis</p>
+            </div>
+            <div class="md:col-span-1 flex md:justify-end">
+              <a href="#" class="inline-flex items-center gap-1.5 hover:bg-neutral-100 transition text-xs text-gray-50 bg-gradient-to-br from-orange-400 to-orange-600 border-0 rounded-full pt-1.5 pr-3 pb-1.5 pl-3">Inscrever</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-neutral-200 rounded-xl p-4 hover:bg-neutral-50 transition-colors animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.6s both;">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div class="md:col-span-2">
+              <p class="text-sm text-neutral-600 font-geist">Sáb, 24 Mai</p>
+            </div>
+            <div class="md:col-span-4">
+              <p class="font-semibold tracking-tight font-geist">Triathlon Lago Azul</p>
+            </div>
+            <div class="md:col-span-3">
+              <p class="text-sm text-neutral-700 font-geist">Bertioga, SP</p>
+            </div>
+            <div class="md:col-span-2">
+              <p class="text-sm text-neutral-700 font-geist">Triathlon</p>
+            </div>
+            <div class="md:col-span-1 flex md:justify-end">
+              <a href="#" class="inline-flex items-center gap-1.5 hover:bg-neutral-100 transition text-xs text-gray-50 bg-gradient-to-br from-orange-400 to-orange-600 border-0 rounded-full pt-1.5 pr-3 pb-1.5 pl-3">Detalhes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+  <!-- Clube de Benefícios (reutiliza layout de "Platform advantages") -->
+  <section class="z-20 border-neutral-200 border-t relative">
+    <div class="lg:px-8 max-w-7xl mr-auto ml-auto pt-16 pr-6 pb-16 pl-6">
+      <!-- Cabeçalho -->
+      <div class="text-center max-w-3xl mr-auto ml-auto">
+        <span class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1 text-[11px] uppercase tracking-widest text-neutral-600 font-geist animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.1s both;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles h-3.5 w-3.5"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+          Clube de Benefícios
+        </span>
+        <h2 class="animate-on-scroll text-3xl font-semibold tracking-tight font-geist mt-4 bg-gradient-to-br from-orange-400 to-orange-600 sm:text-5xl sm:bg-clip-text sm:text-transparent" style="animation: fadeSlideIn 1.0s ease-out 0.2s both">Vantagens exclusivas para membros</h2>
+        <p class="leading-relaxed text-neutral-600 font-geist mt-3 animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.3s both;">
+          Economize em inscrições, tenha acesso antecipado e conte com profissionais para elevar seu desempenho.
+        </p>
+      </div>
+
+      <!-- Layout em quadrantes -->
+      <div class="animate-on-scroll bg-white border-neutral-200 border rounded-2xl mt-12 relative backdrop-blur" style="animation: fadeSlideIn 1.0s ease-out 0.4s both">
+
+
+
+  <div class="grid grid-cols-1 sm:p-10 lg:grid-cols-2 lg:pt-6 lg:pb-6 pt-6 pr-6 pb-6 pl-6 gap-x-8 gap-y-8">
+    <!-- Desconto em estabelecimentos -->
+    <div class="group sm:p-6 hover:bg-neutral-50 transition-colors rounded-xl pt-4 pr-4 pb-4 pl-4 animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.5s both;">
+      <div class="flex gap-3 items-start">
+        <span class="inline-flex items-center justify-center sm:w-12 bg-white w-24 h-9 border-neutral-200 border rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag w-[18px] h-[18px]" data-lucide="badge-percent" data-icon-set="lucide" data-icon-replaced="true" style="color: rgb(23, 23, 23); width: 18px; height: 18px;"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path><path d="m15 9-6 6"></path><path d="M9 9h.01"></path><path d="M15 15h.01"></path></svg>
+              </span>
+        <div class="">
+          <p class="font-medium tracking-tight font-geist">Desconto em estabelecimentos</p>
+          <p class="text-sm text-neutral-600 font-geist">Economize em lojas esportivas, nutrição e parceiros.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inscrições antecipadas -->
+    <div class="group rounded-xl p-4 sm:p-6 hover:bg-neutral-50 transition-colors animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.6s both;">
+      <div class="flex gap-3 items-start">
+        <span class="inline-flex items-center justify-center sm:w-12 bg-white w-24 h-9 border-neutral-200 border rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alarm-clock">
+                  <circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2"></path><path d="M5 3 2 6"></path><path d="m22 6-3-3"></path>
+                </svg>
+              </span>
+        <div class="">
+          <p class="font-medium tracking-tight font-geist">Inscrições antecipadas</p>
+          <p class="text-sm text-neutral-600 font-geist">Garanta sua vaga antes de abrir para o público.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inscrições mais baratas -->
+    <div class="group rounded-xl p-4 sm:p-6 hover:bg-neutral-50 transition-colors animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.7s both;">
+      <div class="flex gap-3 items-start">
+        <span class="inline-flex items-center justify-center sm:w-12 bg-white w-24 h-9 border-neutral-200 border rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="" data-lucide="crown" data-icon-set="lucide" data-icon-replaced="true" style="color: rgb(23, 23, 23);"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"></path><path d="M5 21h14"></path></svg>
+              </span>
+        <div class="">
+          <p class="font-medium tracking-tight font-geist">Inscrições mais baratas</p>
+          <p class="text-sm text-neutral-600 font-geist">Planos com desconto progressivo e cupons exclusivos.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Assessoria de profissionais -->
+    <div class="group rounded-xl p-4 sm:p-6 hover:bg-neutral-50 transition-colors animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.8s both;">
+      <div class="flex items-start gap-3">
+        <span class="inline-flex items-center justify-center sm:w-12 bg-white w-24 h-9 border-neutral-200 border rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-square-2 w-[18px] h-[18px]" data-icon-replaced="true" style="color: rgb(23, 23, 23); width: 18px; height: 18px">
+                  <path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path><path d="M16 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
+        <div class="">
+          <p class="font-medium tracking-tight font-geist">Assessoria de profissionais</p>
+          <p class="text-sm text-neutral-600 font-geist">Treinadores, nutri e físios para cada modalidade.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="flex animate-on-scroll border-neutral-200 border-t mt-0 mb-0 py-3 justify-center" style="animation: fadeSlideIn 1.0s ease-out 0.9s both">
+
+  <a href="#" class="inline-flex items-center gap-2 hover:bg-neutral-100 transition text-sm font-medium text-neutral-900 font-geist border-neutral-200 border rounded-full my4 pt-2 pr-4 pb-2 pl-4">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkle">
+      <path d="M12 3v4"></path>
+      <path d="M12 17v4"></path>
+      <path d="M3 12h4"></path>
+      <path d="M17 12h4"></path>
+      <path d="m18 22-3-6-6-3 6-3 3-6 3 6 6 3-6 3-3 6Z"></path>
+    </svg>
+    Conheça o clube
+  </a>
+</div>
+</div>
+    </div>
+  </section>
+
+  <footer class="z-20 border-neutral-200 border-t relative">
+  <div class="lg:px-8 max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 gap-x-10 gap-y-10">
+      <!-- Marca + Newsletter -->
+      <div class="">
+        <a href="#" class="inline-flex items-center justify-center bg-center w-[180px] h-[30px] bg-[url(https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/aeedd709-9da0-43b6-b8a0-e717ad6fc23d_320w.png)] bg-cover rounded" aria-label="Forge"></a>
+        <p class="mt-4 text-sm text-neutral-600 font-geist">Encontre e participe dos melhores eventos esportivos perto de
+          você.</p>
+        <form class="mt-6 flex items-center gap-2">
+          <input type="email" placeholder="Seu e-mail" class="flex-1 rounded-full bg-white border border-neutral-200 px-3.5 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-300 font-geist">
+          <button class="inline-flex items-center gap-2 text-sm font-normal text-neutral-900 border border-neutral-200 rounded-full px-3.5 py-2 hover:bg-neutral-100 transition font-geist">
+              Assinar
+            </button>
+        </form>
+        <p class="mt-2 text-xs text-neutral-500 font-geist">Sem spam. Cancele quando quiser.</p>
+      </div>
+
+      <!-- Eventos -->
+      <div class="">
+        <p class="text-xs uppercase tracking-widest text-neutral-500 font-geist">Eventos</p>
+        <ul class="mt-3 space-y-2">
+          <li class=""><a href="#" class="hover:text-neutral-900 transition text-sm text-neutral-700 font-geist">Corrida de
+              rua</a></li>
+          <li class=""><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Cross
+              training</a></li>
+          <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Beach tennis</a></li>
+          <li><a href="#" class="inline-flex items-center gap-1.5 text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">
+              Ver agenda
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide h-3.5 w-3.5">
+                <path d="M8 2v4"></path>
+                <path d="M16 2v4"></path>
+                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                <path d="M3 10h18"></path>
+              </svg>
+            </a></li>
+        </ul>
+      </div>
+
+      <!-- Recursos -->
+      <div class="">
+        <p class="text-xs uppercase tracking-widest text-neutral-500 font-geist">Recursos</p>
+        <ul class="mt-3 space-y-2">
+          <li class=""><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Como funciona</a></li>
+          <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Guia do atleta</a>
+          </li>
+          <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">FAQ</a></li>
+          <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Suporte</a></li>
+        </ul>
+      </div>
+
+      <!-- Empresa -->
+      <div class="">
+        <p class="text-xs uppercase tracking-widest text-neutral-500 font-geist">Empresa</p>
+        <ul class="mt-3 space-y-2">
+          <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Sobre</a></li>
+          <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Carreiras</a></li>
+          <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Contato</a></li>
+          <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Imprensa</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="mt-12 border-t border-neutral-200 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <p class="text-xs text-neutral-600 font-geist">© 2025 Symplepass. Todos os direitos reservados.</p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="#" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Termos</a>
+        <span class="w-px h-3 bg-neutral-200"></span>
+        <a href="#" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Privacidade</a>
+        <span class="w-px h-3 bg-neutral-200"></span>
+        <a href="#" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Cookies</a>
+        <span class="w-px h-3 bg-neutral-200"></span>
+        <a href="#" class="inline-flex items-center gap-1 text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">
+          Status
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="activity" class="lucide lucide-activity h-3 w-3">
+            <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2">
+            </path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://unpkg.com/lucide@latest" class="" style="display: none;"></script>
+</body></html>

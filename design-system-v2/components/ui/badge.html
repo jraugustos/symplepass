@@ -1,0 +1,448 @@
+<!--
+  BADGE COMPONENT - shadcn/ui style adapted for Symplepass
+  Pixel-perfect match with HTML designs
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Badge Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../../tailwind.config.js"></script>
+  <link rel="stylesheet" href="../../globals.css">
+</head>
+<body class="p-8 bg-neutral-50">
+
+  <!-- Badge Component Examples -->
+  <div class="space-y-8 max-w-4xl mx-auto">
+
+    <h2 class="text-2xl font-semibold font-geist">Badge Component</h2>
+
+    <!-- Default Badges -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Default Badges</h3>
+      <div class="flex flex-wrap gap-3">
+
+        <!-- Primary Badge (Orange) -->
+        <span class="badge badge-primary">
+          Destaque
+        </span>
+
+        <!-- Secondary Badge -->
+        <span class="badge badge-secondary">
+          Novo
+        </span>
+
+        <!-- Success Badge -->
+        <span class="badge badge-success">
+          Confirmado
+        </span>
+
+        <!-- Warning Badge -->
+        <span class="badge badge-warning">
+          Últimas vagas
+        </span>
+
+        <!-- Error Badge -->
+        <span class="badge badge-error">
+          Esgotado
+        </span>
+
+        <!-- Info Badge -->
+        <span class="badge badge-info">
+          Online
+        </span>
+
+        <!-- Neutral Badge -->
+        <span class="badge badge-neutral">
+          Rascunho
+        </span>
+
+      </div>
+    </section>
+
+    <!-- Status Badges (Matching Event Cards) -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Status Badges</h3>
+      <div class="flex flex-wrap gap-3">
+
+        <!-- Available -->
+        <span class="badge-status badge-status-available">
+          <span class="badge-status-dot"></span>
+          Disponível
+        </span>
+
+        <!-- Limited -->
+        <span class="badge-status badge-status-limited">
+          <span class="badge-status-dot"></span>
+          Últimas vagas
+        </span>
+
+        <!-- Sold Out -->
+        <span class="badge-status badge-status-soldout">
+          <span class="badge-status-dot"></span>
+          Esgotado
+        </span>
+
+        <!-- Coming Soon -->
+        <span class="badge-status badge-status-coming">
+          <span class="badge-status-dot"></span>
+          Em breve
+        </span>
+
+      </div>
+    </section>
+
+    <!-- Category Tags (Matching Event Cards) -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Category Tags</h3>
+      <div class="flex flex-wrap gap-2">
+
+        <span class="tag tag-category">Festival</span>
+        <span class="tag tag-category">Música ao vivo</span>
+        <span class="tag tag-category">Workshop</span>
+        <span class="tag tag-category">Conferência</span>
+        <span class="tag tag-category">Esporte</span>
+        <span class="tag tag-category">Teatro</span>
+        <span class="tag tag-category">Cinema</span>
+        <span class="tag tag-category">Arte</span>
+
+      </div>
+    </section>
+
+    <!-- Size Variants -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Size Variants</h3>
+      <div class="flex flex-wrap gap-3 items-center">
+
+        <span class="badge badge-primary badge-sm">Small</span>
+        <span class="badge badge-primary">Default</span>
+        <span class="badge badge-primary badge-lg">Large</span>
+
+      </div>
+    </section>
+
+    <!-- With Icons -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">With Icons</h3>
+      <div class="flex flex-wrap gap-3">
+
+        <!-- Icon Left -->
+        <span class="badge badge-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          Premium
+        </span>
+
+        <!-- Icon Right -->
+        <span class="badge badge-secondary">
+          Verificado
+          <svg xmlns="http://www.w3.org/2000/svg" class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <path d="m22 4-10 10.01L9 11"></path>
+          </svg>
+        </span>
+
+      </div>
+    </section>
+
+    <!-- Removable Badges -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Removable Tags</h3>
+      <div class="flex flex-wrap gap-2">
+
+        <span class="tag tag-removable">
+          São Paulo
+          <button class="tag-remove" aria-label="Remove">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </span>
+
+        <span class="tag tag-removable">
+          Rock
+          <button class="tag-remove" aria-label="Remove">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </span>
+
+        <span class="tag tag-removable">
+          2024
+          <button class="tag-remove" aria-label="Remove">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </span>
+
+      </div>
+    </section>
+
+    <!-- Count Badges -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Count Badges</h3>
+      <div class="flex flex-wrap gap-4 items-center">
+
+        <!-- Notification Count -->
+        <div class="relative inline-flex">
+          <button class="btn btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+          </button>
+          <span class="badge-count">3</span>
+        </div>
+
+        <!-- Cart Count -->
+        <div class="relative inline-flex">
+          <button class="btn btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="21" r="1"></circle>
+              <circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+          </button>
+          <span class="badge-count badge-count-large">12</span>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Component Styles -->
+  <style>
+    /* Base Badge Styles */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.125rem 0.625rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      border-radius: 9999px;
+      transition: all 200ms ease;
+      white-space: nowrap;
+    }
+
+    /* Badge Variants */
+    .badge-primary {
+      background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+      color: white;
+    }
+
+    .badge-secondary {
+      background: #F5F5F5;
+      color: #525252;
+      border: 1px solid #EAEAEA;
+    }
+
+    .badge-success {
+      background: rgba(52, 199, 89, 0.1);
+      color: #15803D;
+      border: 1px solid rgba(52, 199, 89, 0.2);
+    }
+
+    .badge-warning {
+      background: rgba(245, 158, 11, 0.1);
+      color: #B45309;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .badge-error {
+      background: rgba(255, 59, 48, 0.1);
+      color: #B91C1C;
+      border: 1px solid rgba(255, 59, 48, 0.2);
+    }
+
+    .badge-info {
+      background: rgba(0, 122, 255, 0.1);
+      color: #1D4ED8;
+      border: 1px solid rgba(0, 122, 255, 0.3);
+    }
+
+    .badge-neutral {
+      background: #FAFAFA;
+      color: #737373;
+      border: 1px solid #EAEAEA;
+    }
+
+    /* Size Variants */
+    .badge-sm {
+      padding: 0.0625rem 0.5rem;
+      font-size: 0.6875rem;
+    }
+
+    .badge-lg {
+      padding: 0.25rem 0.875rem;
+      font-size: 0.875rem;
+    }
+
+    /* Badge Icon */
+    .badge-icon {
+      width: 0.875rem;
+      height: 0.875rem;
+    }
+
+    /* Status Badge with Dot */
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      border-radius: 9999px;
+      background: white;
+      border: 1px solid #EAEAEA;
+    }
+
+    .badge-status-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 9999px;
+      flex-shrink: 0;
+    }
+
+    .badge-status-available {
+      color: #15803D;
+      border-color: rgba(52, 199, 89, 0.3);
+      background: rgba(52, 199, 89, 0.05);
+    }
+
+    .badge-status-available .badge-status-dot {
+      background: #34C759;
+    }
+
+    .badge-status-limited {
+      color: #B45309;
+      border-color: rgba(245, 158, 11, 0.3);
+      background: rgba(245, 158, 11, 0.05);
+    }
+
+    .badge-status-limited .badge-status-dot {
+      background: #F59E0B;
+    }
+
+    .badge-status-soldout {
+      color: #B91C1C;
+      border-color: rgba(255, 59, 48, 0.3);
+      background: rgba(255, 59, 48, 0.05);
+    }
+
+    .badge-status-soldout .badge-status-dot {
+      background: #FF3B30;
+    }
+
+    .badge-status-coming {
+      color: #1D4ED8;
+      border-color: rgba(0, 122, 255, 0.3);
+      background: rgba(0, 122, 255, 0.05);
+    }
+
+    .badge-status-coming .badge-status-dot {
+      background: #007AFF;
+    }
+
+    /* Category Tags */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 400;
+      font-family: 'Inter', sans-serif;
+      border-radius: 0.375rem;
+      transition: all 200ms ease;
+    }
+
+    .tag-category {
+      background: #FAFAFA;
+      color: #525252;
+      border: 1px solid #EAEAEA;
+    }
+
+    .tag-category:hover {
+      background: #F5F5F5;
+      border-color: #D4D4D4;
+      cursor: pointer;
+    }
+
+    /* Removable Tags */
+    .tag-removable {
+      background: white;
+      color: #404040;
+      border: 1px solid #D4D4D4;
+      padding-right: 0.5rem;
+    }
+
+    .tag-remove {
+      margin-left: 0.25rem;
+      padding: 0.125rem;
+      border-radius: 0.25rem;
+      transition: all 150ms ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tag-remove:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    /* Count Badges */
+    .badge-count {
+      position: absolute;
+      top: -0.25rem;
+      right: -0.25rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.125rem;
+      height: 1.125rem;
+      padding: 0 0.25rem;
+      font-size: 0.625rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+      color: white;
+      border-radius: 9999px;
+      border: 2px solid white;
+    }
+
+    .badge-count-large {
+      min-width: 1.375rem;
+      height: 1.375rem;
+      font-size: 0.6875rem;
+    }
+  </style>
+
+  <!-- JavaScript for Interactive Demo -->
+  <script>
+    // Remove tag functionality
+    document.querySelectorAll('.tag-remove').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const tag = button.closest('.tag-removable');
+        tag.style.opacity = '0';
+        tag.style.transform = 'scale(0.8)';
+        setTimeout(() => tag.remove(), 200);
+      });
+    });
+  </script>
+
+</body>
+</html>

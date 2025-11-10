@@ -1,0 +1,1119 @@
+<html lang="pt-BR"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil — Symplepass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="disabled-font-classes" content="font-roboto,font-montserrat,font-poppins,font-playfair,font-instrument-serif,font-merriweather,font-bricolage,font-space-grotesk,font-work-sans,font-pt-serif,font-geist-mono,font-space-mono,font-quicksand,font-manrope,font-nunito,font-jakarta">
+  
+  
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist{font-family:'Geist',sans-serif!important;}</style></head>
+<body class="min-h-screen antialiased overflow-x-hidden text-neutral-900 bg-white" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';">
+
+<style class="">
+  @keyframes fadeSlideIn {
+    0% { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+    100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+  }
+</style>
+
+<script class="">
+  (function () {
+    const style = document.createElement("style");
+    style.textContent = `
+      .animate-on-scroll { animation-play-state: paused !important; }
+      .animate-on-scroll.animate { animation-play-state: running !important; }
+    `;
+    document.head.appendChild(style);
+
+    const once = true;
+    if (!window.__inViewIO) {
+      window.__inViewIO = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+            if (once) window.__inViewIO.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
+    }
+
+    window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+      document.querySelectorAll(selector).forEach((el) => window.__inViewIO.observe(el));
+    };
+
+    document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+  })();
+</script>
+
+<header class="relative" style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent)">
+  <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+    <div class="flex pt-6 pb-6 items-center justify-between">
+      <a href="/" class="inline-flex items-center justify-center bg-center w-[220px] h-[40px] bg-[url(https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/aeedd709-9da0-43b6-b8a0-e717ad6fc23d_320w.png)] bg-cover rounded" aria-label="Forge - Início"></a>
+
+      <!-- Navegação Desktop -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="/eventos" class="transition text-sm font-normal font-geist hover:text-neutral-900 text-neutral-700">Eventos</a>
+        <a href="/modalidades" class="transition text-sm font-normal font-geist hover:text-neutral-900 text-neutral-700">Modalidades</a>
+        <a href="/como-funciona" class="transition text-sm font-normal font-geist hover:text-neutral-900 text-neutral-700">Sobre nós</a>
+        <a href="/precos" class="transition text-sm font-normal font-geist hover:text-neutral-900 text-neutral-700">Clube de
+          benefícios</a>
+        <a href="/suporte" class="transition text-sm font-normal font-geist hover:text-neutral-900 text-neutral-700">Suporte</a>
+        <button class="inline-flex gap-2 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 text-sm font-normal font-geist border rounded-full pt-2 pr-4 pb-2 pl-4 backdrop-blur items-center hover:bg-neutral-200 text-neutral-800 bg-neutral-100 border-neutral-200">
+          Entrar
+        </button>
+      </nav>
+
+      <!-- Botão Menu Mobile -->
+      <button id="mobile-menu-button" class="lg:hidden inline-flex transition focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 text-sm font-normal font-geist border rounded-full pt-2 pr-4 pb-2 pl-4 backdrop-blur gap-x-2 gap-y-2 items-center hover:bg-neutral-200 text-neutral-800 bg-neutral-100 border-neutral-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="menu-icon" class="lucide lucide-menu w-[16px] h-[16px]" style="width: 16px; height: 16px; color: rgb(17, 24, 39);"><path d="M4 5h16"></path><path d="M4 12h16"></path><path dm4="" 19h16"=""></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="close-icon" class="lucide lucide-x w-[16px] h-[16px] hidden" style="width: 16px; height: 16px; color: rgb(17, 24, 39);"><path d="m18 6-12 12"></path><path d="m6 6 12 12"></path></svg>
+        <span id="menu-text">Menu</span>
+      </button>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="lg:hidden fixed inset-0 backdrop-blur-xl z-50 opacity-0 invisible transition-all duration-300 ease-out bg-white/95">
+      <div class="flex flex-col h-full pt-6 pb-8 px-6">
+        <!-- Botão Fechar -->
+        <div class="flex justify-end mb-8">
+          <button id="mobile-close-button" class="inline-flex transition focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 text-sm font-normal font-geist border rounded-full pt-3 pr-3 pb-3 pl-3 backdrop-blur hover:bg-neutral-200 text-neutral-800 bg-neutral-100 border-neutral-200" aria-label="Fechar menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x" style="color: rgb(17, 24, 39);"><path d="m18 6-12 12"></path><path d="m6 6 12 12"></path></svg>
+          </button>
+        </div>
+
+        <nav class="flex-1">
+          <div class="space-y-6">
+            <a href="/eventos" class="block transition text-2xl font-normal font-geist hover:text-neutral-900 text-neutral-700">Eventos</a>
+            <a href="/modalidades" class="block transition text-2xl font-normal font-geist hover:text-neutral-900 text-neutral-700">Modalidades</a>
+            <a href="/como-funciona" class="block transition text-2xl font-normal font-geist hover:text-neutral-900 text-neutral-700">Como funciona</a>
+            <a href="/precos" class="block transition text-2xl font-normal font-geist hover:text-neutral-900 text-neutral-700">Preços</a>
+            <a href="/suporte" class="block text-2xl font-normal transition font-geist text-neutral-700 hover:text-neutral-900">Suporte</a>
+          </div>
+
+          <div class="mt-12 pt-8 border-t border-neutral-200">
+            <button class="w-full inline-flex gap-2 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 text-base font-normal font-geist border rounded-full pt-3 pr-6 pb-3 pl-6 backdrop-blur items-center justify-center hover:bg-neutral-200 text-neutral-800 bg-neutral-100 border-neutral-200">
+              Entrar
+            </button>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <script class="">
+      (function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileCloseButton = document.getElementById('mobile-close-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const menuText = document.getElementById('menu-text');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+          isMenuOpen = !isMenuOpen;
+          if (isMenuOpen) {
+            mobileMenu.classList.remove('opacity-0', 'invisible');
+            mobileMenu.classList.add('opacity-100', 'visible');
+            menuIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+            menuText.textContent = 'Fechar';
+            document.body.style.overflow = 'hidden';
+          } else {
+            mobileMenu.classList.remove('opacity-100', 'visible');
+            mobileMenu.classList.add('opacity-0', 'invisible');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            menuText.textContent = 'Menu';
+            document.body.style.overflow = '';
+          }
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMenu);
+        mobileCloseButton.addEventListener('click', toggleMenu);
+
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (isMenuOpen) toggleMenu();
+          });
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && isMenuOpen) toggleMenu();
+        });
+
+        mobileMenu.addEventListener('click', (e) => {
+          if (e.target === mobileMenu && isMenuOpen) toggleMenu();
+        });
+      })();
+    </script>
+  </div>
+</header>
+
+<main class="">
+  <!-- Header do perfil -->
+  <section class="relative pt-10 pb-8">
+    <div class="lg:px-8 max-w-7xl mx-auto px-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&amp;w=256&amp;auto=format&amp;fit=crop" alt="Avatar" class="h-14 w-14 rounded-full object-cover ring-1 ring-neutral-200">
+          <div>
+            <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight font-geist" style="animation: fadeSlideIn 1.0s ease-out 0.1s both;">Olá, Rafael <span class="align-middle">👋</span></h1>
+            <p class="text-neutral-600 font-geist mt-1" style="animation: fadeSlideIn 1.0s ease-out 0.2s both;">Gerencie seus eventos, pagamentos e dados pessoais</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3" style="animation: fadeSlideIn 1.0s ease-out 0.3s both;">
+          <span class="inline-flex items-center gap-1.5 text-xs text-emerald-600 border border-emerald-500/20 rounded-full px-3 py-1 bg-emerald-500/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-badge-check h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><path d="M3 10c0 6.667 9 12 9 12s9-5.333 9-12a9 9 0 0 0-18 0z"></path></svg>
+            Conta verificada
+          </span>
+          <button class="inline-flex gap-2 transition hover:bg-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 text-sm font-normal text-neutral-800 font-geist bg-neutral-100 border-neutral-200 border rounded-full py-2 px-4 backdrop-blur items-center" onclick="document.getElementById('tab-eventos').click()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-calendar h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+            Meus eventos
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="mt-8">
+        <div class="flex overflow-x-auto no-scrollbar rounded-xl border border-neutral-200 bg-neutral-50 p-1 w-full">
+          <button id="tab-visao-geral" data-tab-target="visao-geral" class="tab-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium font-geist text-neutral-900 bg-neutral-100 border border-neutral-200 tracking-tight">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-layout-dashboard h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"></rect><rect x="14" y="3" width="7" height="5" rx="1"></rect><rect x="14" y="12" width="7" height="9" rx="1"></rect><rect x="3" y="16" width="7" height="5" rx="1"></rect></svg>
+            Visão Geral
+          </button>
+          <button id="tab-eventos" data-tab-target="eventos" class="tab-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-normal font-geist text-neutral-700 hover:text-neutral-900 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-flag-triangle-right h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 22V2l15 5-15 5"></path><path d="M7 22V2"></path></svg>
+            Eventos
+          </button>
+          <button id="tab-perfil" data-tab-target="dados" class="tab-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-normal font-geist text-neutral-700 hover:text-neutral-900 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-user h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20a6 6 0 0 0-12 0"></path><circle cx="12" cy="10" r="4"></circle></svg>
+            Dados Pessoais
+          </button>
+          <!-- NOVA ABA: Preferências -->
+          <button id="tab-preferencias" data-tab-target="preferencias" class="tab-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-normal font-geist text-neutral-700 hover:text-neutral-900 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-heart h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg>
+            Preferências
+          </button>
+          <button id="tab-pagamentos" data-tab-target="pagamentos" class="tab-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-normal font-geist text-neutral-700 hover:text-neutral-900 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-credit-card h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+            Pagamentos
+          </button>
+          <button id="tab-config" data-tab-target="config" class="tab-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-normal font-geist text-neutral-700 hover:text-neutral-900 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-settings h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c0 .66.39 1.26 1 1.51.3.13.63.19.96.19H21a2 2 0 1 1 0 4h-.09c-.33 0-.66.06-.96.19-.61.25-1 .85-1 1.51Z"></path></svg>
+            Configurações
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo das Tabs -->
+  <section class="border-t border-neutral-200">
+    <div class="lg:px-8 max-w-7xl mx-auto px-6 py-12">
+
+      <!-- Visão Geral -->
+      <div data-tab="visao-geral" class="tab-panel grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-7 animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.1s both;">
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl overflow-hidden">
+            <div class="p-6">
+              <div class="flex items-center gap-4">
+                <div class="h-12 w-12 rounded-xl bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-sparkles h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"></path><path d="M3 12h3"></path><path d="M21 12h-3"></path><path d="M12 21v-3"></path><path d="M18.5 5.5 16 8"></path><path d="m6 16-2.5 2.5"></path><path d="M18.5 18.5 16 16"></path><path d="M8 8 5.5 5.5"></path></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold tracking-tight font-geist">Resumo rápido</h3>
+                  <p class="text-neutral-600 font-geist text-sm">Veja seus próximos eventos e status da conta</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
+                <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-4">
+                  <p class="text-3xl font-semibold tracking-tight font-geist">2</p>
+                  <p class="text-xs text-neutral-600 font-geist mt-1">Próximos eventos</p>
+                </div>
+                <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-4">
+                  <p class="text-3xl font-semibold tracking-tight font-geist">1</p>
+                  <p class="text-xs text-neutral-600 font-geist mt-1">Pagamentos pendentes</p>
+                </div>
+                <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-4">
+                  <p class="text-3xl font-semibold tracking-tight font-geist">4.9</p>
+                  <p class="text-xs text-neutral-600 font-geist mt-1">Avaliação média</p>
+                </div>
+                <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-4">
+                  <p class="text-3xl font-semibold tracking-tight font-geist">24h</p>
+                  <p class="text-xs text-neutral-600 font-geist mt-1">Suporte</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-neutral-200 p-6">
+              <div class="flex items-center justify-between mb-4">
+                <h4 class="text-lg font-medium tracking-tight font-geist">Próximos eventos</h4>
+                <button class="text-sm text-neutral-600 hover:text-neutral-900 transition font-geist" onclick="document.getElementById('tab-eventos').click()">Ver todos</button>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <!-- Evento 1 -->
+                <div class="bg-neutral-50 border border-neutral-200 rounded-xl p-4">
+                  <div class="flex items-start justify-between">
+                    <div class="flex items-center gap-2">
+                      <div class="h-9 w-9 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-running h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m13 14-1-2-2-1 1-2 3 1 3-3"></path><path d="m7 17 4-3 1-3"></path><path d="M16 17h-1l-2-1-1-3"></path><circle cx="15" cy="4" r="1"></circle></svg>
+                      </div>
+                      <div>
+                        <p class="font-medium font-geist tracking-tight">42ª Maratona Internacional SP</p>
+                        <p class="text-xs text-neutral-600 font-geist">15 de março de 2025 • São Paulo, SP</p>
+                      </div>
+                    </div>
+                    <span class="text-[11px] inline-flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-badge-check h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"></path><path d="M3 10c0 6.667 9 12 9 12s9-5.333 9-12a9 9 0 0 0-18 0Z"></path></svg>
+                      Pago
+                    </span>
+                  </div>
+                  <div class="flex gap-2 mt-4">
+                    <button class="inline-flex items-center gap-2 text-xs font-normal font-geist bg-neutral-100 border border-neutral-200 rounded-full px-3 py-2 hover:bg-neutral-200 transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-qr-code h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 3h4v4H5z"></path><path d="M15 3h4v4h-4z"></path><path d="M5 17h4v4H5z"></path><path d="M7 7v2h2"></path><path d="M17 7v2h2"></path><path d="M7 15v2h2"></path><path d="M13 13h2v2h-2z"></path><path d="M15 15h4v4h-4z"></path><path d="M13 7h2"></path></svg>
+                      QR Code
+                    </button>
+                    <button class="inline-flex items-center gap-2 text-xs font-normal font-geist border border-neutral-200 rounded-full px-3 py-2 hover:bg-neutral-100 transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-download h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+                      PDF
+                    </button>
+                  </div>
+                </div>
+                <!-- Evento 2 -->
+                <div class="bg-neutral-50 border border-neutral-200 rounded-xl p-4">
+                  <div class="flex items-start justify-between">
+                    <div class="flex items-center gap-2">
+                      <div class="h-9 w-9 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-bicycle h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="5.5" cy="17.5" r="3.5"></circle><circle cx="18.5" cy="17.5" r="3.5"></circle><path d="M12 17.5 8 10h4l3 5h3"></path><path d="M5.5 14.5 8 10"></path></svg>
+                      </div>
+                      <div>
+                        <p class="font-medium font-geist tracking-tight">Circuito de Ciclismo SP</p>
+                        <p class="text-xs text-neutral-600 font-geist">22 de abril de 2025 • São Paulo, SP</p>
+                      </div>
+                    </div>
+                    <span class="text-[11px] inline-flex items-center gap-1 px-2 py-1 rounded-full bg-amber-500/10 text-amber-600 border border-amber-500/20">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-alert-circle h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+                      Pendente
+                    </span>
+                  </div>
+                  <div class="flex gap-2 mt-4">
+                    <button class="inline-flex items-center gap-2 text-xs font-normal font-geist border border-neutral-200 rounded-full px-3 py-2 hover:bg-neutral-100 transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-eye h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                      Detalhes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.2s both;">
+          <div class="lg:sticky lg:top-8 space-y-6">
+            <div class="rounded-2xl bg-neutral-50 border border-neutral-200 p-6">
+              <h4 class="text-lg font-semibold tracking-tight font-geist">Atalhos</h4>
+              <div class="mt-4 grid grid-cols-2 gap-3">
+                <button class="inline-flex items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 hover:bg-neutral-100 transition text-sm font-normal font-geist" onclick="document.getElementById('tab-perfil').click()">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-id-card h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="20" height="14" x="2" y="5" rx="2"></rect><path d="M6 10h4"></path><path d="M6 14h6"></path><path d="M16 14h2"></path></svg>
+                  Editar dados
+                </button>
+                <button class="inline-flex items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 hover:bg-neutral-100 transition text-sm font-normal font-geist" onclick="document.getElementById('tab-pagamentos').click()">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-receipt h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21V3l-3 2-2-2-2 2-2-2-2 2-3-2v18l3-2 2 2 2-2 2 2 2-2 3 2Z"></path></svg>
+                  Ver faturas
+                </button>
+                <button class="inline-flex items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 hover:bg-neutral-100 transition text-sm font-normal font-geist" onclick="document.getElementById('tab-config').click()">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-bell-ring h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 5a2 2 0 1 1 4 0"></path><path d="M22 17H2a8 8 0 0 0 16 0Z"></path><path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 7H3s3 0 3-7"></path></svg>
+                  Notificações
+                </button>
+                <button class="inline-flex items-center justify-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 hover:bg-neutral-100 transition text-sm font-normal font-geist" onclick="document.getElementById('tab-eventos').click()">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-tickets h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9a3 3 0 1 0 0 6"></path><path d="M21 9a3 3 0 1 1 0 6"></path><rect x="3" y="5" width="18" height="14" rx="2"></rect></svg>
+                  Meus ingressos
+                </button>
+              </div>
+            </div>
+
+            <!-- NOVO CARD: Preferências na Visão Geral -->
+            <div class="rounded-2xl bg-neutral-50 border border-neutral-200 p-6">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-heart h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold tracking-tight font-geist">Preferências</h4>
+                  <p class="text-sm text-neutral-600 font-geist">Esportes que você mais gosta</p>
+                </div>
+              </div>
+              <div id="prefs-summary" class="mt-4 flex flex-wrap gap-2">
+                <!-- Preenchido via JS -->
+                <span class="text-xs text-neutral-600 font-geist">Carregando...</span>
+              </div>
+              <button class="mt-4 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-100 px-4 py-2 text-sm font-normal font-geist hover:bg-neutral-200 transition" onclick="document.getElementById('tab-preferencias').click()">
+                Editar preferências
+                <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-chevron-right h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 18 6-6-6-6"></path></svg>
+              </button>
+            </div>
+
+            <div class="rounded-2xl bg-[url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&amp;w=1600&amp;auto=format&amp;fit=crop')] bg-cover bg-center border border-neutral-200 overflow-hidden">
+              <div class="bg-black/60 backdrop-blur p-6">
+                <h4 class="text-lg font-semibold tracking-tight font-geist text-white">Descubra novos eventos</h4>
+                <p class="text-sm text-white/80 font-geist mt-1">Corridas de rua, ciclismo, triathlon e mais perto de você</p>
+                <button class="mt-4 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/20 px-4 py-2 text-sm font-normal font-geist text-white hover:bg-white/30 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-search h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                  Explorar agora
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eventos -->
+      <div data-tab="eventos" class="tab-panel hidden">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight font-geist mb-6">Meus Eventos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <!-- Card Evento 1 -->
+          <div class="group overflow-hidden hover:bg-neutral-100 transition-colors bg-neutral-50 border-neutral-200 border rounded-2xl backdrop-blur">
+            <div class="relative h-40">
+              <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Maratona" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              <div class="absolute top-4 left-4 flex items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 text-xs text-emerald-700 border border-emerald-400/30 rounded-full px-2.5 py-1 bg-emerald-400/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-badge-check h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"></path><path d="M3 10c0 6.667 9 12 9 12s9-5.333 9-12a9 9 0 0 0-18 0Z"></path></svg>
+                  Pago
+                </span>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="text-lg font-medium font-geist tracking-tight">42ª Maratona Internacional SP</h3>
+                  <p class="text-sm text-neutral-600 font-geist">15 de março de 2025 • São Paulo, SP</p>
+                </div>
+                <span class="text-xs text-neutral-600 font-geist">21km • Meia Maratona</span>
+              </div>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <button class="inline-flex items-center gap-2 text-xs font-normal font-geist bg-neutral-100 border border-neutral-200 rounded-full px-3 py-2 hover:bg-neutral-200 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-qr-code h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 3h4v4H5z"></path><path d="M15 3h4v4h-4z"></path><path d="M5 17h4v4H5z"></path><path d="M7 7v2h2"></path><path d="M17 7v2h2"></path><path d="M7 15v2h2"></path><path d="M13 13h2v2h-2z"></path><path d="M15 15h4v4h-4z"></path><path d="M13 7h2"></path></svg>
+                  QR Code
+                </button>
+                <button class="inline-flex items-center gap-2 text-xs font-normal font-geist border border-neutral-200 rounded-full px-3 py-2 hover:bg-neutral-100 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-download h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+                  PDF
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Evento 2 -->
+          <div class="group overflow-hidden hover:bg-neutral-100 transition-colors bg-neutral-50 border-neutral-200 border rounded-2xl backdrop-blur">
+            <div class="relative h-40">
+              <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Ciclismo" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              <div class="absolute top-4 left-4 flex items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 text-xs text-amber-700 border border-amber-400/30 rounded-full px-2.5 py-1 bg-amber-400/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-alert-circle h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+                  Pendente
+                </span>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="text-lg font-medium font-geist tracking-tight">Circuito de Ciclismo SP</h3>
+                  <p class="text-sm text-neutral-600 font-geist">22 de abril de 2025 • São Paulo, SP</p>
+                </div>
+                <span class="text-xs text-neutral-600 font-geist">50km • Estrada</span>
+              </div>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <button class="inline-flex items-center gap-2 text-xs font-normal font-geist border border-neutral-200 rounded-full px-3 py-2 hover:bg-neutral-100 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-eye h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  Detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Evento 3 (exemplo) -->
+          <div class="group overflow-hidden hover:bg-neutral-100 transition-colors bg-neutral-50 border-neutral-200 border rounded-2xl backdrop-blur">
+            <div class="relative h-40">
+              <img src="https://images.unsplash.com/photo-1621619856624-42fd193a0661?w=1080&amp;q=80" alt="Triathlon" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              <div class="absolute top-4 left-4 flex items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 text-xs text-sky-700 border border-sky-400/30 rounded-full px-2.5 py-1 bg-sky-400/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-timer h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="10" y1="2" x2="14" y2="2"></line><line x1="12" y1="14" x2="12" y2="10"></line><circle cx="12" cy="14" r="8"></circle></svg>
+                  Confirmado
+                </span>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="text-lg font-medium font-geist tracking-tight">Triathlon Sprint Praia</h3>
+                  <p class="text-sm text-neutral-600 font-geist">12 de maio de 2025 • Santos, SP</p>
+                </div>
+                <span class="text-xs text-neutral-600 font-geist">750m • 20km • 5km</span>
+              </div>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <button class="inline-flex items-center gap-2 text-xs font-normal font-geist border border-neutral-200 rounded-full px-3 py-2 hover:bg-neutral-100 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-eye h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  Detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dados Pessoais -->
+      <div data-tab="dados" class="tab-panel hidden">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight font-geist mb-6">Dados Pessoais</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
+            <div class="grid grid-cols-1 gap-5">
+              <div>
+                <label class="text-sm text-neutral-600 font-geist">Nome completo</label>
+                <input type="text" value="Rafael Silva Santos" class="mt-2 w-full rounded-xl bg-neutral-50 border border-neutral-200 px-4 py-3 text-sm font-geist placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-300">
+              </div>
+              <div>
+                <label class="text-sm text-neutral-600 font-geist">E-mail</label>
+                <input type="email" value="rafael@email.com" class="mt-2 w-full rounded-xl bg-neutral-50 border border-neutral-200 px-4 py-3 text-sm font-geist focus:outline-none focus:ring-2 focus:ring-neutral-300">
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="text-sm text-neutral-600 font-geist">CPF</label>
+                  <input type="text" value="123.456.789-00" class="mt-2 w-full rounded-xl bg-neutral-50 border border-neutral-200 px-4 py-3 text-sm font-geist focus:outline-none focus:ring-2 focus:ring-neutral-300">
+                </div>
+                <div>
+                  <label class="text-sm text-neutral-600 font-geist">Data de nascimento</label>
+                  <div class="relative mt-2">
+                    <input type="date" value="1990-05-15" class="w-full rounded-xl bg-neutral-50 border border-neutral-200 px-4 py-3 text-sm font-geist focus:outline-none focus:ring-2 focus:ring-neutral-300">
+                    <div class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-calendar h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label class="text-sm text-neutral-600 font-geist">Telefone</label>
+                <input type="tel" value="(11) 99999-9999" class="mt-2 w-full rounded-xl bg-neutral-50 border border-neutral-200 px-4 py-3 text-sm font-geist focus:outline-none focus:ring-2 focus:ring-neutral-300">
+              </div>
+              <div class="pt-2">
+                <button class="inline-flex gap-2 transition hover:bg-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 text-sm font-normal text-neutral-800 font-geist bg-neutral-100 border-neutral-200 border rounded-full py-3 px-5 backdrop-blur items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-save h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"></path><path d="M17 21v-8H7v8"></path><path d="M7 3v5h8"></path></svg>
+                  Salvar alterações
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
+            <h4 class="text-lg font-medium tracking-tight font-geist mb-4">Documento digital</h4>
+            <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-4 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-file-badge-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16l4-2 4 2 4-2 4 2V8z"></path><path d="M14 2v6h6"></path></svg>
+                </div>
+                <div>
+                  <p class="text-sm font-medium font-geist tracking-tight">Carteira de participante</p>
+                  <p class="text-xs text-neutral-600 font-geist">Atualizada há 2 dias</p>
+                </div>
+              </div>
+              <button class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-100 px-4 py-2 text-xs font-normal font-geist hover:bg-neutral-200 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-download h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+                Baixar PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOVA ABA: Preferências -->
+      <div data-tab="preferencias" class="tab-panel hidden">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight font-geist mb-6">Preferências</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+            <div class="flex items-start gap-3">
+              <div class="h-10 w-10 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-heart h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path></svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-medium font-geist tracking-tight">Quais esportes você prefere?</h3>
+                <p class="text-sm text-neutral-600 font-geist mt-1">Selecione seus esportes favoritos para personalizarmos suas recomendações.</p>
+              </div>
+            </div>
+
+            <div id="prefs-form" class="mt-5">
+              <div class="flex flex-wrap gap-2">
+                <label class="cursor-pointer">
+                  <input type="checkbox" class="sr-only peer" data-pref="Corrida" checked="">
+                  <span class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm font-geist text-neutral-700 transition peer-checked:bg-emerald-500/10 peer-checked:border-emerald-400/30 peer-checked:text-emerald-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-running h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m13 14-1-2-2-1 1-2 3 1 3-3"></path><path d="m7 17 4-3 1-3"></path><path d="M16 17h-1l-2-1-1-3"></path><circle cx="15" cy="4" r="1"></circle></svg>
+                    Corrida
+                  </span>
+                </label>
+
+                <label class="cursor-pointer">
+                  <input type="checkbox" class="sr-only peer" data-pref="Ciclismo" checked="">
+                  <span class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm font-geist text-neutral-700 transition peer-checked:bg-emerald-500/10 peer-checked:border-emerald-400/30 peer-checked:text-emerald-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-bicycle h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="5.5" cy="17.5" r="3.5"></circle><circle cx="18.5" cy="17.5" r="3.5"></circle><path d="M12 17.5 8 10h4l3 5h3"></path><path d="M5.5 14.5 8 10"></path></svg>
+                    Ciclismo
+                  </span>
+                </label>
+
+                <label class="cursor-pointer">
+                  <input type="checkbox" class="sr-only peer" data-pref="Triathlon">
+                  <span class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm font-geist text-neutral-700 transition peer-checked:bg-emerald-500/10 peer-checked:border-emerald-400/30 peer-checked:text-emerald-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-medal h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"></circle><path d="m15.2 10.2 2.3 2.3-2.9 2.9-2.3-2.3"></path><path d="M8.6 13.4 6.3 15.7 9.2 18.6 11.5 16.3"></path></svg>
+                    Triathlon
+                  </span>
+                </label>
+
+                <label class="cursor-pointer">
+                  <input type="checkbox" class="sr-only peer" data-pref="Natação">
+                  <span class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm font-geist text-neutral-700 transition peer-checked:bg-emerald-500/10 peer-checked:border-emerald-400/30 peer-checked:text-emerald-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-life-buoy h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m4.93 19.07 4.24-4.24"></path></svg>
+                    Natação
+                  </span>
+                </label>
+
+                <label class="cursor-pointer">
+                  <input type="checkbox" class="sr-only peer" data-pref="Caminhada">
+                  <span class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm font-geist text-neutral-700 transition peer-checked:bg-emerald-500/10 peer-checked:border-emerald-400/30 peer-checked:text-emerald-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-map h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
+                    Caminhada
+                  </span>
+                </label>
+
+                <label class="cursor-pointer">
+                  <input type="checkbox" class="sr-only peer" data-pref="Trail Running">
+                  <span class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm font-geist text-neutral-700 transition peer-checked:bg-emerald-500/10 peer-checked:border-emerald-400/30 peer-checked:text-emerald-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-route h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="19" r="3"></circle><circle cx="18" cy="5" r="3"></circle><path d="M9 17A10 10 0 0 1 18 7"></path></svg>
+                    Trail Running
+                  </span>
+                </label>
+              </div>
+
+              <div class="mt-5">
+                <button class="inline-flex gap-2 transition hover:bg-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 text-sm font-normal text-neutral-800 font-geist bg-neutral-100 border-neutral-200 border rounded-full py-3 px-5 backdrop-blur items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-save h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"></path><path d="M17 21v-8H7v8"></path><path d="M7 3v5h8"></path></svg>
+                  Salvar preferências
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+            <h4 class="text-lg font-medium font-geist tracking-tight">Dica</h4>
+            <p class="text-sm text-neutral-600 font-geist mt-1">Suas recomendações de eventos e conteúdos serão personalizadas com base nas suas escolhas.</p>
+            <div class="mt-4 rounded-xl border border-neutral-200 bg-neutral-50 p-4">
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-sparkles h-4 w-4 text-neutral-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3"></path><path d="M3 12h3"></path><path d="M21 12h-3"></path><path d="M12 21v-3"></path><path d="M18.5 5.5 16 8"></path><path d="m6 16-2.5 2.5"></path><path d="M18.5 18.5 16 16"></path><path d="M8 8 5.5 5.5"></path></svg>
+                <p class="text-xs text-neutral-700 font-geist">Você pode editar essas preferências a qualquer momento.</p>
+              </div>
+              <button class="mt-3 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-100 px-4 py-2 text-xs font-normal font-geist hover:bg-neutral-200 transition" onclick="document.getElementById('tab-visao-geral').click()">
+                Voltar à visão geral
+                <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-arrow-right h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagamentos -->
+      <div data-tab="pagamentos" class="tab-panel hidden">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight font-geist mb-6">Histórico de Pagamentos</h2>
+        <div class="space-y-4">
+          <!-- Linha 1 -->
+          <div class="rounded-2xl bg-neutral-50 border border-neutral-200 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="h-10 w-10 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-receipt h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21V3l-3 2-2-2-2 2-2-2-2 2-3-2v18l3-2 2 2 2-2 2 2 2-2 3 2Z"></path></svg>
+              </div>
+              <div>
+                <p class="font-medium font-geist tracking-tight">42ª Maratona Internacional SP</p>
+                <p class="text-xs text-neutral-600 font-geist">15 de março de 2025</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-sm font-medium font-geist">R$ 70,00</span>
+              <span class="text-[11px] inline-flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">Pago</span>
+              <button class="text-sm text-neutral-600 hover:text-neutral-900 transition font-geist inline-flex items-center gap-2">
+                Ver detalhes
+                <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-chevron-right h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 18 6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+          <!-- Linha 2 -->
+          <div class="rounded-2xl bg-neutral-50 border border-neutral-200 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="h &lt;div class=" h-10="" w-10="" rounded-lg="" bg-white="" 10="" border="" border-white="" flex="" items-center="" justify-center"="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-credit-card h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+              </div>
+              <div>
+                <p class="font-medium font-geist tracking-tight">Circuito de Ciclismo SP</p>
+                <p class="text-xs text-neutral-600 font-geist">22 de abril de 2025</p>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+              <span class="text-sm font-medium font-geist">R$ 90,00</span>
+              <span class="text-[11px] inline-flex items-center gap-1 px-2 py-1 rounded-full bg-amber-500/10 text-amber-600 border border-amber-500/20">Pendente</span>
+              <button class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-100 px-4 py-2 text-sm font-normal font-geist hover:bg-neutral-200 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-wallet h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3"></path><path d="M22 12H4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h18Z"></path><path d="M16 12h2"></path></svg>
+                Pagar agora
+              </button>
+            </div>
+          </div>
+          <!-- Linha 3 -->
+          <div class="rounded-2xl bg-neutral-50 border border-neutral-200 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="h-10 w-10 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-ticket h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7v4a2 2 0 0 1 0 4v4h18v-4a2 2 0 0 1 0-4V7Z"></path><path d="M13 5v2"></path><path d="M13 17v2"></path><path d="M13 11v2"></path></svg>
+              </div>
+              <div>
+                <p class="font-medium font-geist tracking-tight">Triathlon Sprint Praia</p>
+                <p class="text-xs text-neutral-600 font-geist">12 de maio de 2025</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-sm font-medium font-geist">R$ 120,00</span>
+              <span class="text-[11px] inline-flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">Pago</span>
+              <button class="text-sm text-neutral-600 hover:text-neutral-900 transition font-geist inline-flex items-center gap-2">
+                Nota fiscal
+                <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-download h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          <p class="text-sm text-neutral-600 font-geist">Mostrando 3 de 12 pagamentos</p>
+          <div class="inline-flex rounded-full border border-neutral-200 bg-neutral-50 p-1">
+            <button class="px-3 py-1.5 text-xs rounded-full text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100 transition font-geist">
+              Anterior
+            </button>
+            <button class="px-3 py-1.5 text-xs rounded-full text-neutral-900 bg-neutral-100 border border-neutral-200 font-geist">
+              Próximo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Configurações -->
+      <div data-tab="config" class="tab-panel hidden">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight font-geist mb-6">Configurações</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Preferências -->
+          <div class="lg:col-span-1 space-y-4">
+            <div class="rounded-2xl border border-neutral-200 bg-neutral-50 p-5">
+              <h3 class="text-lg font-medium font-geist tracking-tight">Notificações</h3>
+              <p class="text-sm text-neutral-600 font-geist mt-1">Controle como você deseja ser avisado</p>
+
+              <div class="mt-4 space-y-3">
+                <label class="flex items-center justify-between gap-4">
+                  <div>
+                    <p class="text-sm font-geist">E-mail</p>
+                    <p class="text-xs text-neutral-600 font-geist">Alertas de pagamento e atualizações</p>
+                  </div>
+                  <input type="checkbox" class="sr-only peer" checked="">
+                  <span class="w-11 h-6 rounded-full bg-neutral-100 border border-neutral-200 relative inline-flex items-center transition peer-checked:bg-emerald-500/20 peer-checked:border-emerald-400/30">
+                    <span class="absolute left-0.5 peer-checked:translate-x-5 transition translate-x-0 inline-block h-5 w-5 rounded-full bg-white/80"></span>
+                  </span>
+                </label>
+
+                <label class="flex items-center justify-between gap-4">
+                  <div>
+                    <p class="text-sm font-geist">SMS</p>
+                    <p class="text-xs text-neutral-600 font-geist">Mensagens rápidas sobre eventos</p>
+                  </div>
+                  <input type="checkbox" class="sr-only peer">
+                  <span class="w-11 h-6 rounded-full bg-neutral-100 border border-neutral-200 relative inline-flex items-center transition peer-checked:bg-emerald-500/20 peer-checked:border-emerald-400/30">
+                    <span class="absolute left-0.5 peer-checked:translate-x-5 transition translate-x-0 inline-block h-5 w-5 rounded-full bg-white/80"></span>
+                  </span>
+                </label>
+
+                <label class="flex items-center justify-between gap-4">
+                  <div>
+                    <p class="text-sm font-geist">Push</p>
+                    <p class="text-xs text-neutral-600 font-geist">Alertas no navegador</p>
+                  </div>
+                  <input type="checkbox" class="sr-only peer">
+                  <span class="w-11 h-6 rounded-full bg-neutral-100 border border-neutral-200 relative inline-flex items-center transition peer-checked:bg-emerald-500/20 peer-checked:border-emerald-400/30">
+                    <span class="absolute left-0.5 peer-checked:translate-x-5 transition translate-x-0 inline-block h-5 w-5 rounded-full bg-white/80"></span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-neutral-200 bg-neutral-50 p-5">
+              <h3 class="text-lg font-medium font-geist tracking-tight">Aparência</h3>
+              <p class="text-sm text-neutral-600 font-geist mt-1">Escolha seu tema preferido</p>
+
+              &lt;              <div class="mt-4 grid grid-cols-3 gap-3" role="radiogroup" aria-label="Tema">
+                <label class="cursor-pointer">
+                  <input="radio" name="theme-option" value="light" class="sr-only peer" checked="">
+                  <span class="flex flex-col items-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 p-3 text-center text-sm font-geist text-neutral-700 transition peer-checked:border-emerald-400/30 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-700">
+                    <span class="h-8 w-full rounded-md bg-white border border-neutral-200 shadow-sm"></span>
+                    Claro
+                  </span>
+                </input="radio"></label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="theme-option" value="dark" class="sr-only peer">
+                  <span class="flex flex-col items-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 p-3 text-center text-sm font-geist text-neutral-700 transition peer-checked:border-emerald-400/30 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-700">
+                    <span class="h-8 w-full rounded-md bg-neutral-900 border border-neutral-800 shadow-sm"></span>
+                    Escuro
+                  </span>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="theme-option" value="system" class="sr-only peer">
+                  <span class="flex flex-col items-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 p-3 text-center text-sm font-geist text-neutral-700 transition peer-checked:border-emerald-400/30 peer-checked:bg-emerald-500/10 peer-checked:text-emerald-700">
+                    <span class="h-8 w-full rounded-md bg-gradient-to-r from-white to-neutral-900 border border-neutral-200 shadow-sm"></span>
+                    Sistema
+                  </span>
+                </label>
+              </div>
+
+              <p class="mt-3 text-xs text-neutral-600 font-geist">O tema escuro reduz o brilho e pode ser mais confortável em ambientes com pouca luz.</p>
+            </div>
+
+            <div class="rounded-2xl border border-neutral-200 bg-neutral-50 p-5">
+              <h3 class="text-lg font-medium font-geist tracking-tight">Idioma</h3>
+              <p class="text-sm text-neutral-600 font-geist mt-1">Escolha o idioma da interface</p>
+
+              <div class="mt-4">
+                <div class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-100 px-4 py-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-globe h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2c2 2.5 4 6.5 4 10s-2 7.5-4 10c-2-2.5-4-6.5-4-10S10 4.5 12 2Z"></path></svg>
+                  <select aria-label="Idioma" class="bg-transparent text-sm font-geist focus:outline-none">
+                    <option selected="">Português (Brasil)</option>
+                    <option>English (US)</option>
+                    <option>Español</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna direita (conteúdo) -->
+          <div class="lg:col-span-2 space-y-4">
+            <div class="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+              <h3 class="text-lg font-medium font-geist tracking-tight">Segurança</h3>
+              <p class="text-sm text-neutral-600 font-geist mt-1">Mantenha sua conta protegida</p>
+
+              <div class="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label class="text-sm text-neutral-600 font-geist">Senha atual</label>
+                  <input type="password" class="mt-2 w-full rounded-xl bg-neutral-50 border border-neutral-200 px-4 py-3 text-sm font-geist focus:outline-none focus:ring-2 focus:ring-neutral-300" placeholder="••••••••">
+                </div>
+                <div>
+                  <label class="text-sm text-neutral-600 font-geist">Nova senha</label>
+                  <input type="password" class="mt-2 w-full rounded-xl bg-neutral-50 border border-neutral-200 px-4 py-3 text-sm font-geist focus:outline-none focus:ring-2 focus:ring-neutral-300" placeholder="••••••••">
+                </div>
+                <div>
+                  <label class="text-sm text-neutral-600 font-geist">Confirmar senha</label>
+                  <input type="password" class="mt-2 w-full rounded-xl bg-neutral-50 border border-neutral-200 px-4 py-3 text-sm font-geist focus:outline-none focus:ring-2 focus:ring-neutral-300" placeholder="••••••••">
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <button class="inline-flex gap-2 transition hover:bg-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 text-sm font-normal text-neutral-800 font-geist bg-neutral-100 border-neutral-200 border rounded-full py-3 px-5 backdrop-blur items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-shield-check h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path><path d="m9 12 2 2 4-4"></path></svg>
+                  Atualizar senha
+                </button>
+              </div>
+
+              <div class="mt-6 border-t border-neutral-200 pt-5">
+                <h4 class="text-sm font-medium font-geist tracking-tight">Sessões ativas</h4>
+                <div class="mt-3 space-y-3">
+                  <div class="flex items-center justify-between rounded-xl border border-neutral-200 bg-neutral-50 p-3">
+                    <div class="flex items-center gap-3">
+                      <div class="h-9 w-9 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-monitor h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M12 17v4"></path><path d="M8 21h8"></path></svg>
+                      </div>
+                      <div>
+                        <p class="text-sm font-geist tracking-tight">Chrome • São Paulo, BR</p>
+                        <p class="text-xs text-neutral-600 font-geist">Ativa agora</p>
+                      </div>
+                    </div>
+                    <span class="text-[11px] inline-flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">Este dispositivo</span>
+                  </div>
+
+                  <div class="flex items-center justify-between rounded-xl border border-neutral-200 bg-neutral-50 p-3">
+                    <div class="flex items-center gap-3">
+                      <div class="h-9 w-9 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-smartphone h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"></rect><path d="M12 18h.01"></path></svg>
+                      </div>
+                      <div>
+                        <p class="text-sm font-geist tracking-tight">iPhone • Rio de Janeiro, BR</p>
+                        <p class="text-xs text-neutral-600 font-geist">Há 2 dias</p>
+                      </div>
+                    </div>
+                    <button class="text-xs text-neutral-600 hover:text-neutral-900 transition font-geist">Encerrar</button>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <button class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-100 px-4 py-2 text-xs font-normal font-geist hover:bg-neutral-200 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-log-out h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="M16 17l5-5-5-5"></path><path d="M21 12H9"></path></svg>
+                    Encerrar outras sessões
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+              <h3 class="text-lg font-medium font-geist tracking-tight">Privacidade e dados</h3>
+              <p class="text-sm text-neutral-600 font-geist mt-1">Gerencie como seus dados são tratados</p>
+
+              <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-4">
+                  <div class="flex items-center gap-3">
+                    <div class="h-9 w-9 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-download h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+                    </div>
+                    <div>
+                      <p class="text-sm font-medium font-geist tracking-tight">Exportar dados</p>
+                      <p class="text-xs text-neutral-600 font-geist">Baixe uma cópia dos seus dados</p>
+                    </div>
+                  </div>
+                  <button class="mt-3 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-100 px-4 py-2 text-xs font-normal font-geist hover:bg-neutral-200 transition">
+                    Solicitar exportação
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-arrow-right h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </button>
+                </div>
+
+                <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-4">
+                  <div class="flex items-center gap-3">
+                    <div class="h-9 w-9 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-trash-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                    </div>
+                    <div>
+                      <p class="text-sm font-medium font-geist tracking-tight">Excluir conta</p>
+                      <p class="text-xs text-neutral-600 font-geist">Ação irreversível, confirme antes de continuar</p>
+                    </div>
+                  </div>
+                  <button class="mt-3 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-4 py-2 text-xs font-normal font-geist text-red-700 hover:bg-red-100 transition">
+                    Excluir permanentemente
+                    <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-alert-triangle h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- /grid -->
+      </div> <!-- /tab-panel config -->
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-neutral-200">
+  <div class="lg:px-8 max-w-7xl mx-auto px-6 py-10">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-neutral-600 font-geist">© 2025 Symplepass. Todos os direitos reservados.</p>
+      <div class="flex items-center gap-4">
+        <a href="#" class="text-sm text-neutral-600 hover:text-neutral-900 transition font-geist">Privacidade</a>
+        <a href="#" class="text-sm text-neutral-600 hover:text-neutral-900 transition font-geist">Termos</a>
+        <a href="#" class="text-sm text-neutral-600 hover:text-neutral-900 transition font-geist">Contato</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div id="app-toast" class="fixed inset-x-0 bottom-6 flex justify-center pointer-events-none z-[60]">
+  <div class="pointer-events-auto hidden items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2 shadow-sm text-sm font-geist" role="status" aria-live="polite">
+    <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-check-circle-2 h-4 w-4 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12a10 10 0 1 0 20 0 10 10 0 0 0-20 0"></path><path d="m9 12 2 2 4-4"></path></svg>
+    <span id="toast-message">Preferências salvas</span>
+  </div>
+</div>
+
+<style>
+  /* Dark theme overrides (aplicado quando html.dark estiver presente) */
+  .dark body { background-color: #0b0e13; color: #e5e7eb; }
+  .dark .bg-white { background-color: #0f131a !important; }
+  .dark .bg-neutral-50 { background-color: #0f131a !important; }
+  .dark .bg-neutral-100 { background-color: #141a22 !important; }
+  .dark .border-neutral-200 { border-color: #283041 !important; }
+  .dark .text-neutral-900, .dark .text-neutral-800 { color: #e5e7eb !important; }
+  .dark .text-neutral-700 { color: #cbd5e1 !important; }
+  .dark .text-neutral-600 { color: #a5b4cf !important; }
+  .dark .hover\:bg-neutral-100:hover { background-color: #1a2230 !important; }
+  .dark .hover\:bg-neutral-200:hover { background-color: #243044 !important; }
+
+  /* Hide scrollbars utility */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
+<script>
+  // Tabs
+  (function () {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+
+    function activateTab(target) {
+      panels.forEach(p => {
+        if (p.getAttribute('data-tab') === target) p.classList.remove('hidden');
+        else p.classList.add('hidden');
+      });
+
+      tabButtons.forEach(btn => {
+        const isActive = btn.dataset.tabTarget === target;
+        btn.classList.toggle('font-medium', isActive);
+        btn.classList.toggle('font-normal', !isActive);
+        btn.classList.toggle('text-neutral-900', isActive);
+        btn.classList.toggle('text-neutral-700', !isActive);
+        btn.classList.toggle('bg-neutral-100', isActive);
+        btn.classList.toggle('border', isActive);
+        btn.classList.toggle('border-neutral-200', isActive);
+      });
+
+      window.location.hash = target;
+    }
+
+    tabButtons.forEach(btn => btn.addEventListener('click', () => activateTab(btn.dataset.tabTarget)));
+
+    // Initial tab from hash or default
+    const hash = window.location.hash?.replace('#', '');
+    const valid = Array.from(panels).some(p => p.getAttribute('data-tab') === hash);
+    activateTab(valid ? hash : 'visao-geral');
+  })();
+
+  // Preferências (resumo e persistência)
+  (function () {
+    const PREFS_KEY = 'symplepass:prefs';
+    const form = document.getElementById('prefs-form');
+    const summary = document.getElementById('prefs-summary');
+    const saveBtn = form?.querySelector('button');
+
+    function getSelectedPrefs() {
+      return Array.from(form.querySelectorAll('input[type="checkbox"]'))
+        .filter(i => i.checked)
+        .map(i => i.dataset.pref);
+    }
+
+    function renderSummary(prefs) {
+      if (!summary) return;
+      if (!prefs.length) {
+        summary.innerHTML = '<span class="text-xs text-neutral-600 font-geist">Nenhuma preferência selecionada</span>';
+        return;
+      }
+      summary.innerHTML = '';
+      prefs.forEach(p => {
+        const el = document.createElement('span');
+        el.className = 'inline-flex items-center gap-1.5 text-xs text-neutral-700 border border-neutral-200 rounded-full px-2.5 py-1 bg-neutral-50';
+        el.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-sparkles h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3"></path><path d="M3 12h3"></path><path d="M21 12h-3"></path><path d="M12 21v-3"></path></svg>
+          ${p}
+        `;
+        summary.appendChild(el);
+      });
+    }
+
+    function loadPrefs() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(PREFS_KEY) || '[]');
+        const inputs = form.querySelectorAll('input[type="checkbox"]');
+        if (saved.length) {
+          inputs.forEach(i => i.checked = saved.includes(i.dataset.pref));
+        }
+        renderSummary(getSelectedPrefs());
+      } catch (_) {
+        renderSummary(getSelectedPrefs());
+      }
+    }
+
+    function showToast(msg = 'Preferências salvas') {
+      const container = document.querySelector('#app-toast > div');
+      const text = document.getElementById('toast-message');
+      if (!container) return;
+      if (text) text.textContent = msg;
+      container.classList.remove('hidden');
+      setTimeout(() => container.classList.add('hidden'), 1800);
+    }
+
+    if (form) {
+      form.addEventListener('change', () => renderSummary(getSelectedPrefs()));
+      if (saveBtn) {
+        saveBtn.id = 'save-prefs-btn';
+        saveBtn.addEventListener('click', () => {
+          const selected = getSelectedPrefs();
+          localStorage.setItem(PREFS_KEY, JSON.stringify(selected));
+          renderSummary(selected);
+          showToast('Preferências salvas');
+        });
+      }
+      document.addEventListener('DOMContentLoaded', loadPrefs);
+    }
+  })();
+
+  // Tema (Claro/Escuro/Sistema)
+  (function () {
+    const THEME_KEY = 'symplepass:theme';
+    const radios = document.querySelectorAll('input[name="theme-option"]');
+    const root = document.documentElement;
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function apply(theme) {
+      if (theme === 'dark') root.classList.add('dark');
+      else if (theme === 'light') root.classList.remove('dark');
+      else root.classList.toggle('dark', media.matches);
+    }
+
+    function setTheme(theme) {
+      localStorage.setItem(THEME_KEY, theme);
+      apply(theme);
+    }
+
+    function init() {
+      const saved = localStorage.getItem(THEME_KEY) || 'light';
+      radios.forEach(r => r.checked = r.value === saved);
+      apply(saved);
+    }
+
+    radios.forEach(r => r.addEventListener('change', e => setTheme(e.target.value)));
+    media.addEventListener?.('change', () => {
+      const saved = localStorage.getItem(THEME_KEY) || 'system';
+      if (saved === 'system') apply('system');
+    });
+
+    document.addEventListener('DOMContentLoaded', init);
+  })();
+
+  // Correção de HTML corrompido na aba Pagamentos (linha 2)
+  (function () {
+    document.addEventListener('DOMContentLoaded', () => {
+      const tab = document.querySelector('[data-tab="pagamentos"]');
+      if (!tab) return;
+      const rows = tab.querySelectorAll('.space-y-4 > div.rounded-2xl');
+      if (rows.length >= 2) {
+        rows[1].innerHTML = `
+          <div class="flex items-center gap-4">
+            <div class="h-10 w-10 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-credit-card h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+            </div>
+            <div>
+              <p class="font-medium font-geist tracking-tight">Circuito de Ciclismo SP</p>
+              <p class="text-xs text-neutral-600 font-geist">22 de abril de 2025</p>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+            <span class="text-sm font-medium font-geist">R$ 90,00</span>
+            <span class="text-[11px] inline-flex items-center gap-1 px-2 py-1 rounded-full bg-amber-500/10 text-amber-600 border border-amber-500/20">Pendente</span>
+            <button class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-100 px-4 py-2 text-sm font-normal font-geist hover:bg-neutral-200 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-wallet h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3"></path><path d="M22 12H4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h18Z"></path><path d="M16 12h2"></path></svg>
+              Pagar agora
+            </button>
+          </div>
+        `;
+      }
+    });
+  })();
+</script>
+
+</body></html>

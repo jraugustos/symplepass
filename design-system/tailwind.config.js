@@ -1,0 +1,117 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./pages/**/*.html",
+    "./design-system/**/*.html",
+    "./design-system/components/**/*.html",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#FFF7ED',
+          100: '#FFEDD5',
+          200: '#FED7AA',
+          300: '#FFB347',
+          400: '#FF8C1A',
+          500: '#FF7A00',
+          600: '#E56D00',
+          700: '#C25E00',
+          800: '#994A00',
+          900: '#7A3B00',
+        },
+        neutral: {
+          50: '#FAFAFA',
+          100: '#F5F5F5',
+          200: '#EAEAEA',
+          300: '#D4D4D4',
+          400: '#A3A3A3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+        },
+        success: {
+          50: '#ECFDF5',
+          100: '#D1FAE5',
+          500: '#34C759',
+          600: '#16A34A',
+          700: '#15803D',
+        },
+        error: {
+          50: '#FEF2F2',
+          100: '#FEE2E2',
+          500: '#FF3B30',
+          600: '#DC2626',
+          700: '#B91C1C',
+        },
+        info: {
+          50: '#EFF6FF',
+          100: '#DBEAFE',
+          500: '#007AFF',
+          600: '#2563EB',
+          700: '#1D4ED8',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+      },
+      fontSize: {
+        'xs': ['12px', { lineHeight: '16px' }],
+        'sm': ['14px', { lineHeight: '20px' }],
+        'base': ['16px', { lineHeight: '24px' }],
+        'lg': ['18px', { lineHeight: '28px' }],
+        'xl': ['20px', { lineHeight: '28px' }],
+        '2xl': ['24px', { lineHeight: '32px' }],
+        '3xl': ['30px', { lineHeight: '36px' }],
+        '4xl': ['36px', { lineHeight: '40px' }],
+        '5xl': ['48px', { lineHeight: '1' }],
+        '6xl': ['60px', { lineHeight: '1' }],
+        '7xl': ['72px', { lineHeight: '1' }],
+      },
+      spacing: {
+        '18': '72px',
+        '22': '88px',
+        '26': '104px',
+        '30': '120px',
+      },
+      borderRadius: {
+        'sm': '4px',
+        'DEFAULT': '8px',
+        'md': '8px',
+        'lg': '12px',
+        'xl': '16px',
+        '2xl': '20px',
+        '3xl': '24px',
+      },
+      boxShadow: {
+        'sm': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+        'DEFAULT': '0 2px 8px 0 rgb(0 0 0 / 0.08)',
+        'md': '0 4px 12px 0 rgb(0 0 0 / 0.1)',
+        'lg': '0 8px 24px 0 rgb(0 0 0 / 0.12)',
+        'xl': '0 12px 32px 0 rgb(0 0 0 / 0.15)',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-out',
+        'slide-up': 'slideUp 0.5s ease-out',
+        'slide-down': 'slideDown 0.5s ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideDown: {
+          '0%': { transform: 'translateY(-10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+    },
+  },
+  plugins: [],
+}

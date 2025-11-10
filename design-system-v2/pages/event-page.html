@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbie Run 2025 — Symplepass</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../globals.css">
+
+  <style>
+    .font-geist {
+      font-family: 'Geist', sans-serif !important;
+    }
+
+    /* No scrollbar for tabs */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen antialiased overflow-x-hidden text-neutral-900 bg-white" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';">
+
+  <!-- Header with Orange Gradient + Hero -->
+  <header class="bg-center bg-gradient-to-br from-orange-400 to-orange-600 bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5b35a172-3e48-4df1-adb3-bc58b00990c6_3840w.jpg)] bg-cover top-0 blur-none">
+    <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-8 pl-8">
+      <!-- Navigation -->
+      <div class="flex border-neutral-200/20 border-b pt-4 pb-4 items-center justify-between">
+        <a href="home.html" class="inline-flex items-center justify-center" aria-label="Symplepass - Início">
+          <img src="../assets/symplepass-white.svg" alt="Symplepass" class="w-[200px] h-[34px]">
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="events-list.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Eventos</a>
+          <a href="events-list.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Modalidades</a>
+          <a href="home.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Sobre nós</a>
+          <a href="home.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Clube de benefícios</a>
+          <a href="home.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Suporte</a>
+          <a href="user-panel.html" class="inline-flex gap-2 items-center text-sm font-normal rounded-full px-4 py-2 border-0 text-white hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 font-geist" style="background-image: linear-gradient(to right, rgb(138, 55, 10), rgb(82, 32, 3));">Entrar</a>
+        </nav>
+
+        <button id="mobile-menu-button" class="lg:hidden inline-flex items-center gap-2 text-sm font-normal font-geist rounded-full px-4 py-2 border border-white/10 bg-white/10 text-white/90 hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+          <i data-lucide="x" class="w-5 h-5 hidden" id="close-icon"></i>
+          <span id="menu-text" class="text-white/90 font-geist">Menu</span>
+        </button>
+      </div>
+
+      <!-- Hero Section -->
+      <div class="pt-3 pb-6">
+        <h1 class="sm:text-4xl md:text-3xl text-2xl font-semibold text-white tracking-tight font-geist mt-2" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">Barbie Run 2025</h1>
+        <div class="mt-3 flex flex-wrap items-center gap-2">
+          <span class="inline-flex items-center gap-2 sm:text-sm text-xs text-white/90 font-geist bg-white/10 border-white/20 border rounded-full pt-1.5 pr-3 pb-1.5 pl-3" style="opacity: 0; transform: translateY(10px); transition: opacity 600ms 80ms, transform 600ms; will-change: opacity, transform;">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            15 Mar 2025
+          </span>
+          <span class="inline-flex items-center gap-2 sm:text-sm text-xs text-white/90 font-geist bg-white/10 border-white/20 border rounded-full pt-1.5 pr-3 pb-1.5 pl-3" style="opacity: 0; transform: translateY(10px); transition: opacity 600ms 160ms, transform 600ms; will-change: opacity, transform;">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            Parque Ibirapuera, SP
+          </span>
+          <button id="hero-cta" class="hidden sm:inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-white hover:opacity-95 font-geist" style="background-image: linear-gradient(to right, rgb(138, 55, 10), rgb(82, 32, 3)); opacity: 0; transform: translateY(10px); transition: opacity 600ms 240ms, transform 600ms; will-change: opacity, transform;">
+            Inscreva-se
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu overlay -->
+      <div id="mobile-menu" class="lg:hidden fixed inset-0 backdrop-blur-xl z-50 opacity-0 invisible transition-all duration-300 ease-out bg-black/95">
+        <div class="flex flex-col h-full pt-6 pb-8 px-6">
+          <div class="flex justify-end mb-8">
+            <button id="mobile-close-button" class="inline-flex rounded-full p-3 border border-white/10 bg-white/10 text-white/90 hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60" aria-label="Fechar menu">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+          <nav class="flex-1">
+            <div class="space-y-6">
+              <a href="events-list.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Eventos</a>
+              <a href="events-list.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Modalidades</a>
+              <a href="home.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Como funciona</a>
+              <a href="home.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Preços</a>
+              <a href="home.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Suporte</a>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/10">
+              <a href="user-panel.html" class="w-full inline-flex items-center justify-center gap-2 text-base font-normal rounded-full px-6 py-3 border-0 text-white hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 font-geist" style="background-image: linear-gradient(to right, rgb(138, 55, 10), rgb(82, 32, 3));">Entrar</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Tabs -->
+  <div class="bg-white/90 z-30 border-neutral-200 border-b backdrop-blur" style="top: 199px;" id="tabs-sticky">
+    <div class="lg:px-8 max-w-7xl mx-auto px-4">
+      <nav class="flex overflow-x-auto no-scrollbar pt-3 pb-3 gap-2" id="tabs">
+        <a href="#sobre" class="tab-link inline-flex items-center whitespace-nowrap text-xs sm:text-sm font-normal rounded-full px-2.5 sm:px-3 py-1.5 border border-neutral-200 hover:text-neutral-900 hover:bg-neutral-50 font-geist">Sobre</a>
+        <a href="#categorias" class="tab-link inline-flex items-center whitespace-nowrap text-xs sm:text-sm font-normal rounded-full px-2.5 sm:px-3 py-1.5 border border-neutral-200 hover:text-neutral-900 hover:bg-neutral-50 font-geist">Categorias</a>
+        <a href="#kit" class="tab-link inline-flex items-center whitespace-nowrap text-xs sm:text-sm font-normal rounded-full px-2.5 sm:px-3 py-1.5 border border-neutral-200 hover:text-neutral-900 hover:bg-neutral-50 font-geist">Kit</a>
+        <a href="#percurso" class="tab-link inline-flex items-center whitespace-nowrap text-xs sm:text-sm font-normal rounded-full px-2.5 sm:px-3 py-1.5 border border-neutral-200 hover:text-neutral-900 hover:bg-neutral-50 font-geist">Percurso</a>
+        <a href="#regulamento" class="tab-link inline-flex items-center whitespace-nowrap text-xs sm:text-sm font-normal rounded-full px-2.5 sm:px-3 py-1.5 border border-neutral-200 hover:text-neutral-900 hover:bg-neutral-50 font-geist">Regulamento</a>
+        <a href="#faq" class="tab-link inline-flex items-center whitespace-nowrap text-xs sm:text-sm font-normal rounded-full px-2.5 sm:px-3 py-1.5 border border-neutral-200 hover:text-neutral-900 hover:bg-neutral-50 font-geist">FAQ</a>
+        <a href="#organizador" class="tab-link inline-flex items-center whitespace-nowrap text-xs sm:text-sm font-normal rounded-full px-2.5 sm:px-3 py-1.5 border border-neutral-200 text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 font-geist">Organizador</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <div class="lg:px-8 max-w-7xl mr-auto ml-auto pt-10 pr-6 pb-24 pl-6">
+
+      <!-- Sobre o Evento -->
+      <section id="sobre">
+        <!-- Event Image -->
+        <div class="w-full aspect-[16/9] rounded-2xl overflow-hidden border border-neutral-200 mb-6" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms 120ms, transform 600ms; will-change: opacity, transform;">
+          <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/e72d4ff0-6d7d-4cd3-bcd0-2051c4b8f27d_3840w.jpg" alt="Arte oficial de divulgação do evento pelo organizador" class="w-full h-full object-cover" loading="lazy">
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Text + Info Cards -->
+          <div class="lg:col-span-2">
+            <h2 class="text-2xl sm:text-3xl tracking-tight font-geist font-semibold" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">Sobre o evento</h2>
+            <p class="leading-relaxed text-neutral-600 mt-3 font-geist">A Barbie Run está de volta em 2025 com novas experiências, novos percursos e ainda mais motivos para celebrar. Depois do sucesso da última edição, o circuito terá 3 edições</p>
+
+            <!-- Info Cards Grid -->
+            <div class="mt-5 grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div class="rounded-xl border border-neutral-200 bg-white p-4" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms 60ms, transform 600ms; will-change: opacity, transform;">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="map-pin" class="w-5 h-5 text-neutral-700"></i>
+                  <p class="font-medium tracking-tight font-geist">Local</p>
+                </div>
+                <p class="text-sm mt-1 text-neutral-600 font-geist">Parque Ibirapuera</p>
+              </div>
+
+              <div class="rounded-xl border border-neutral-200 bg-white p-4" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms 120ms, transform 600ms; will-change: opacity, transform;">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="calendar" class="w-5 h-5 text-neutral-700"></i>
+                  <p class="font-medium tracking-tight font-geist">Data</p>
+                </div>
+                <p class="text-sm mt-1 text-neutral-600 font-geist">15 Mar 2025</p>
+              </div>
+
+              <div class="rounded-xl border border-neutral-200 bg-white p-4" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms 180ms, transform 600ms; will-change: opacity, transform;">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="alarm-clock" class="w-5 h-5 text-neutral-700"></i>
+                  <p class="font-medium tracking-tight font-geist">Horário</p>
+                </div>
+                <p class="text-sm mt-1 text-neutral-600 font-geist">07:00</p>
+              </div>
+            </div>
+
+            <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="rounded-xl border border-neutral-200 bg-white p-4" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms 240ms, transform 600ms; will-change: opacity, transform;">
+                <p class="text-sm text-neutral-500 font-geist">Modalidade</p>
+                <p class="font-medium mt-0.5 font-geist">Corrida</p>
+              </div>
+              <div class="rounded-xl border border-neutral-200 bg-white p-4" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms 300ms, transform 600ms; will-change: opacity, transform;">
+                <p class="text-sm text-neutral-500 font-geist">Tipo</p>
+                <p class="font-medium mt-0.5 font-geist">Presencial</p>
+              </div>
+            </div>
+
+            <div class="mt-4 flex flex-wrap gap-2">
+              <button data-open-maps class="inline-flex items-center gap-2 text-sm font-medium rounded-full px-4 py-2 border border-neutral-200 text-neutral-700 hover:bg-neutral-50 font-geist" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms 100ms, transform 600ms; will-change: opacity, transform;">
+                Ver no mapa
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </button>
+              <button class="inline-flex items-center gap-2 text-sm font-medium rounded-full px-4 py-2 border border-neutral-200 text-neutral-700 hover:bg-neutral-50 font-geist" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms 160ms, transform 600ms; will-change: opacity, transform;">
+                Largada inicial
+                <i data-lucide="flag" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Price Card -->
+          <div class="lg:col-span-1">
+            <div class="rounded-2xl border border-neutral-200 bg-white p-5" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms 180ms, transform 600ms; will-change: opacity, transform;">
+              <p class="text-sm text-neutral-500 font-geist">Inscrições a partir de</p>
+              <p class="mt-1 text-2xl font-semibold tracking-tight font-geist"><span id="price-start" class="font-geist font-semibold">R$ 45,00</span></p>
+              <button id="cta-side" class="mt-4 w-full inline-flex items-center justify-center gap-2 text-sm font-medium rounded-xl px-4 py-2 text-white hover:opacity-95 focus:outline-none font-geist" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11)); opacity: 0; transform: translateY(12px); transition: opacity 600ms 360ms, transform 600ms; will-change: opacity, transform;">
+                Selecionar categoria
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+              <div class="mt-4 space-y-2">
+                <div class="flex items-center gap-2 text-sm text-neutral-600 font-geist">
+                  <i data-lucide="shield-check" class="w-4 h-4"></i>
+                  Pagamento seguro
+                </div>
+                <div class="flex items-center gap-2 text-sm text-neutral-600 font-geist">
+                  <i data-lucide="badge-check" class="w-4 h-4"></i>
+                  Evento verificado
+                </div>
+                <div class="flex items-center gap-2 text-sm text-neutral-600 font-geist">
+                  <i data-lucide="zap" class="w-4 h-4"></i>
+                  Confirmação imediata
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Categorias -->
+      <section class="mt-12" id="categorias">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <h2 class="text-2xl sm:text-3xl tracking-tight font-geist font-semibold" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">Categorias e lotes</h2>
+        </div>
+
+        <!-- Categories List -->
+        <div class="mt-4 space-y-2">
+          <!-- 5k -->
+          <div class="rounded-xl border border-neutral-200 bg-white p-4 font-geist" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div class="min-w-0">
+                <p class="font-medium tracking-tight font-geist">5km • Corrida de rua</p>
+                <span class="inline-flex mt-1 items-center gap-1 text-[11px] px-2 py-1 rounded-full border border-amber-300 text-amber-700 bg-amber-50 font-geist">Inscrições abertas</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                <div class="text-left sm:text-right">
+                  <p class="text-sm font-medium font-geist">R$ 45,00</p>
+                  <p class="text-[11px] text-neutral-500 font-geist">1º lote</p>
+                </div>
+                <button data-category data-name="5km" data-price="45,00" class="hidden sm:inline-flex items-center justify-center gap-2 text-sm font-medium rounded-lg px-4 py-2 border border-neutral-200 text-neutral-700 hover:bg-neutral-50 whitespace-nowrap font-geist">Selecionar</button>
+              </div>
+            </div>
+            <button data-category data-name="5km" data-price="45,00" class="mt-3 sm:hidden w-full inline-flex items-center justify-center gap-2 text-sm font-medium rounded-full px-4 py-2.5 text-white hover:opacity-95 font-geist" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));">Selecionar</button>
+          </div>
+
+          <!-- 10k -->
+          <div class="rounded-xl border border-neutral-200 bg-white p-4 font-geist" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms 50ms, transform 600ms; will-change: opacity, transform;">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div class="min-w-0">
+                <p class="font-medium tracking-tight font-geist">10km • Corrida de rua</p>
+                <span class="inline-flex mt-1 items-center gap-1 text-[11px] px-2 py-1 rounded-full border border-amber-300 text-amber-700 bg-amber-50 font-geist">Inscrições abertas</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                <div class="text-left sm:text-right">
+                  <p class="text-sm font-medium font-geist">R$ 65,00</p>
+                  <p class="text-[11px] text-neutral-500 font-geist">2º lote</p>
+                </div>
+                <button data-category data-name="10km" data-price="65,00" class="hidden sm:inline-flex items-center justify-center gap-2 text-sm font-medium rounded-lg px-4 py-2 border border-neutral-200 text-neutral-700 hover:bg-neutral-50 whitespace-nowrap font-geist">Selecionar</button>
+              </div>
+            </div>
+            <button data-category data-name="10km" data-price="65,00" class="mt-3 sm:hidden w-full inline-flex items-center justify-center gap-2 text-sm font-medium rounded-full px-4 py-2.5 text-white hover:opacity-95 font-geist" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));">Selecionar</button>
+          </div>
+
+          <!-- 21k -->
+          <div class="rounded-xl border border-neutral-200 bg-white p-4 font-geist" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms 100ms, transform 600ms; will-change: opacity, transform;">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div class="min-w-0">
+                <p class="font-medium tracking-tight font-geist">21km • Meia maratona</p>
+                <span class="inline-flex mt-1 items-center gap-1 text-[11px] px-2 py-1 rounded-full border border-amber-300 text-amber-700 bg-amber-50 font-geist">Inscrições abertas</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                <div class="text-left sm:text-right">
+                  <p class="text-sm font-medium font-geist">R$ 85,00</p>
+                  <p class="text-[11px] text-neutral-500 font-geist">2º lote</p>
+                </div>
+                <button data-category data-name="21km" data-price="85,00" class="hidden sm:inline-flex items-center justify-center gap-2 text-sm font-medium rounded-lg px-4 py-2 border border-neutral-200 text-neutral-700 hover:bg-neutral-50 whitespace-nowrap font-geist">Selecionar</button>
+              </div>
+            </div>
+            <button data-category data-name="21km" data-price="85,00" class="mt-3 sm:hidden w-full inline-flex items-center justify-center gap-2 text-sm font-medium rounded-full px-4 py-2.5 text-white hover:opacity-95 font-geist" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));">Selecionar</button>
+          </div>
+
+          <!-- 42k Esgotado -->
+          <div class="rounded-xl border border-neutral-200 bg-neutral-50 p-4 opacity-70 font-geist" style="opacity: 0.7; transform: translateY(12px); transition: opacity 600ms 150ms, transform 600ms; will-change: opacity, transform;">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div class="min-w-0">
+                <p class="font-medium tracking-tight font-geist">42km • Maratona</p>
+                <span class="inline-flex mt-1 items-center gap-1 text-[11px] px-2 py-1 rounded-full border border-neutral-200 text-neutral-500 bg-white font-geist">Esgotado</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                <div class="text-left sm:text-right">
+                  <p class="text-sm font-medium font-geist">R$ 120,00</p>
+                  <p class="text-[11px] text-neutral-500 font-geist">2º lote</p>
+                </div>
+                <button disabled class="hidden sm:inline-flex items-center justify-center gap-2 text-sm font-medium rounded-lg px-4 py-2 border border-neutral-200 text-neutral-400 cursor-not-allowed whitespace-nowrap font-geist">Esgotado</button>
+              </div>
+            </div>
+            <button disabled class="mt-3 sm:hidden w-full inline-flex items-center justify-center gap-2 text-sm font-medium rounded-full px-4 py-2.5 bg-neutral-200 text-neutral-400 cursor-not-allowed font-geist">Esgotado</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kit do Atleta -->
+      <section id="kit" class="mt-12">
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-geist font-semibold" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">Kit do atleta</h2>
+
+        <div class="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Carousel -->
+          <div class="lg:col-span-1">
+            <div id="kit-carousel" class="relative" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">
+              <div class="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
+                <div id="kit-track" class="flex transition-transform duration-300 ease-out" style="transform: translateX(0%);">
+                  <div class="kit-slide w-full shrink-0">
+                    <img src="../assets/illustrations/kit-shirt.svg" alt="Ilustração da camiseta e sacochila do kit do atleta" class="w-full aspect-[16/11] object-cover">
+                  </div>
+                  <div class="kit-slide w-full shrink-0">
+                    <img src="../assets/illustrations/kit-bib.svg" alt="Ilustração do número de peito e chip de cronometragem do kit" class="w-full aspect-[16/11] object-cover">
+                  </div>
+                  <div class="kit-slide w-full shrink-0">
+                    <img src="../assets/illustrations/kit-medal.svg" alt="Ilustração da medalha finisher e brindes do evento" class="w-full aspect-[16/11] object-cover">
+                  </div>
+                </div>
+              </div>
+
+              <div class="pointer-events-none absolute inset-0 flex items-center justify-between px-2">
+                <button id="kit-prev" class="pointer-events-auto inline-flex items-center justify-center h-9 w-9 rounded-full border border-neutral-200 bg-white/90 hover:bg-white text-neutral-700 shadow-sm">
+                  <i data-lucide="chevron-left" class="w-[18px] h-[18px]"></i>
+                </button>
+                <button id="kit-next" class="pointer-events-auto inline-flex items-center justify-center h-9 w-9 rounded-full border border-neutral-200 bg-white/90 hover:bg-white text-neutral-700 shadow-sm">
+                  <i data-lucide="chevron-right" class="w-[18px] h-[18px]"></i>
+                </button>
+              </div>
+
+              <div id="kit-dots" class="mt-3 flex items-center justify-center gap-2">
+                <button class="h-2 w-2 rounded-full bg-amber-500" aria-label="Ir para slide 1"></button>
+                <button class="h-2 w-2 rounded-full bg-neutral-300" aria-label="Ir para slide 2"></button>
+                <button class="h-2 w-2 rounded-full bg-neutral-300" aria-label="Ir para slide 3"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kit Items List -->
+          <div class="lg:col-span-1">
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms 80ms, transform 600ms; will-change: opacity, transform;">
+                <div class="h-9 w-9 rounded-lg border border-neutral-200 bg-white flex items-center justify-center">
+                  <i data-lucide="shirt" class="w-[18px] h-[18px]"></i>
+                </div>
+                <div>
+                  <p class="font-medium leading-tight font-geist">Camiseta oficial (tecido tecnológico)</p>
+                  <p class="text-sm text-neutral-600 font-geist">Modelos masculino e feminino • Tamanhos P ao GG</p>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-3" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms 130ms, transform 600ms; will-change: opacity, transform;">
+                <div class="h-9 w-9 rounded-lg border border-neutral-200 bg-white flex items-center justify-center">
+                  <i data-lucide="barcode" class="w-[18px] h-[18px]"></i>
+                </div>
+                <div>
+                  <p class="font-medium leading-tight font-geist">Número de peito + chip de cronometragem</p>
+                  <p class="text-sm text-neutral-600 font-geist">Uso obrigatório durante a prova</p>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-3" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms 180ms, transform 600ms; will-change: opacity, transform;">
+                <div class="h-9 w-9 rounded-lg border border-neutral-200 bg-white flex items-center justify-center">
+                  <i data-lucide="medal" class="w-[18px] h-[18px]"></i>
+                </div>
+                <div>
+                  <p class="font-medium leading-tight font-geist">Medalha finisher</p>
+                  <p class="text-sm text-neutral-600 font-geist">Para todos que concluírem a prova</p>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-3" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms 230ms, transform 600ms; will-change: opacity, transform;">
+                <div class="h-9 w-9 rounded-lg border border-neutral-200 bg-white flex items-center justify-center">
+                  <i data-lucide="shopping-bag" class="w-[18px] h-[18px]"></i>
+                </div>
+                <div>
+                  <p class="font-medium leading-tight font-geist">Sacochila + brindes de parceiros</p>
+                  <p class="text-sm text-neutral-600 font-geist">Itens podem variar conforme o lote</p>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-3" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms 280ms, transform 600ms; will-change: opacity, transform;">
+                <div class="h-9 w-9 rounded-lg border border-neutral-200 bg-white flex items-center justify-center">
+                  <i data-lucide="droplets" class="w-[18px] h-[18px]"></i>
+                </div>
+                <div>
+                  <p class="font-medium leading-tight font-geist">Hidratação e fruta pós‑prova</p>
+                  <p class="text-sm text-neutral-600 font-geist">Pontos a cada 2,5km (consulte o percurso)</p>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-3" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms 330ms, transform 600ms; will-change: opacity, transform;">
+                <div class="h-9 w-9 rounded-lg border border-neutral-200 bg-white flex items-center justify-center">
+                  <i data-lucide="book-open" class="w-[18px] h-[18px]"></i>
+                </div>
+                <div>
+                  <p class="font-medium leading-tight font-geist">Guia do atleta + seguro prova</p>
+                  <p class="text-sm text-neutral-600 font-geist">Informações completas e cobertura básica</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="mt-6 rounded-xl border border-neutral-200 bg-white p-4">
+              <div class="flex items-start gap-3">
+                <div class="h-9 w-9 rounded-lg border border-neutral-200 bg-white flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path><path d="M12 22V12"></path><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"></path><path d="m7.5 4.27 9 5.15"></path></svg>
+                </div>
+                <div class="flex-1">
+                  <p class="font-medium leading-tight font-geist">Retirada do kit</p>
+                  <p class="text-sm text-neutral-600 font-geist">13 e 14 de Mar • 10h às 20h • Ginásio do Ibirapuera — Portão 7</p>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <button data-open-maps class="inline-flex items-center gap-2 text-xs font-medium rounded-full px-3 py-1.5 border border-neutral-200 text-neutral-700 hover:bg-neutral-50 font-geist">
+                      Ver rota no mapa
+                      <i data-lucide="map" class="w-4 h-4"></i>
+                    </button>
+                    <button class="inline-flex items-center gap-2 text-xs font-medium rounded-full px-3 py-1.5 border border-neutral-200 text-neutral-700 hover:bg-neutral-50 font-geist">
+                      O que levar
+                      <i data-lucide="credit-card" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="mt-3 text-xs text-neutral-500 font-geist">Observação: itens do kit podem variar por lote sem aviso prévio, respeitando equivalência de valores.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Percurso -->
+      <section id="percurso" class="mt-12">
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-geist font-semibold" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">Percurso</h2>
+
+        <!-- Map -->
+        <div class="mt-4">
+          <div class="relative rounded-2xl overflow-hidden border border-neutral-200 bg-white" style="opacity: 0; transform: translateY(16px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">
+            <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1400&q=80&auto=format&fit=crop" alt="Mapa detalhando o percurso da corrida com marcações em destaque" class="w-full aspect-[16/9] object-cover">
+            <div class="absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
+              <div class="flex flex-wrap items-center gap-2">
+                <button data-open-maps class="inline-flex items-center gap-2 text-sm font-medium rounded-full px-3 py-1.5 border border-white/20 text-white/90 hover:bg-white/10 font-geist">
+                  Abrir no Google Maps
+                  <i data-lucide="external-link" class="w-[18px] h-[18px]"></i>
+                </button>
+                <a href="#" class="inline-flex items-center gap-2 text-sm font-medium rounded-full px-3 py-1.5 border border-white/20 text-white/90 hover:bg-white/10 font-geist">
+                  Baixar GPX
+                  <i data-lucide="download" class="w-[18px] h-[18px]"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Info Cards -->
+        <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="rounded-xl border border-neutral-200 bg-white p-4" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms 80ms, transform 600ms; will-change: opacity, transform;">
+            <p class="text-sm text-neutral-500 font-geist">Largada • Chegada</p>
+            <p class="font-medium mt-1 font-geist">Av. Pedro Álvares Cabral, 220 - Ibirapuera</p>
+            <div class="mt-3 grid grid-cols-3 gap-3">
+              <div class="rounded-lg border border-neutral-200 p-3 text-center">
+                <p class="text-xs text-neutral-500 font-geist">5k</p>
+                <p class="text-sm font-medium font-geist">Plano</p>
+              </div>
+              <div class="rounded-lg border border-neutral-200 p-3 text-center">
+                <p class="text-xs text-neutral-500 font-geist">10k</p>
+                <p class="text-sm font-medium font-geist">Leve</p>
+              </div>
+              <div class="rounded-lg border border-neutral-200 p-3 text-center">
+                <p class="text-xs text-neutral-500 font-geist">21k</p>
+                <p class="text-sm font-medium font-geist">Moderado</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-neutral-200 bg-white p-4" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms 150ms, transform 600ms; will-change: opacity, transform;">
+            <div class="flex items-center justify-between">
+              <p class="font-medium font-geist">Altimetria</p>
+              <span class="text-xs text-neutral-500 font-geist">aprox.</span>
+            </div>
+            <div class="mt-3 h-28 w-full relative">
+              <svg viewBox="0 0 320 100" class="absolute inset-0 w-full h-full">
+                <defs>
+                  <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#fb923c;stop-opacity:0.3" />
+                    <stop offset="100%" style="stop-color:#fb923c;stop-opacity:0.05" />
+                  </linearGradient>
+                </defs>
+                <path d="M0,70 C40,60 60,40 90,42 C120,44 130,52 160,50 C190,48 210,30 240,32 C270,34 290,46 320,40 L320,100 L0,100 Z" fill="url(#grad)"></path>
+                <path d="M0,70 C40,60 60,40 90,42 C120,44 130,52 160,50 C190,48 210,30 240,32 C270,34 290,46 320,40" fill="none" stroke="#f97316" stroke-width="2"></path>
+              </svg>
+            </div>
+            <div class="mt-2 grid grid-cols-3 text-center">
+              <div>
+                <p class="text-xs text-neutral-500 font-geist">Ganho</p>
+                <p class="text-sm font-medium font-geist">180 m</p>
+              </div>
+              <div>
+                <p class="text-xs text-neutral-500 font-geist">Perda</p>
+                <p class="text-sm font-medium font-geist">175 m</p>
+              </div>
+              <div>
+                <p class="text-xs text-neutral-500 font-geist">Alt. máx.</p>
+                <p class="text-sm font-medium font-geist">812 m</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-neutral-200 bg-white p-4" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms 220ms, transform 600ms; will-change: opacity, transform;">
+            <p class="font-medium font-geist">Pontos de apoio</p>
+            <ul class="mt-2 space-y-2 text-sm font-geist text-neutral-600">
+              <li class="flex items-center gap-2 font-geist"><span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span> Hidratação a cada 2,5 km</li>
+              <li class="flex items-center gap-2 font-geist"><span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span> Banheiros químicos nas principais áreas</li>
+              <li class="flex items-center gap-2 font-geist"><span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span> Postos médicos móveis</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Regulamento -->
+      <section id="regulamento" class="mt-12">
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-geist font-semibold" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">Regulamento</h2>
+
+        <div class="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 space-y-3">
+            <details class="group rounded-xl border border-neutral-200 bg-white p-4 open:shadow-sm transition" style="opacity: 0; transform: translateY(10px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <p class="font-medium font-geist">Inscrições, cancelamentos e transferências</p>
+                <i data-lucide="chevron-down" class="w-[18px] h-[18px] transition-transform group-open:rotate-180"></i>
+              </summary>
+              <div class="mt-3 text-sm text-neutral-600 leading-relaxed font-geist">
+                - Cancelamentos em até 7 dias da compra: reembolso integral. Após esse prazo: crédito no evento.<br>
+                - Transferência de titularidade permitida até 10 dias antes da prova.<br>
+                - Descontos legais aplicáveis para idosos (≥60 anos) e PCD.
+              </div>
+            </details>
+
+            <details class="group rounded-xl border border-neutral-200 bg-white p-4 open:shadow-sm transition" style="opacity: 0; transform: translateY(10px); transition: opacity 600ms 70ms, transform 600ms; will-change: opacity, transform;">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <p class="font-medium font-geist">Retirada de kit e documentos</p>
+                <i data-lucide="chevron-down" class="w-[18px] h-[18px] transition-transform group-open:rotate-180"></i>
+              </summary>
+              <div class="mt-3 text-sm text-neutral-600 leading-relaxed font-geist">
+                - Documento com foto e comprovante de pagamento.<br>
+                - Atestado médico recomendado para distâncias a partir de 21 km.<br>
+                - Retirada por terceiros mediante autorização + cópia do documento do inscrito.
+              </div>
+            </details>
+
+            <details class="group rounded-xl border border-neutral-200 bg-white p-4 open:shadow-sm transition" style="opacity: 0; transform: translateY(10px); transition: opacity 600ms 140ms, transform 600ms; will-change: opacity, transform;">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <p class="font-medium font-geist">Segurança e conduta no percurso</p>
+                <i data-lucide="chevron-down" class="w-[18px] h-[18px] transition-transform group-open:rotate-180"></i>
+              </summary>
+              <div class="mt-3 text-sm text-neutral-600 leading-relaxed font-geist">
+                - Siga as orientações da organização e equipe médica.<br>
+                - É proibido correr com acompanhantes sem inscrição ou com bicicletas.<br>
+                - Descarte de copos nos pontos de lixo indicados.
+              </div>
+            </details>
+          </div>
+
+          <div class="lg:col-span-1">
+            <div class="rounded-xl border border-neutral-200 bg-white p-4" style="opacity: 0; transform: translateY(10px); transition: opacity 600ms 220ms, transform 600ms; will-change: opacity, transform;">
+              <p class="text-sm text-neutral-500 font-geist">Documento completo</p>
+              <p class="font-medium mt-1 font-geist">Baixe o regulamento oficial</p>
+              <a href="#" class="mt-3 inline-flex items-center gap-2 text-sm font-medium rounded-full px-4 py-2 border border-neutral-200 text-neutral-700 hover:bg-neutral-50 font-geist">
+                Baixar PDF
+                <i data-lucide="file-down" class="w-[18px] h-[18px]"></i>
+              </a>
+              <p class="mt-3 text-xs text-neutral-500 font-geist">Última atualização: 10/09/2024</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-12">
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-geist font-semibold" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">Perguntas frequentes</h2>
+
+        <div class="mt-4 space-y-3">
+          <details class="group rounded-xl border border-neutral-200 bg-white p-4 open:shadow-sm transition" style="opacity: 0; transform: translateY(10px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">
+            <summary class="flex cursor-pointer list-none items-center justify-between">
+              <p class="font-medium font-geist">Posso alterar minha categoria após a inscrição?</p>
+              <i data-lucide="plus" class="w-[18px] h-[18px] transition-transform group-open:rotate-45"></i>
+            </summary>
+            <div class="mt-3 text-sm text-neutral-600 font-geist">Sim, até 10 dias antes do evento, mediante disponibilidade de vagas e ajuste de valores entre lotes.</div>
+          </details>
+
+          <details class="group rounded-xl border border-neutral-200 bg-white p-4 open:shadow-sm transition" style="opacity: 0; transform: translateY(10px); transition: opacity 600ms 70ms, transform 600ms; will-change: opacity, transform;">
+            <summary class="flex cursor-pointer list-none items-center justify-between">
+              <p class="font-medium font-geist">Há guarda-volumes no local?</p>
+              <i data-lucide="plus" class="w-[18px] h-[18px] transition-transform group-open:rotate-45"></i>
+            </summary>
+            <div class="mt-3 text-sm text-neutral-600 font-geist">Sim, com limite de volume por participante. Recomendamos levar apenas o essencial.</div>
+          </details>
+
+          <details class="group rounded-xl border border-neutral-200 bg-white p-4 open:shadow-sm transition" style="opacity: 0; transform: translateY(10px); transition: opacity 600ms 140ms, transform 600ms; will-change: opacity, transform;">
+            <summary class="flex cursor-pointer list-none items-center justify-between">
+              <p class="font-medium font-geist">O evento acontece em caso de chuva?</p>
+              <i data-lucide="plus" class="w-[18px] h-[18px] transition-transform group-open:rotate-45"></i>
+            </summary>
+            <div class="mt-3 text-sm text-neutral-600 font-geist">Sim, exceto em condições extremas que comprometam a segurança. A organização informará qualquer alteração.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Organizador -->
+      <section id="organizador" class="mt-12">
+        <h2 class="text-2xl sm:text-3xl tracking-tight font-geist font-semibold" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">Organizador</h2>
+
+        <div class="mt-4 rounded-2xl border border-neutral-200 bg-white p-5" style="opacity: 0; transform: translateY(12px); transition: opacity 600ms, transform 600ms; will-change: opacity, transform;">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div class="h-12 w-12 rounded-full bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+                <i data-lucide="trophy" class="w-5.5 h-5.5"></i>
+              </div>
+              <div>
+                <p class="font-medium leading-tight font-geist">SP Run Org</p>
+                <p class="text-sm text-neutral-600 font-geist">CNPJ 12.345.678/0001-90</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <a href="mailto:contato@sprun.org" class="inline-flex items-center gap-2 text-sm font-medium rounded-full px-3 py-1.5 border border-neutral-200 text-neutral-700 hover:bg-neutral-50 font-geist">
+                E-mail
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </a>
+              <a href="https://sprun.org" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-medium rounded-full px-3 py-1.5 border border-neutral-200 text-neutral-700 hover:bg-neutral-50 font-geist">
+                Site
+                <i data-lucide="globe" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+          <p class="mt-3 text-sm text-neutral-600 font-geist">Organização com mais de 15 anos de experiência em eventos de corrida de rua, focada em segurança, experiência do atleta e responsabilidade socioambiental.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="z-20 border-neutral-200 border-t relative">
+    <div class="lg:px-8 max-w-7xl mx-auto px-6 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <!-- Brand + Newsletter -->
+        <div>
+          <a href="home.html" class="inline-flex items-center justify-center" aria-label="Symplepass">
+            <img src="../assets/symplepass-color.svg" alt="Symplepass" class="w-[180px] h-[30px]">
+          </a>
+          <p class="mt-4 text-sm text-neutral-600 font-geist">Encontre e participe dos melhores eventos esportivos perto de você.</p>
+          <form class="mt-6 flex items-center gap-2">
+            <input type="email" placeholder="Seu e-mail" class="flex-1 rounded-full bg-white border border-neutral-200 px-3.5 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-300 font-geist">
+            <button class="inline-flex items-center gap-2 text-sm font-normal text-neutral-900 border border-neutral-200 rounded-full px-3.5 py-2 hover:bg-neutral-100 transition font-geist">
+              Assinar
+            </button>
+          </form>
+          <p class="mt-2 text-xs text-neutral-500 font-geist">Sem spam. Cancele quando quiser.</p>
+        </div>
+
+        <!-- Events Column -->
+        <div>
+          <p class="text-xs uppercase tracking-widest text-neutral-500 font-geist">Eventos</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="#" class="hover:text-neutral-900 transition text-sm text-neutral-700 font-geist">Corrida de rua</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Cross training</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Beach tennis</a></li>
+            <li><a href="#" class="inline-flex items-center gap-1.5 text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">
+              Ver agenda
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide h-3.5 w-3.5">
+                <path d="M8 2v4"></path>
+                <path d="M16 2v4"></path>
+                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                <path d="M3 10h18"></path>
+              </svg>
+            </a></li>
+          </ul>
+        </div>
+
+        <!-- Resources Column -->
+        <div>
+          <p class="text-xs uppercase tracking-widest text-neutral-500 font-geist">Recursos</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Como funciona</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Guia do atleta</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">FAQ</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Suporte</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div>
+          <p class="text-xs uppercase tracking-widest text-neutral-500 font-geist">Empresa</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Sobre</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Carreiras</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Contato</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Imprensa</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="mt-12 border-t border-neutral-200 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <p class="text-xs text-neutral-600 font-geist">© 2025 Symplepass. Todos os direitos reservados.</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Termos</a>
+          <span class="w-px h-3 bg-neutral-200"></span>
+          <a href="#" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Privacidade</a>
+          <span class="w-px h-3 bg-neutral-200"></span>
+          <a href="#" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Cookies</a>
+          <span class="w-px h-3 bg-neutral-200"></span>
+          <a href="#sobre" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Topo</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA Bottom Bar -->
+  <div class="fixed inset-x-0 bottom-0 z-40 border-t border-neutral-200 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80" style="padding-bottom: env(safe-area-inset-bottom);">
+    <div class="lg:px-8 max-w-7xl mx-auto px-6 py-3">
+      <div class="flex items-center justify-between gap-4">
+        <div class="min-w-0">
+          <p class="text-xs text-neutral-500 font-geist">Inscrições a partir de</p>
+          <p class="text-base font-medium font-geist"><span id="sticky-price" class="font-geist">R$ 45,00</span></p>
+        </div>
+        <button id="sticky-cta" class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-white hover:opacity-95 font-geist" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));">
+          Inscreva-se
+          <i data-lucide="arrow-right" class="w-[18px] h-[18px]"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <div class="absolute inset-x-0 bottom-0 sm:inset-0 sm:flex sm:items-center sm:justify-center w-full sm:max-w-md sm:mx-auto">
+      <div class="rounded-t-2xl sm:rounded-2xl border border-neutral-200 bg-white p-5 shadow-xl">
+        <div class="flex items-start justify-between">
+          <div>
+            <p class="text-sm text-neutral-500 font-geist">Resumo da inscrição</p>
+            <p id="modal-category" class="mt-0.5 font-medium font-geist">Categoria</p>
+          </div>
+          <button id="modal-close" class="rounded-full p-2 border border-neutral-200 hover:bg-neutral-50" aria-label="Fechar">
+            <i data-lucide="x" class="w-[18px] h-[18px]"></i>
+          </button>
+        </div>
+
+        <div class="mt-4 space-y-3">
+          <div class="flex items-center justify-between rounded-lg border border-neutral-200 p-3">
+            <p class="text-sm text-neutral-600 font-geist">Valor</p>
+            <p id="modal-price" class="text-sm font-medium font-geist">R$ —</p>
+          </div>
+
+          <div>
+            <p class="text-sm text-neutral-600 font-geist">Tamanho da camiseta</p>
+            <div class="mt-2 grid grid-cols-5 gap-2">
+              <label class="cursor-pointer">
+                <input type="radio" name="shirt" class="peer hidden" value="P" checked>
+                <span class="inline-flex w-full items-center justify-center rounded-lg border border-neutral-200 px-3 py-2 text-sm font-medium text-neutral-700 peer-checked:border-amber-400 peer-checked:bg-amber-50 font-geist">P</span>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="shirt" class="peer hidden" value="M">
+                <span class="inline-flex w-full items-center justify-center rounded-lg border border-neutral-200 px-3 py-2 text-sm font-medium text-neutral-700 peer-checked:border-amber-400 peer-checked:bg-amber-50 font-geist">M</span>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="shirt" class="peer hidden" value="G">
+                <span class="inline-flex w-full items-center justify-center rounded-lg border border-neutral-200 px-3 py-2 text-sm font-medium text-neutral-700 peer-checked:border-amber-400 peer-checked:bg-amber-50 font-geist">G</span>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="shirt" class="peer hidden" value="GG">
+                <span class="inline-flex w-full items-center justify-center rounded-lg border border-neutral-200 px-3 py-2 text-sm font-medium text-neutral-700 peer-checked:border-amber-400 peer-checked:bg-amber-50 font-geist">GG</span>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="shirt" class="peer hidden" value="XG">
+                <span class="inline-flex w-full items-center justify-center rounded-lg border border-neutral-200 px-3 py-2 text-sm font-medium text-neutral-700 peer-checked:border-amber-400 peer-checked:bg-amber-50 font-geist">XG</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 flex items-center justify-between">
+          <button id="modal-cancel" class="inline-flex items-center gap-2 text-sm font-medium rounded-full px-4 py-2 border border-neutral-200 text-neutral-700 hover:bg-neutral-50 font-geist">Cancelar</button>
+          <button id="modal-continue" class="inline-flex items-center gap-2 text-sm font-medium rounded-full px-4 py-2 text-white hover:opacity-95 font-geist" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));">
+            Continuar
+            <i data-lucide="arrow-right" class="w-[18px] h-[18px]"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Helpers
+    const qs = (s, el = document) => el.querySelector(s);
+    const qsa = (s, el = document) => [...el.querySelectorAll(s)];
+
+    // Mobile menu
+    const btnMenu = qs('#mobile-menu-button');
+    const overlayMenu = qs('#mobile-menu');
+    const btnCloseMobile = qs('#mobile-close-button');
+    const iconClose = qs('#close-icon');
+    const textMenu = qs('#menu-text');
+
+    const openMobileMenu = () => {
+      overlayMenu.classList.remove('opacity-0', 'invisible');
+      overlayMenu.classList.add('opacity-100', 'visible');
+      iconClose.classList.remove('hidden');
+      textMenu.textContent = 'Fechar';
+    };
+
+    const closeMobileMenu = () => {
+      overlayMenu.classList.add('opacity-0', 'invisible');
+      overlayMenu.classList.remove('opacity-100', 'visible');
+      iconClose.classList.add('hidden');
+      textMenu.textContent = 'Menu';
+    };
+
+    btnMenu?.addEventListener('click', () => {
+      const isOpen = overlayMenu.classList.contains('visible');
+      isOpen ? closeMobileMenu() : openMobileMenu();
+    });
+    btnCloseMobile?.addEventListener('click', closeMobileMenu);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
+
+    // Dynamic offsets for sticky tabs and smooth scroll
+    const getHeaderHeight = () => qs('header')?.getBoundingClientRect().height || 72;
+    const getTabsHeight = () => qs('#tabs-sticky')?.getBoundingClientRect().height || 48;
+
+    const updateTabsOffset = () => {
+      const tabsSticky = qs('#tabs-sticky');
+      if (tabsSticky) tabsSticky.style.top = `${getHeaderHeight()}px`;
+    };
+    updateTabsOffset();
+    window.addEventListener('resize', () => {
+      updateTabsOffset();
+      initObserver();
+    });
+
+    // Smooth scroll for internal links
+    const smoothScrollTo = (target) => {
+      if (!target) return;
+      const offset = getHeaderHeight() + getTabsHeight() + 8;
+      const rect = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: rect, behavior: 'smooth' });
+    };
+
+    qsa('a[href^="#"], .tab-link').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const target = qs(href);
+          smoothScrollTo(target);
+          closeMobileMenu();
+        }
+      });
+    });
+
+    // Tabs active state on scroll
+    const tabLinks = qsa('#tabs .tab-link');
+    const tabMap = new Map(tabLinks.map(a => [a.getAttribute('href') || '', a]));
+
+    const setActiveTab = (id) => {
+      tabLinks.forEach(a => {
+        a.classList.remove('bg-neutral-900', 'text-white', 'border-neutral-900');
+        a.classList.add('text-neutral-600', 'border-neutral-200');
+      });
+      const active = tabMap.get(id);
+      if (active) {
+        active.classList.add('bg-neutral-900', 'text-white', 'border-neutral-900');
+        active.classList.remove('text-neutral-600');
+      }
+    };
+
+    const observedIds = ['#sobre', '#categorias', '#kit', '#percurso', '#regulamento', '#faq', '#organizador'];
+    let observer;
+    const initObserver = () => {
+      if (observer) observer.disconnect();
+      observer = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter(e => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (visible) setActiveTab('#' + visible.target.id);
+      }, { rootMargin: `-${getHeaderHeight() + 56}px 0px -55% 0px`, threshold: 0.01 });
+
+      observedIds.forEach(id => {
+        const el = qs(id);
+        if (el) observer.observe(el);
+      });
+    };
+    initObserver();
+
+    // CTA buttons scroll to categorias
+    qs('#cta-side')?.addEventListener('click', () => smoothScrollTo(qs('#categorias')));
+    qs('#hero-cta')?.addEventListener('click', () => smoothScrollTo(qs('#categorias')));
+    qs('#sticky-cta')?.addEventListener('click', () => smoothScrollTo(qs('#categorias')));
+
+    // Sticky price sync
+    const stickyPrice = qs('#sticky-price');
+    const priceStart = qs('#price-start');
+    const updateStickyPrice = () => {
+      if (stickyPrice && priceStart) stickyPrice.textContent = priceStart.textContent;
+    };
+    updateStickyPrice();
+
+    // Open maps buttons
+    const mapsUrl = 'https://www.google.com/maps/dir/?api=1&destination=Parque+Ibirapuera,+São+Paulo';
+    qsa('[data-open-maps]').forEach(btn => btn.addEventListener('click', () => window.open(mapsUrl, '_blank')));
+
+    // Category selection -> modal
+    const modal = qs('#checkout-modal');
+    const modalCat = qs('#modal-category');
+    const modalPrice = qs('#modal-price');
+    const openModal = () => { modal.classList.remove('hidden'); document.body.classList.add('overflow-hidden'); };
+    const closeModal = () => { modal.classList.add('hidden'); document.body.classList.remove('overflow-hidden'); };
+
+    qsa('[data-category]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.getAttribute('data-name') || 'Categoria';
+        const price = btn.getAttribute('data-price') || '--';
+        modalCat.textContent = `${name} • Inscrição`;
+        modalPrice.textContent = `R$ ${price}`;
+        priceStart.textContent = `R$ ${price}`;
+        updateStickyPrice();
+        openModal();
+      });
+    });
+
+    qs('#modal-close')?.addEventListener('click', closeModal);
+    qs('#modal-cancel')?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    qs('#modal-continue')?.addEventListener('click', () => {
+      window.location.href = 'review.html';
+    });
+
+    // Kit carousel
+    const track = qs('#kit-track');
+    const slides = qsa('.kit-slide', track);
+    const dots = qsa('#kit-dots button');
+    let idx = 0;
+    const goTo = (i) => {
+      idx = (i + slides.length) % slides.length;
+      if (track) track.style.transform = `translateX(-${idx * 100}%)`;
+      dots.forEach((d, di) => {
+        d.classList.toggle('bg-amber-500', di === idx);
+        d.classList.toggle('bg-neutral-300', di !== idx);
+      });
+    };
+    qs('#kit-prev')?.addEventListener('click', () => goTo(idx - 1));
+    qs('#kit-next')?.addEventListener('click', () => goTo(idx + 1));
+    dots.forEach((d, di) => d.addEventListener('click', () => goTo(di)));
+    goTo(0);
+
+    // Animation on scroll
+    (() => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+
+      const reveal = (el) => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      };
+
+      const observerReveal = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const el = e.target;
+            requestAnimationFrame(() => reveal(el));
+            observerReveal.unobserve(el);
+          }
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+
+      const prepare = (el) => {
+        if (!el) return;
+        observerReveal.observe(el);
+      };
+
+      // Hero
+      const heroTitle = qs('header h1');
+      prepare(heroTitle);
+      qsa('header .mt-3 > *').forEach((el) => prepare(el));
+
+      // Section titles
+      qsa('main section h2').forEach((el) => prepare(el));
+
+      // Sobre
+      const sobreImgWrap = qs('#sobre > div.w-full');
+      prepare(sobreImgWrap);
+      qsa('#sobre .rounded-xl').forEach((el) => prepare(el));
+      qsa('#sobre .rounded-2xl').forEach((el) => prepare(el));
+      qsa('#sobre .mt-4 button').forEach((el) => prepare(el));
+
+      // Categorias
+      qsa('#categorias > div > div').forEach((el) => prepare(el));
+
+      // Kit
+      const kitCarousel = qs('#kit-carousel');
+      prepare(kitCarousel);
+      qsa('#kit ul li').forEach((el) => prepare(el));
+
+      // Percurso
+      const mapWrapper = qs('#percurso .relative');
+      prepare(mapWrapper);
+      qsa('#percurso .grid .rounded-xl').forEach((el) => prepare(el));
+
+      // Regulamento
+      qsa('#regulamento details').forEach((el) => prepare(el));
+      const regSide = qs('#regulamento .lg\\:col-span-1 .rounded-xl');
+      prepare(regSide);
+
+      // FAQ
+      qsa('#faq details').forEach((el) => prepare(el));
+
+      // Organizador
+      const orgCard = qs('#organizador > div.rounded-2xl');
+      prepare(orgCard);
+    })();
+  </script>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>

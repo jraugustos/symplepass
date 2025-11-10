@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos — Symplepass</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../globals.css">
+
+  <style>
+    .font-geist {
+      font-family: 'Geist', sans-serif !important;
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeSlideIn {
+      0% { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+
+    @keyframes scrollBlur {
+      from { filter: blur(0px); }
+      to { filter: blur(100px); }
+    }
+  </style>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    (function () {
+      const style = document.createElement("style");
+      style.textContent = `
+        .animate-on-scroll { animation-play-state: paused !important; }
+        .animate-on-scroll.animate { animation-play-state: running !important; }
+      `;
+      document.head.appendChild(style);
+      const once = true;
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              if (once) window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
+      }
+      window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+        document.querySelectorAll(selector).forEach((el) => { window.__inViewIO.observe(el); });
+      };
+      document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+    })();
+  </script>
+</head>
+
+<body class="min-h-screen antialiased overflow-x-hidden text-neutral-900 bg-neutral-50" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';">
+
+  <!-- Header -->
+  <header class="bg-center bg-gradient-to-br from-orange-400 to-orange-600 top-0">
+    <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-8 pl-8">
+      <!-- Navigation -->
+      <div class="flex border-neutral-200/20 border-b pt-4 pb-4 items-center justify-between">
+        <a href="home.html" class="inline-flex items-center justify-center" aria-label="Symplepass - Início">
+          <img src="../assets/symplepass-white.svg" alt="Symplepass" class="w-[200px] h-[34px]">
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="events-list.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Eventos</a>
+          <a href="events-list.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Modalidades</a>
+          <a href="home.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Sobre nós</a>
+          <a href="home.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Clube de benefícios</a>
+          <a href="home.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Suporte</a>
+          <a href="user-panel.html" class="inline-flex gap-2 items-center text-sm font-normal rounded-full px-4 py-2 border-0 text-white hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 font-geist" style="background-image: linear-gradient(to right, rgb(138, 55, 10), rgb(82, 32, 3));">Entrar</a>
+        </nav>
+
+        <button id="mobile-menu-button" class="lg:hidden inline-flex items-center gap-2 text-sm font-normal font-geist rounded-full px-4 py-2 border border-white/10 bg-white/10 text-white/90 hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+          <i data-lucide="x" class="w-5 h-5 hidden" id="close-icon"></i>
+          <span id="menu-text" class="text-white/90 font-geist">Menu</span>
+        </button>
+      </div>
+
+      <!-- Page Header (Hero with Search) -->
+      <div class="pt-5 pb-12">
+        <div class="max-w-3xl">
+          <h1 class="sm:text-5xl lg:text-4xl text-4xl font-semibold tracking-tight font-geist text-white">
+            Encontre seus próximos eventos
+          </h1>
+          <p class="text-lg sm:text-xl font-geist mt-4 text-white/90">
+            Competições, workshops e encontros da comunidade. Busque por cidade, data ou categoria.
+          </p>
+
+          <!-- Search -->
+          <form role="search" class="mt-6">
+            <label for="event-search" class="sr-only">Buscar eventos</label>
+            <div class="flex items-stretch gap-2">
+              <div class="relative flex-1">
+                <span class="absolute inset-y-0 left-3 inline-flex items-center text-neutral-400">
+                  <i data-lucide="search" class="w-[18px] h-[18px]"></i>
+                </span>
+                <input id="event-search" type="search" placeholder="Busque por evento, cidade ou data" class="w-full rounded-full border pr-4 pl-10 py-3 text-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-white/60 font-geist bg-white border-white/20 text-neutral-900">
+              </div>
+              <button type="submit" class="inline-flex transition text-sm font-medium text-white font-geist border-0 rounded-full px-5 gap-x-2 gap-y-2 items-center justify-center hover:opacity-95" style="background-image: linear-gradient(to right, rgb(138, 55, 10), rgb(82, 32, 3));">
+                Buscar
+              </button>
+            </div>
+          </form>
+
+          <!-- Quick Stats -->
+          <div class="flex flex-wrap gap-6 mt-8 pt-6">
+            <div class="flex items-center gap-2">
+              <i data-lucide="calendar-days" class="w-5 h-5 text-white/80"></i>
+              <span class="text-sm font-geist text-white/90">120+ eventos no ano</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-5 h-5 text-white/80"></i>
+              <span class="text-sm font-geist text-white/90">15 cidades</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="ticket" class="w-5 h-5 text-white/80"></i>
+              <span class="text-sm font-geist text-white/90">Inscrições abertas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu overlay -->
+      <div id="mobile-menu" class="lg:hidden fixed inset-0 backdrop-blur-xl z-50 opacity-0 invisible transition-all duration-300 ease-out bg-black/95">
+        <div class="flex flex-col h-full pt-6 pb-8 px-6">
+          <div class="flex justify-end mb-8">
+            <button id="mobile-close-button" class="inline-flex rounded-full p-3 border border-white/10 bg-white/10 text-white/90 hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60" aria-label="Fechar menu">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+          <nav class="flex-1">
+            <div class="space-y-6">
+              <a href="events-list.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Eventos</a>
+              <a href="events-list.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Modalidades</a>
+              <a href="home.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Como funciona</a>
+              <a href="home.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Preços</a>
+              <a href="home.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Suporte</a>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/10">
+              <a href="user-panel.html" class="w-full inline-flex items-center justify-center gap-2 text-base font-normal rounded-full px-6 py-3 border-0 text-white hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 font-geist" style="background-image: linear-gradient(to right, rgb(138, 55, 10), rgb(82, 32, 3));">Entrar</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Featured Event (Fullwidth) -->
+  <section class="z-20 relative pt-8 pb-8">
+    <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+      <div class="group transition-all duration-300 bg-white border rounded-2xl overflow-hidden backdrop-blur animate-on-scroll border-neutral-200 hover:bg-neutral-50 animate" style="animation: fadeSlideIn 1.0s ease-out 0.1s both;">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <div class="relative h-56 sm:h-72 lg:h-full">
+            <img src="https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?auto=format&fit=crop&w=1600&q=80" alt="Atletas executando treino funcional no Summit de Performance" class="h-full w-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t to-transparent from-black/60 via-black/0"></div>
+            <div class="absolute top-4 left-4 flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/80 backdrop-blur border px-2.5 py-1 text-xs font-geist border-white/10 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles">
+                  <path d="M12 3v4"></path>
+                  <path d="M12 17v4"></path>
+                  <path d="M3 12h4"></path>
+                  <path d="M17 12h4"></path>
+                  <path d="m18 6-2 2"></path>
+                  <path d="m8 16-2 2"></path>
+                  <path d="m6 6 2 2"></path>
+                  <path d="m16 16 2 2"></path>
+                </svg>
+                Destaque
+              </span>
+            </div>
+          </div>
+          <div class="sm:p-8 pt-6 pr-6 pb-6 pl-6">
+            <div class="flex items-start justify-between gap-4">
+              <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight font-geist">Summit de Performance 2025</h3>
+              <span class="inline-flex items-center gap-1 rounded-full border px-2 py-1 text-xs font-geist bg-neutral-100 border-neutral-200 text-neutral-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                </svg>
+                500 vagas
+              </span>
+            </div>
+            <div class="mt-3 flex flex-wrap items-center gap-4 text-sm text-neutral-700">
+              <span class="inline-flex items-center gap-2 font-geist">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar">
+                  <path d="M8 2v4"></path>
+                  <path d="M16 2v4"></path>
+                  <rect width="18" height="18" x="3" y="4" rx="2" class=""></rect>
+                  <path d="M3 10h18"></path>
+                </svg>
+                Sáb, 22 Mar 2025 • 09:00–18:00
+              </span>
+              <span class="inline-flex items-center gap-2 font-geist">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin">
+                  <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                São Paulo, SP
+              </span>
+            </div>
+            <p class="font-geist mt-4 text-neutral-600">
+              Conferência imersiva com palestras, painéis e experiências práticas sobre performance, treinamento e saúde.
+            </p>
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a href="event-page.html" class="inline-flex transition hover:opacity-95 text-sm font-medium text-white font-geist border-0 rounded-full px-5 py-2.5 gap-x-2 gap-y-2 items-center justify-center" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));">
+                Ver detalhes
+              </a>
+              <button class="inline-flex gap-2 transition hover:bg-neutral-50 text-sm font-normal text-neutral-800 font-geist border-neutral-200 border rounded-full pt-2.5 pr-5 pb-2.5 pl-5 gap-x-2 gap-y-2 items-center justify-center bg-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ticket">
+                  <path d="M3 9V6a2 2 0 0 1 2-2h3"></path>
+                  <path d="M21 9V6a2 2 0 0 0-2-2h-3"></path>
+                  <path d="M3 15v3a2 2 0 0 0 2 2h3"></path>
+                  <path d="M21 15v3a2 2 0 0 1-2 2h-3"></path>
+                  <rect width="6" height="12" x="9" y="6" rx="2"></rect>
+                </svg>
+                Garantir ingresso
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters Section -->
+  <section class="z-20 relative pb-6">
+    <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+      <!-- Filter Parameters -->
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
+        <button class="inline-flex items-center gap-2 text-xs sm:text-sm font-normal bg-white border rounded-full px-3.5 py-2 transition font-geist text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50 border-neutral-200">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-range">
+            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+            <path d="M16 2v4"></path>
+            <path d="M8 2v4"></path>
+            <path d="M3 10h18"></path>
+            <path d="M8 14h.01"></path>
+            <path d="M12 14h.01"></path>
+          </svg>
+          Data
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+        <button class="inline-flex items-center gap-2 text-xs sm:text-sm font-normal bg-white border rounded-full px-3.5 py-2 transition font-geist text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50 border-neutral-200">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin">
+            <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Local
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+        <button class="inline-flex items-center gap-2 text-xs sm:text-sm font-normal bg-white border rounded-full px-3.5 py-2 transition font-geist text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50 border-neutral-200">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-dollar-sign">
+            <path d="M7 11.5C7 10.7 7.7 10 8.5 10H12a2 2 0 0 1 0 4H9.5A1.5 1.5 0 1 0 11 15.5"></path>
+            <path d="M10 7v2"></path>
+            <path d="M10 17v2"></path>
+            <path d="M12 22a10 10 0 1 1 10-10 10 10 0 0 1-10 10"></path>
+          </svg>
+          Preço
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+        <button class="inline-flex items-center gap-2 text-xs sm:text-sm font-normal bg-white border rounded-full px-3.5 py-2 transition font-geist text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50 border-neutral-200">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layers">
+            <path d="m12.97 2.79 8.06 4.62a2 2 0 0 1 0 3.46l-8.06 4.62a2 2 0 0 1-1.94 0L3 10.87a2 2 0 0 1 0-3.46l8.03-4.62a2 2 0 0 1 1.94 0"></path>
+            <path d="m2.3 15.69 9.7 5.56 9.7-5.56"></path>
+          </svg>
+          Categoria
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+        <div class="ml-auto">
+          <button class="inline-flex items-center gap-2 text-xs sm:text-sm font-normal bg-white border rounded-full px-3.5 py-2 transition font-geist text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50 border-neutral-200">
+            Ordenar
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-down">
+              <path d="m21 16-4 4-4-4"></path>
+              <path d="M17 20V4"></path>
+              <path d="m3 8 4-4 4 4"></path>
+              <path d="M7 4v16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Grid -->
+  <section class="z-20 relative pb-16">
+    <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Event 1 -->
+        <div class="group transition-all duration-300 bg-white border rounded-2xl overflow-hidden backdrop-blur animate-on-scroll hover:bg-neutral-50 border-neutral-200" style="animation: fadeSlideIn 1.0s ease-out 0.1s both;">
+          <div class="relative h-48">
+            <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=80" alt="Pelotão de corredores na Street Run 10K" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t to-transparent from-black/60 via-black/0"></div>
+            <div class="absolute top-4 left-4 flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full backdrop-blur border px-2.5 py-1 text-xs font-geist bg-black/40 border-white/10 text-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap">
+                  <path d="m13 2-2 6h6l-4 8 2-6H9l4-8Z"></path>
+                </svg>
+                Competição
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="text-xs backdrop-blur border rounded-full px-2 py-1 font-geist text-white/90 bg-black/40 border-white/10">14 Abr 2025</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold tracking-tight font-geist mb-1">Street Run 10K</h3>
+            <div class="flex items-center gap-1 text-xs font-geist text-neutral-600 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin">
+                <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              São Paulo, SP
+            </div>
+            <p class="text-sm font-geist mb-4 text-neutral-600">
+              Prova de rua com altimetria moderada, kits exclusivos e premiação por categorias.
+            </p>
+            <div class="flex items-center justify-between text-xs mb-4 text-neutral-500">
+              <span class="font-geist inline-flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-dollar-sign">
+                  <path d="M7 11.5C7 10.7 7.7 10 8.5 10H12a2 2 0 0 1 0 4H9.5A1.5 1.5 0 1 0 11 15.5"></path>
+                  <path d="M10 7v2"></path>
+                  <path d="M10 17v2"></path>
+                  <path d="M12 22a10 10 0 1 1 10-10 10 10 0 0 1-10 10"></path>
+                </svg>
+                a partir de R$ 120
+              </span>
+              <span class="font-geist">Presencial</span>
+            </div>
+            <a href="event-page.html" class="w-full inline-flex items-center justify-center gap-2 text-sm font-medium rounded-full px-4 py-2.5 transition font-geist text-white hover:opacity-95" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));">
+              Ver detalhes
+            </a>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="group transition-all duration-300 bg-white border rounded-2xl overflow-hidden backdrop-blur animate-on-scroll hover:bg-neutral-50 border-neutral-200" style="animation: fadeSlideIn 1.0s ease-out 0.2s both;">
+          <div class="relative h-48">
+            <img src="https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?auto=format&fit=crop&w=1600&q=80" alt="Instrutora guiando alongamentos no workshop de mobilidade" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t to-transparent from-black/60 via-black/0"></div>
+            <div class="absolute top-4 left-4 flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full backdrop-blur border px-2.5 py-1 text-xs font-geist bg-black/40 border-white/10 text-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand">
+                  <path d="M4 13V7a3 3 0 0 1 6 0v6"></path>
+                  <path d="M10 12V5a3 3 0 1 1 6 0v7"></path>
+                  <path d="M16 11V7a3 3 0 1 1 6 0v4a7 7 0 0 1-14 0v-1"></path>
+                  <path d="M2 15a6 6 0 0 0 12 0"></path>
+                </svg>
+                Workshop
+              </span>
+              <span class="inline-flex items-center gap-1 rounded-full bg-orange-500/80 backdrop-blur px-2 py-0.5 text-xs font-geist text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame">
+                  <path d="M8 12a4 4 0 0 0 8 0c0-4-8-8-8-8s8 4 8 8"></path>
+                </svg>
+                Popular
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="text-xs backdrop-blur border rounded-full px-2 py-1 font-geist text-white/90 bg-black/40 border-white/10">27 Abr 2025</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold tracking-tight font-geist mb-1">Mobilidade e Performance</h3>
+            <div class="flex items-center gap-1 text-xs font-geist text-neutral-600 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-video">
+                <path d="m22 8-6 4 6 4V8Z"></path>
+                <rect width="14" height="12" x="2" y="6" rx="2"></rect>
+                <path d="M8 6V4h8v2"></path>
+              </svg>
+              Campinas, SP (online)
+            </div>
+            <p class="text-sm font-geist mb-4 text-neutral-600">
+              Técnicas práticas para ampliar amplitude, reduzir dores e melhorar a performance nos principais levantamentos.
+            </p>
+            <div class="flex items-center justify-between text-xs mb-4 text-neutral-500">
+              <span class="font-geist inline-flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 6v6l4 2"></path>
+                </svg>
+                3h de duração
+              </span>
+              <span class="font-geist">R$ 89</span>
+            </div>
+            <a href="event-page.html" class="w-full inline-flex items-center justify-center gap-2 text-sm font-medium rounded-full px-4 py-2.5 transition font-geist text-white hover:opacity-95" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));">
+              Ver detalhes
+            </a>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="group transition-all duration-300 bg-white border rounded-2xl overflow-hidden backdrop-blur animate-on-scroll hover:bg-neutral-50 border-neutral-200" style="animation: fadeSlideIn 1.0s ease-out 0.3s both;">
+          <div class="relative h-48">
+            <img src="https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?auto=format&fit=crop&w=1600&q=80" alt="Atletas treinando força durante o Strength Camp" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t to-transparent from-black/60 via-black/0"></div>
+            <div class="absolute top-4 left-4 flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full backdrop-blur border px-2.5 py-1 text-xs font-geist bg-black/40 border-white/10 text-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dumbbell">
+                  <path d="M14.4 14.4 9.6 9.6"></path>
+                  <path d="M15 5v4"></path>
+                  <path d="M19 5v4"></path>
+                  <path d="M5 15v4"></path>
+                  <path d="M9 15v4"></path>
+                  <path d="M14.4 9.6l-4.8 4.8"></path>
+                </svg>
+                Camp
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="text-xs backdrop-blur border rounded-full px-2 py-1 font-geist text-white/90 bg-black/40 border-white/10">10 Mai 2025</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold tracking-tight font-geist mb-1">Strength Camp</h3>
+            <div class="flex items-center gap-1 text-xs font-geist text-neutral-600 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin">
+                <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Ribeirão Preto, SP
+            </div>
+            <p class="text-sm font-geist mb-4 text-neutral-600">
+              Imersão prática de um dia com foco em técnica, periodização e progressão de cargas.
+            </p>
+            <div class="flex items-center justify-between text-xs mb-4 text-neutral-500">
+              <span class="font-geist">Presencial</span>
+              <span class="font-geist inline-flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-dollar-sign">
+                  <path d="M7 11.5C7 10.7 7.7 10 8.5 10H12a2 2 0 0 1 0 4H9.5A1.5 1.5 0 1 0 11 15.5"></path>
+                  <path d="M10 7v2"></path>
+                  <path d="M10 17v2"></path>
+                  <path d="M12 22a10 10 0 1 1 10-10 10 10 0 0 1-10 10"></path>
+                </svg>
+                R$ 220
+              </span>
+            </div>
+            <a href="event-page.html" class="w-full inline-flex items-center justify-center gap-2 text-sm font-medium rounded-full px-4 py-2.5 transition font-geist text-white hover:opacity-95" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));">
+              Ver detalhes
+            </a>
+          </div>
+        </div>
+
+        <!-- Event 4 -->
+        <div class="group transition-all duration-300 bg-white border rounded-2xl overflow-hidden backdrop-blur animate-on-scroll hover:bg-neutral-50 border-neutral-200" style="animation: fadeSlideIn 1.0s ease-out 0.4s both;">
+          <div class="relative h-48">
+            <img src="https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=1600&q=80" alt="Auditório da Health & Performance Expo" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t to-transparent from-black/60 via-black/0"></div>
+            <div class="absolute top-4 left-4 flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full backdrop-blur border px-2.5 py-1 text-xs font-geist bg-black/40 border-white/10 text-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-presentation">
+                  <path d="M2 3h20"></path>
+                  <path d="M14 3v8a2 2 0 0 0 2 2h6"></path>
+                  <path d="M2 21l3-7h14l3 7"></path>
+                </svg>
+                Conferência
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="text-xs backdrop-blur border rounded-full px-2 py-1 font-geist text-white/90 bg-black/40 border-white/10">25 Mai 2025</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold tracking-tight font-geist mb-1">Health & Performance Expo</h3>
+            <div class="flex items-center gap-1 text-xs font-geist text-neutral-600 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin">
+                <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Santos, SP
+            </div>
+            <p class="text-sm font-geist mb-4 text-neutral-600">
+              Expositores, palestras e ativações com as principais marcas e especialistas do setor.
+            </p>
+            <div class="flex items-center justify-between text-xs mb-4 text-neutral-500">
+              <span class="font-geist">Presencial</span>
+              <span class="font-geist inline-flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-percent">
+                  <path d="M7 7h10v10H7z"></path>
+                  <path d="m9 9 6 6"></path>
+                  <path d="m15 9-6 6"></path>
+                </svg>
+                Gratuito
+              </span>
+            </div>
+            <a href="event-page.html" class="w-full inline-flex items-center justify-center gap-2 text-sm font-medium rounded-full px-4 py-2.5 transition font-geist text-white hover:opacity-95" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));">
+              Ver detalhes
+            </a>
+          </div>
+        </div>
+
+        <!-- Event 5 -->
+        <div class="group transition-all duration-300 bg-white border rounded-2xl overflow-hidden backdrop-blur animate-on-scroll hover:bg-neutral-50 border-neutral-200" style="animation: fadeSlideIn 1.0s ease-out 0.5s both;">
+          <div class="relative h-48">
+            <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=1600&q=80" alt="Pelotão encarando subida no Gran Fondo Serra" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t to-transparent from-black/60 via-black/0"></div>
+            <div class="absolute top-4 left-4 flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full backdrop-blur border px-2.5 py-1 text-xs font-geist bg-black/40 border-white/10 text-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bike">
+                  <circle cx="5.5" cy="17.5" r="3.5"></circle>
+                  <circle cx="18.5" cy="17.5" r="3.5"></circle>
+                  <path d="M15 6H9l6 11h3"></path>
+                  <path d="M6 6h.01"></path>
+                </svg>
+                Competição
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="text-xs backdrop-blur border rounded-full px-2 py-1 font-geist text-white/90 bg-black/40 border-white/10">01 Jun 2025</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold tracking-tight font-geist mb-1">Gran Fondo Serra</h3>
+            <div class="flex items-center gap-1 text-xs font-geist text-neutral-600 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin">
+                <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Campos do Jordão, SP
+            </div>
+            <p class="text-sm font-geist mb-4 text-neutral-600">
+              Desafio de ciclismo em alta montanha com percursos de 80 e 120km.
+            </p>
+            <div class="flex items-center justify-between text-xs mb-4 text-neutral-500">
+              <span class="font-geist">Presencial</span>
+              <span class="font-geist inline-flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-dollar-sign">
+                  <path d="M7 11.5C7 10.7 7.7 10 8.5 10H12a2 2 0 0 1 0 4H9.5A1.5 1.5 0 1 0 11 15.5"></path>
+                  <path d="M10 7v2"></path>
+                  <path d="M10 17v2"></path>
+                  <path d="M12 22a10 10 0 1 1 10-10 10 10 0 0 1-10 10"></path>
+                </svg>
+                R$ 290
+              </span>
+            </div>
+            <a href="event-page.html" class="w-full inline-flex items-center justify-center gap-2 text-sm font-medium rounded-full px-4 py-2.5 transition font-geist text-white hover:opacity-95" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));">
+              Ver detalhes
+            </a>
+          </div>
+        </div>
+
+        <!-- Event 6 -->
+        <div class="group transition-all duration-300 bg-white border rounded-2xl overflow-hidden backdrop-blur animate-on-scroll hover:bg-neutral-50 border-neutral-200" style="animation: fadeSlideIn 1.0s ease-out 0.6s both;">
+          <div class="relative h-48">
+            <img src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&w=1600&q=80" alt="Praticantes em sequência de yoga no Yoga Sunset" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t to-transparent from-black/60 via-black/0"></div>
+            <div class="absolute top-4 left-4 flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full backdrop-blur border px-2.5 py-1 text-xs font-geist bg-black/40 border-white/10 text-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun">
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2"></path>
+                  <path d="M12 20v2"></path>
+                  <path d="M5 5l1.5 1.5"></path>
+                  <path d="M17.5 17.5 19 19"></path>
+                  <path d="M2 12h2"></path>
+                  <path d="M20 12h2"></path>
+                  <path d="M5 19 6.5 17.5"></path>
+                  <path d="m17.5 6.5 1.5-1.5"></path>
+                </svg>
+                Encontro
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="text-xs backdrop-blur border rounded-full px-2 py-1 font-geist text-white/90 bg-black/40 border-white/10">07 Jun 2025</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold tracking-tight font-geist mb-1">Yoga Sunset</h3>
+            <div class="flex items-center gap-1 text-xs font-geist text-neutral-600 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin">
+                <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Ilhabela, SP
+            </div>
+            <p class="text-sm font-geist mb-4 text-neutral-600">
+              Prática guiada ao ar livre com trilha ao vivo e sessão de respiração ao final.
+            </p>
+            <div class="flex items-center justify-between text-xs mb-4 text-neutral-500">
+              <span class="font-geist">Presencial</span>
+              <span class="font-geist inline-flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-percent">
+                  <path d="M7 7h10v10H7z"></path>
+                  <path d="m9 9 6 6"></path>
+                  <path d="m15 9-6 6"></path>
+                </svg>
+                Gratuito
+              </span>
+            </div>
+            <a href="event-page.html" class="w-full inline-flex items-center justify-center gap-2 text-sm font-medium rounded-full px-4 py-2.5 transition font-geist text-white hover:opacity-95" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));">
+              Ver detalhes
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Load More Button -->
+      <div class="flex justify-center mt-12">
+        <button class="inline-flex items-center gap-2 text-sm font-medium border rounded-full px-6 py-3 transition font-geist text-neutral-900 bg-white hover:bg-neutral-50 border-neutral-200">
+          Carregar mais eventos
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Club Benefits -->
+  <section class="z-20 border-t relative border-neutral-200">
+    <div class="lg:px-8 max-w-7xl mr-auto ml-auto pt-16 pr-6 pb-16 pl-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight font-geist animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.1s both;">Junte-se ao nosso Clube de Benefícios</h2>
+        <p class="font-geist mt-3 animate-on-scroll text-neutral-600" style="animation: fadeSlideIn 1.0s ease-out 0.2s both;">
+          Descontos exclusivos em eventos, acesso antecipado às inscrições e conteúdos especiais para membros.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8 animate-on-scroll" style="animation: fadeSlideIn 1.0s ease-out 0.3s both;">
+          <button class="inline-flex items-center justify-center gap-2 text-base font-medium rounded-full px-8 py-3 transition font-geist text-white hover:opacity-95" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));">
+            Assinar Clube
+          </button>
+          <button class="inline-flex items-center justify-center gap-2 text-base font-normal border rounded-full px-8 py-3 transition font-geist text-neutral-800 hover:bg-neutral-50 bg-white border-neutral-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 16v-4"></path>
+              <path d="M12 8h.01"></path>
+            </svg>
+            Saiba mais
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="z-20 border-neutral-200 border-t relative">
+    <div class="lg:px-8 max-w-7xl mx-auto px-6 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 gap-x-10 gap-y-10">
+        <!-- Brand + Newsletter -->
+        <div class="">
+          <a href="home.html" class="inline-flex items-center justify-center" aria-label="Symplepass">
+            <img src="../assets/symplepass-color.svg" alt="Symplepass" class="w-[180px] h-[30px]">
+          </a>
+          <p class="mt-4 text-sm text-neutral-600 font-geist">Encontre e participe dos melhores eventos esportivos perto de você.</p>
+          <form class="mt-6 flex items-center gap-2">
+            <input type="email" placeholder="Seu e-mail" class="flex-1 rounded-full bg-white border border-neutral-200 px-3.5 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-300 font-geist">
+            <button class="inline-flex items-center gap-2 text-sm font-normal text-neutral-900 border border-neutral-200 rounded-full px-3.5 py-2 hover:bg-neutral-100 transition font-geist">
+              Assinar
+            </button>
+          </form>
+          <p class="mt-2 text-xs text-neutral-500 font-geist">Sem spam. Cancele quando quiser.</p>
+        </div>
+
+        <!-- Events Column -->
+        <div class="">
+          <p class="text-xs uppercase tracking-widest text-neutral-500 font-geist">Eventos</p>
+          <ul class="mt-3 space-y-2">
+            <li class=""><a href="#" class="hover:text-neutral-900 transition text-sm text-neutral-700 font-geist">Corrida de rua</a></li>
+            <li class=""><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Cross training</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Beach tennis</a></li>
+            <li><a href="#" class="inline-flex items-center gap-1.5 text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">
+              Ver agenda
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide h-3.5 w-3.5">
+                <path d="M8 2v4"></path>
+                <path d="M16 2v4"></path>
+                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                <path d="M3 10h18"></path>
+              </svg>
+            </a></li>
+          </ul>
+        </div>
+
+        <!-- Resources Column -->
+        <div class="">
+          <p class="text-xs uppercase tracking-widest text-neutral-500 font-geist">Recursos</p>
+          <ul class="mt-3 space-y-2">
+            <li class=""><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Como funciona</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Guia do atleta</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">FAQ</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Suporte</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div class="">
+          <p class="text-xs uppercase tracking-widest text-neutral-500 font-geist">Empresa</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Sobre</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Carreiras</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Contato</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Imprensa</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="mt-12 border-t border-neutral-200 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <p class="text-xs text-neutral-600 font-geist">© 2025 Symplepass. Todos os direitos reservados.</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Termos</a>
+          <span class="w-px h-3 bg-neutral-200"></span>
+          <a href="#" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Privacidade</a>
+          <span class="w-px h-3 bg-neutral-200"></span>
+          <a href="#" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Cookies</a>
+          <span class="w-px h-3 bg-neutral-200"></span>
+          <a href="#" class="inline-flex items-center gap-1 text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">
+            Status
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity h-3 w-3">
+              <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    (function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileCloseButton = document.getElementById('mobile-close-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+      const menuText = document.getElementById('menu-text');
+      let isMenuOpen = false;
+
+      function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+          mobileMenu.classList.remove('opacity-0', 'invisible');
+          mobileMenu.classList.add('opacity-100', 'visible');
+          menuIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+          menuText.textContent = 'Fechar';
+          document.body.style.overflow = 'hidden';
+        } else {
+          mobileMenu.classList.remove('opacity-100', 'visible');
+          mobileMenu.classList.add('opacity-0', 'invisible');
+          menuIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          menuText.textContent = 'Menu';
+          document.body.style.overflow = '';
+        }
+      }
+
+      mobileMenuButton.addEventListener('click', toggleMenu);
+      mobileCloseButton.addEventListener('click', toggleMenu);
+
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (isMenuOpen) toggleMenu();
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isMenuOpen) toggleMenu();
+      });
+
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu && isMenuOpen) toggleMenu();
+      });
+    })();
+  </script>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "design-system-v2",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "lucide": "^0.553.0"
+  }
+}

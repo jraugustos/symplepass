@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscrição confirmada — Symplepass</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../globals.css">
+
+  <style>
+    .font-geist {
+      font-family: 'Geist', sans-serif !important;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen antialiased overflow-x-hidden text-neutral-900 bg-white" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';">
+
+  <!-- Header -->
+  <header class="bg-center bg-gradient-to-br from-orange-400 to-orange-600 top-0">
+    <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-8 pl-8">
+      <!-- Navigation -->
+      <div class="flex border-neutral-200/20 border-b pt-4 pb-4 items-center justify-between">
+        <a href="home.html" class="inline-flex items-center justify-center" aria-label="Symplepass - Início">
+          <img src="../assets/symplepass-white.svg" alt="Symplepass" class="w-[200px] h-[34px]">
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="events-list.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Eventos</a>
+          <a href="events-list.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Modalidades</a>
+          <a href="home.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Sobre nós</a>
+          <a href="home.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Clube de benefícios</a>
+          <a href="home.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Suporte</a>
+          <a href="user-panel.html" class="inline-flex gap-2 items-center text-sm font-normal rounded-full px-4 py-2 border-0 text-white hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 font-geist" style="background-image: linear-gradient(to right, rgb(138, 55, 10), rgb(82, 32, 3));">Entrar</a>
+        </nav>
+
+        <button id="mobile-menu-button" class="lg:hidden inline-flex items-center gap-2 text-sm font-normal font-geist rounded-full px-4 py-2 border border-white/10 bg-white/10 text-white/90 hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+          <i data-lucide="x" class="w-5 h-5 hidden" id="close-icon"></i>
+          <span id="menu-text" class="text-white/90 font-geist">Menu</span>
+        </button>
+      </div>
+
+      <!-- Page Title -->
+      <div class="pt-5 pb-8">
+        <h1 class="sm:text-4xl md:text-5xl text-2xl font-semibold text-white tracking-tight font-geist text-center mt-2">Inscrição confirmada</h1>
+        <div class="flex flex-wrap gap-2 text-center mt-3 items-center justify-center">
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-white/90 text-xs sm:text-sm font-geist">
+            <i data-lucide="list-ordered" class="w-4 h-4"></i>
+            Pedido #SP2025-4821
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-white/90 text-xs sm:text-sm font-geist">
+            <i data-lucide="badge-check" class="w-4 h-4"></i>
+            Barbie Run 2025
+          </span>
+        </div>
+      </div>
+
+      <!-- Mobile menu overlay -->
+      <div id="mobile-menu" class="lg:hidden fixed inset-0 backdrop-blur-xl z-50 opacity-0 invisible transition-all duration-300 ease-out bg-black/95">
+        <div class="flex flex-col h-full pt-6 pb-8 px-6">
+          <div class="flex justify-end mb-8">
+            <button id="mobile-close-button" class="inline-flex rounded-full p-3 border border-white/10 bg-white/10 text-white/90 hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60" aria-label="Fechar menu">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+          <nav class="flex-1">
+            <div class="space-y-6">
+              <a href="events-list.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Eventos</a>
+              <a href="events-list.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Modalidades</a>
+              <a href="home.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Como funciona</a>
+              <a href="home.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Preços</a>
+              <a href="home.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Suporte</a>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/10">
+              <a href="user-panel.html" class="w-full inline-flex items-center justify-center gap-2 text-base font-normal rounded-full px-6 py-3 border-0 text-white hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 font-geist" style="background-image: linear-gradient(to right, rgb(138, 55, 10), rgb(82, 32, 3));">Entrar</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="lg:px-8 max-w-3xl mx-auto px-6 pt-10 pb-24">
+
+      <!-- Confirmation Card -->
+      <section class="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms, transform 600ms;">
+        <div class="flex flex-col items-center text-center">
+          <div class="flex bg-gradient-to-br from-green-400 to-green-600 w-24 h-24 rounded-full shadow-sm items-center justify-center">
+            <i data-lucide="check" class="w-12 h-12 text-white" stroke-width="2.5"></i>
+          </div>
+          <h2 class="mt-6 text-2xl sm:text-3xl tracking-tight font-geist font-semibold">Inscrição confirmada!</h2>
+          <p class="mt-2 text-neutral-600 font-geist">Você receberá um e‑mail com o comprovante e QR Code.</p>
+        </div>
+
+        <!-- QR Code + Download -->
+        <div class="mt-8">
+          <h3 class="text-lg font-semibold tracking-tight font-geist text-center">Seu QR Code de acesso</h3>
+          <div class="flex flex-col mt-4 items-center">
+            <div class="rounded-2xl border border-neutral-200 bg-neutral-100 p-3">
+              <div class="h-44 w-44 rounded-xl bg-neutral-900 flex items-center justify-center">
+                <i data-lucide="qr-code" class="w-16 h-16 text-white"></i>
+              </div>
+            </div>
+            <p class="mt-3 text-sm text-neutral-600 font-geist">Código: <span class="font-medium text-neutral-800 font-geist" id="ticket-code">#SP2025-4821</span></p>
+            <button id="btn-pdf" class="mt-4 inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-white hover:opacity-95 font-geist" style="background-image: linear-gradient(to right, rgb(115, 115, 115), rgb(163, 163, 163)); opacity: 0; transform: translateY(8px); transition: opacity 600ms 50ms, transform 600ms;">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              Baixar comprovante (PDF)
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Summary -->
+      <section class="mt-6 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms 100ms, transform 600ms;">
+        <h3 class="text-lg tracking-tight font-geist font-semibold">Resumo da inscrição</h3>
+
+        <div class="mt-4 rounded-xl border border-neutral-200 p-4">
+          <div class="flex items-start gap-3">
+            <div class="h-10 w-10 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center">
+              <i data-lucide="badge-check" class="w-5 h-5 text-neutral-700"></i>
+            </div>
+            <div class="min-w-0 flex-1">
+              <p class="font-medium leading-tight font-geist">Barbie Run 2025</p>
+              <p class="text-sm text-neutral-600 font-geist">21km • São Paulo, SP</p>
+              <p class="text-sm text-neutral-600 font-geist">15 de março de 2025 • 07:00</p>
+            </div>
+          </div>
+
+          <div class="my-4 h-px bg-neutral-200"></div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="sm:col-span-2">
+              <p class="text-sm text-neutral-500 font-geist">Valor pago</p>
+              <p class="mt-0.5 font-medium font-geist">R$ 70,00</p>
+            </div>
+            <div>
+              <p class="text-sm text-neutral-500 font-geist">Status</p>
+              <span class="inline-flex mt-1 items-center gap-1 text-xs px-2 py-1 rounded-full border border-green-200 text-green-700 bg-green-50 font-geist">
+                <i data-lucide="badge-check" class="w-3.5 h-3.5"></i>
+                Pago
+              </span>
+            </div>
+            <div class="sm:col-span-3">
+              <p class="text-sm text-neutral-500 font-geist">Transação</p>
+              <p class="mt-0.5 font-geist text-neutral-800" id="tx-code">#pi_3NmQx2L9h...kPZ</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 grid grid-cols-1 gap-3">
+          <button id="btn-my-events" class="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-medium border border-neutral-200 text-neutral-800 hover:bg-neutral-50 font-geist" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms 150ms, transform 600ms;">
+            <i data-lucide="calendar" class="w-5 h-5"></i>
+            Ver Meus Eventos
+          </button>
+          <button id="btn-ics" class="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-medium border border-neutral-200 text-neutral-800 hover:bg-neutral-50 font-geist" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms 200ms, transform 600ms;">
+            <i data-lucide="calendar-plus" class="w-5 h-5"></i>
+            Adicionar ao calendário
+          </button>
+        </div>
+      </section>
+
+      <!-- Next Steps -->
+      <section class="mt-6 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8" style="opacity: 0; transform: translateY(8px); transition: opacity 600ms 250ms, transform 600ms;">
+        <h3 class="text-lg tracking-tight font-geist font-semibold">Próximos passos</h3>
+        <div class="mt-4 space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 text-xs font-medium">1</span>
+            <div>
+              <p class="font-medium font-geist">Confirmação por e‑mail</p>
+              <p class="text-sm text-neutral-600 font-geist">Enviada para joao@email.com</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 text-xs font-medium">2</span>
+            <div>
+              <p class="font-medium font-geist">Retirada do kit</p>
+              <p class="text-sm text-neutral-600 font-geist">14 de março, das 10h às 18h</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 text-xs font-medium">3</span>
+            <div>
+              <p class="font-medium font-geist">Dia do evento</p>
+              <p class="text-sm text-neutral-600 font-geist">Chegue 30min antes do horário</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <div class="mt-8">
+        <button id="btn-explore" class="w-full inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-4 text-sm font-medium text-white shadow-lg hover:opacity-95 font-geist" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11)); opacity: 0; transform: translateY(8px); transition: opacity 600ms 300ms, transform 600ms;">
+          Explorar mais eventos
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </button>
+        <p class="mt-3 text-center text-xs text-neutral-500 font-geist">Obrigado por escolher a Symplepass!</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="z-20 border-neutral-200 border-t relative">
+    <div class="lg:px-8 max-w-7xl mx-auto px-6 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <!-- Brand + Newsletter -->
+        <div>
+          <a href="home.html" class="inline-flex items-center justify-center" aria-label="Symplepass">
+            <img src="../assets/symplepass-color.svg" alt="Symplepass" class="w-[180px] h-[30px]">
+          </a>
+          <p class="mt-4 text-sm text-neutral-600 font-geist">Encontre e participe dos melhores eventos esportivos perto de você.</p>
+          <form class="mt-6 flex items-center gap-2">
+            <input type="email" placeholder="Seu e-mail" class="flex-1 rounded-full bg-white border border-neutral-200 px-3.5 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-300 font-geist">
+            <button class="inline-flex items-center gap-2 text-sm font-normal text-neutral-900 border border-neutral-200 rounded-full px-3.5 py-2 hover:bg-neutral-100 transition font-geist">
+              Assinar
+            </button>
+          </form>
+          <p class="mt-2 text-xs text-neutral-500 font-geist">Sem spam. Cancele quando quiser.</p>
+        </div>
+
+        <!-- Events Column -->
+        <div>
+          <p class="text-xs uppercase tracking-widest text-neutral-500 font-geist">Eventos</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="#" class="hover:text-neutral-900 transition text-sm text-neutral-700 font-geist">Corrida de rua</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Cross training</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Beach tennis</a></li>
+            <li><a href="#" class="inline-flex items-center gap-1.5 text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">
+              Ver agenda
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+            </a></li>
+          </ul>
+        </div>
+
+        <!-- Resources Column -->
+        <div>
+          <p class="text-xs uppercase tracking-widest text-neutral-500 font-geist">Recursos</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Como funciona</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Guia do atleta</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">FAQ</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Suporte</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div>
+          <p class="text-xs uppercase tracking-widest text-neutral-500 font-geist">Empresa</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Sobre</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Carreiras</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Contato</a></li>
+            <li><a href="#" class="text-sm text-neutral-700 hover:text-neutral-900 transition font-geist">Imprensa</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="mt-12 border-t border-neutral-200 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <p class="text-xs text-neutral-600 font-geist">© 2025 Symplepass. Todos os direitos reservados.</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Termos</a>
+          <span class="w-px h-3 bg-neutral-200"></span>
+          <a href="#" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Privacidade</a>
+          <span class="w-px h-3 bg-neutral-200"></span>
+          <a href="#" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Cookies</a>
+          <span class="w-px h-3 bg-neutral-200"></span>
+          <a href="/" class="text-xs text-neutral-700 hover:text-neutral-900 transition font-geist">Início</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Helpers
+    const qs = (s, el = document) => el.querySelector(s);
+    const qsa = (s, el = document) => [...el.querySelectorAll(s)];
+
+    // Mobile menu
+    const btnMenu = qs('#mobile-menu-button');
+    const overlayMenu = qs('#mobile-menu');
+    const btnCloseMobile = qs('#mobile-close-button');
+    const iconClose = qs('#close-icon');
+    const textMenu = qs('#menu-text');
+
+    const openMobileMenu = () => {
+      overlayMenu.classList.remove('opacity-0', 'invisible');
+      overlayMenu.classList.add('opacity-100', 'visible');
+      iconClose.classList.remove('hidden');
+      textMenu.textContent = 'Fechar';
+    };
+
+    const closeMobileMenu = () => {
+      overlayMenu.classList.add('opacity-0', 'invisible');
+      overlayMenu.classList.remove('opacity-100', 'visible');
+      iconClose.classList.add('hidden');
+      textMenu.textContent = 'Menu';
+    };
+
+    btnMenu?.addEventListener('click', () => {
+      const isOpen = overlayMenu.classList.contains('visible');
+      isOpen ? closeMobileMenu() : openMobileMenu();
+    });
+    btnCloseMobile?.addEventListener('click', closeMobileMenu);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
+
+    // Actions
+    qs('#btn-my-events')?.addEventListener('click', () => {
+      window.location.href = '/meus-eventos';
+    });
+
+    qs('#btn-explore')?.addEventListener('click', () => {
+      window.location.href = '/eventos';
+    });
+
+    // Download receipt (print dialog)
+    qs('#btn-pdf')?.addEventListener('click', () => {
+      window.print();
+    });
+
+    // Add to calendar (ICS)
+    qs('#btn-ics')?.addEventListener('click', () => {
+      const title = 'Barbie Run 2025 — 21km';
+      const description = 'Ingresso confirmado: ' + (qs('#ticket-code')?.textContent || '#SP2025-4821') + '\\nApresente o QR Code na entrada.';
+      const location = 'Parque Ibirapuera, São Paulo, SP';
+      // 2025-03-15 07:00 -03:00 -> create as approximate UTC
+      const startLocal = new Date('2025-03-15T07:00:00-03:00');
+      const endLocal = new Date('2025-03-15T10:00:00-03:00');
+
+      const toICS = (d) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+      const ics =
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Symplepass//Ingressos//PT-BR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+DTSTAMP:${toICS(new Date())}
+DTSTART:${toICS(startLocal)}
+DTEND:${toICS(endLocal)}
+SUMMARY:${title}
+DESCRIPTION:${description}
+LOCATION:${location}
+END:VEVENT
+END:VCALENDAR`;
+
+      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'barbie-run-2025.ics';
+      document.body.appendChild(a);
+      a.click();
+      URL.revokeObjectURL(url);
+      a.remove();
+    });
+
+    // Animated entry
+    (() => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+      const reveal = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { reveal(e.target); observer.unobserve(e.target); }});
+      }, { threshold: 0.08 });
+      qsa('main section, main button').forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(8px)';
+        el.style.transition = 'opacity 600ms ease, transform 600ms ease';
+        el.style.transitionDelay = `${i * 50}ms`;
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>

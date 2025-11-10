@@ -1,0 +1,554 @@
+<!--
+  MODAL/DIALOG COMPONENT - shadcn/ui style adapted for Symplepass
+  Accessible modal implementation with various configurations
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../../tailwind.config.js"></script>
+  <link rel="stylesheet" href="../../globals.css">
+</head>
+<body class="p-8 bg-neutral-50">
+
+  <!-- Modal Component Examples -->
+  <div class="space-y-8 max-w-4xl mx-auto">
+
+    <h2 class="text-2xl font-semibold font-geist">Modal/Dialog Component</h2>
+
+    <!-- Modal Triggers -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Modal Examples</h3>
+      <div class="flex flex-wrap gap-4">
+
+        <!-- Basic Modal -->
+        <button class="btn btn-primary" data-modal-trigger="basic-modal">
+          Abrir Modal Básico
+        </button>
+
+        <!-- Confirmation Modal -->
+        <button class="btn btn-destructive" data-modal-trigger="confirm-modal">
+          Modal de Confirmação
+        </button>
+
+        <!-- Form Modal -->
+        <button class="btn btn-secondary" data-modal-trigger="form-modal">
+          Modal com Formulário
+        </button>
+
+        <!-- Full Screen Modal -->
+        <button class="btn btn-outline" data-modal-trigger="fullscreen-modal">
+          Modal Tela Cheia
+        </button>
+
+        <!-- Image Modal -->
+        <button class="btn btn-secondary" data-modal-trigger="image-modal">
+          Modal com Imagem
+        </button>
+
+      </div>
+    </section>
+
+    <!-- Alert Dialog -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Alert Dialog</h3>
+      <div class="flex flex-wrap gap-4">
+
+        <button class="btn btn-primary" data-modal-trigger="success-alert">
+          Alert de Sucesso
+        </button>
+
+        <button class="btn btn-destructive" data-modal-trigger="error-alert">
+          Alert de Erro
+        </button>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- MODALS -->
+
+  <!-- Basic Modal -->
+  <div class="modal" id="basic-modal">
+    <div class="modal-overlay" data-modal-close></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Título do Modal</h2>
+        <button class="modal-close" data-modal-close>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Este é um modal básico com cabeçalho, corpo e rodapé. Você pode adicionar qualquer conteúdo aqui.</p>
+        <p class="mt-4 text-sm text-neutral-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" data-modal-close>
+          Cancelar
+        </button>
+        <button class="btn btn-primary">
+          Confirmar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div class="modal" id="confirm-modal">
+    <div class="modal-overlay" data-modal-close></div>
+    <div class="modal-content modal-sm">
+      <div class="modal-icon-wrapper modal-icon-warning">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m10.29 3.86 1.41 1.42L10.29 3.86zM21 12h-2M19 12h2-2zM12 19v2M12 21v-2 2zM5 12H3M3 12h2-2zM12 3V1M12 1v2V1zM18.36 18.36l1.42 1.41L18.36 18.36zM5.64 5.64 4.22 4.22L5.64 5.64zM18.36 5.64l1.42-1.41L18.36 5.64zM5.64 18.36l-1.42 1.41L5.64 18.36z"></path>
+          <path d="M12 7v6"></path>
+          <circle cx="12" cy="17" r="1"></circle>
+        </svg>
+      </div>
+      <div class="modal-body text-center">
+        <h3 class="text-lg font-semibold mb-2">Tem certeza?</h3>
+        <p class="text-sm text-neutral-600">Esta ação não poderá ser desfeita. Todos os dados serão permanentemente excluídos.</p>
+      </div>
+      <div class="modal-footer justify-center">
+        <button class="btn btn-secondary" data-modal-close>
+          Cancelar
+        </button>
+        <button class="btn btn-destructive">
+          Sim, excluir
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form Modal -->
+  <div class="modal" id="form-modal">
+    <div class="modal-overlay" data-modal-close></div>
+    <div class="modal-content modal-md">
+      <div class="modal-header">
+        <h2 class="modal-title">Inscrever-se no evento</h2>
+        <button class="modal-close" data-modal-close>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="space-y-4">
+          <div>
+            <label class="form-label">Nome completo</label>
+            <input type="text" class="input" placeholder="Digite seu nome">
+          </div>
+          <div>
+            <label class="form-label">E-mail</label>
+            <input type="email" class="input" placeholder="seu@email.com">
+          </div>
+          <div>
+            <label class="form-label">Telefone</label>
+            <input type="tel" class="input" placeholder="(11) 99999-9999">
+          </div>
+          <div>
+            <label class="checkbox-label">
+              <input type="checkbox" class="checkbox">
+              <span>Aceito os termos e condições</span>
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" data-modal-close>
+          Cancelar
+        </button>
+        <button class="btn btn-primary">
+          Confirmar inscrição
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full Screen Modal -->
+  <div class="modal" id="fullscreen-modal">
+    <div class="modal-overlay" data-modal-close></div>
+    <div class="modal-content modal-fullscreen">
+      <div class="modal-header">
+        <h2 class="modal-title">Modal Tela Cheia</h2>
+        <button class="modal-close" data-modal-close>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="prose max-w-none">
+          <h3>Conteúdo em Tela Cheia</h3>
+          <p>Este modal ocupa toda a tela, ideal para exibir conteúdo extenso como termos de uso, políticas de privacidade, ou interfaces complexas.</p>
+
+          <div class="grid md:grid-cols-2 gap-6 mt-6">
+            <div class="p-6 bg-neutral-50 rounded-xl">
+              <h4 class="text-lg font-semibold mb-3">Seção 1</h4>
+              <p class="text-sm text-neutral-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="p-6 bg-neutral-50 rounded-xl">
+              <h4 class="text-lg font-semibold mb-3">Seção 2</h4>
+              <p class="text-sm text-neutral-600">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-modal-close>
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div class="modal" id="image-modal">
+    <div class="modal-overlay" data-modal-close></div>
+    <div class="modal-content modal-lg">
+      <button class="modal-close modal-close-absolute" data-modal-close>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+      <div class="modal-body p-0">
+        <img src="https://picsum.photos/800/600" alt="Evento" class="w-full rounded-xl">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Rock in Rio 2024</h3>
+          <p class="text-sm text-neutral-600">O maior festival de música do mundo está de volta! Prepare-se para dias inesquecíveis com os maiores artistas internacionais.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Alert -->
+  <div class="modal" id="success-alert">
+    <div class="modal-overlay" data-modal-close></div>
+    <div class="modal-content modal-sm">
+      <div class="modal-icon-wrapper modal-icon-success">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6 9 17l-5-5"></path>
+        </svg>
+      </div>
+      <div class="modal-body text-center">
+        <h3 class="text-lg font-semibold mb-2">Sucesso!</h3>
+        <p class="text-sm text-neutral-600">Sua inscrição foi realizada com sucesso. Você receberá um e-mail de confirmação em breve.</p>
+      </div>
+      <div class="modal-footer justify-center">
+        <button class="btn btn-primary" data-modal-close>
+          Entendido
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error Alert -->
+  <div class="modal" id="error-alert">
+    <div class="modal-overlay" data-modal-close></div>
+    <div class="modal-content modal-sm">
+      <div class="modal-icon-wrapper modal-icon-error">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="m15 9-6 6"></path>
+          <path d="m9 9 6 6"></path>
+        </svg>
+      </div>
+      <div class="modal-body text-center">
+        <h3 class="text-lg font-semibold mb-2">Erro ao processar</h3>
+        <p class="text-sm text-neutral-600">Não foi possível completar a operação. Por favor, tente novamente mais tarde.</p>
+      </div>
+      <div class="modal-footer justify-center">
+        <button class="btn btn-secondary" data-modal-close>
+          Cancelar
+        </button>
+        <button class="btn btn-primary">
+          Tentar novamente
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Component Styles -->
+  <style>
+    /* Modal Base */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 250ms ease;
+    }
+
+    .modal.modal-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    /* Modal Content */
+    .modal-content {
+      position: relative;
+      background: white;
+      border-radius: 1.25rem;
+      box-shadow: 0 20px 40px 0 rgb(0 0 0 / 0.2);
+      width: 100%;
+      max-width: 32rem;
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transform: scale(0.95) translateY(1rem);
+      transition: transform 250ms ease;
+    }
+
+    .modal.modal-open .modal-content {
+      transform: scale(1) translateY(0);
+    }
+
+    /* Modal Sizes */
+    .modal-sm {
+      max-width: 24rem;
+    }
+
+    .modal-md {
+      max-width: 32rem;
+    }
+
+    .modal-lg {
+      max-width: 48rem;
+    }
+
+    .modal-xl {
+      max-width: 64rem;
+    }
+
+    .modal-fullscreen {
+      max-width: calc(100vw - 2rem);
+      max-height: calc(100vh - 2rem);
+      height: calc(100vh - 2rem);
+    }
+
+    /* Modal Header */
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem;
+      border-bottom: 1px solid #EAEAEA;
+    }
+
+    .modal-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #262626;
+      font-family: 'Geist', sans-serif;
+    }
+
+    .modal-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 0.5rem;
+      background: transparent;
+      border: none;
+      color: #737373;
+      cursor: pointer;
+      transition: all 200ms ease;
+    }
+
+    .modal-close:hover {
+      background: #F5F5F5;
+      color: #262626;
+    }
+
+    .modal-close-absolute {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
+      background: white;
+      box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.1);
+    }
+
+    /* Modal Body */
+    .modal-body {
+      flex: 1;
+      padding: 1.5rem;
+      overflow-y: auto;
+      color: #404040;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+    }
+
+    /* Modal Footer */
+    .modal-footer {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.5rem;
+      border-top: 1px solid #EAEAEA;
+      justify-content: flex-end;
+    }
+
+    .modal-footer.justify-center {
+      justify-content: center;
+    }
+
+    /* Modal Icon Wrapper */
+    .modal-icon-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      margin: 1.5rem auto 0;
+      border-radius: 9999px;
+    }
+
+    .modal-icon-success {
+      background: rgba(52, 199, 89, 0.1);
+      color: #34C759;
+    }
+
+    .modal-icon-error {
+      background: rgba(255, 59, 48, 0.1);
+      color: #FF3B30;
+    }
+
+    .modal-icon-warning {
+      background: rgba(245, 158, 11, 0.1);
+      color: #F59E0B;
+    }
+
+    .modal-icon-info {
+      background: rgba(0, 122, 255, 0.1);
+      color: #007AFF;
+    }
+
+    /* Form Elements in Modal */
+    .modal .form-label {
+      display: block;
+      margin-bottom: 0.375rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #262626;
+    }
+
+    .modal .input {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      border: 1px solid #D4D4D4;
+      border-radius: 0.75rem;
+      transition: all 200ms ease;
+    }
+
+    .modal .input:focus {
+      outline: none;
+      border-color: #FF7A00;
+      box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
+    }
+
+    .modal .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+
+    .modal .checkbox {
+      width: 1rem;
+      height: 1rem;
+      accent-color: #FF7A00;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .modal-content {
+        max-width: 100%;
+        margin: 0 0.5rem;
+      }
+
+      .modal-fullscreen {
+        max-width: 100vw;
+        max-height: 100vh;
+        height: 100vh;
+        margin: 0;
+        border-radius: 0;
+      }
+    }
+  </style>
+
+  <!-- JavaScript for Modal Functionality -->
+  <script>
+    // Modal functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      // Open modal
+      document.querySelectorAll('[data-modal-trigger]').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const modalId = trigger.getAttribute('data-modal-trigger');
+          const modal = document.getElementById(modalId);
+          if (modal) {
+            modal.classList.add('modal-open');
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+
+      // Close modal
+      document.querySelectorAll('[data-modal-close]').forEach(closeBtn => {
+        closeBtn.addEventListener('click', (e) => {
+          const modal = e.target.closest('.modal');
+          if (modal) {
+            modal.classList.remove('modal-open');
+            document.body.style.overflow = '';
+          }
+        });
+      });
+
+      // Close on ESC key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const openModal = document.querySelector('.modal.modal-open');
+          if (openModal) {
+            openModal.classList.remove('modal-open');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

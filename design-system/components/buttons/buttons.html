@@ -1,0 +1,234 @@
+<!--
+  SYMPLEPASS BUTTON COMPONENTS
+  Sistema de botões completo com todas as variantes
+-->
+
+<!-- ===== PRIMARY BUTTONS ===== -->
+
+<!-- Primary Button - Default -->
+<button class="btn-primary">
+  Inscrever-se
+</button>
+
+<!-- Primary Button - With Icon -->
+<button class="btn-primary">
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 12h14"></path>
+    <path d="m12 5 7 7-7 7"></path>
+  </svg>
+  Continuar
+</button>
+
+<!-- Primary Button - Loading -->
+<button class="btn-primary" disabled>
+  <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+  </svg>
+  Processando...
+</button>
+
+<!-- Primary Button - Small -->
+<button class="btn-primary btn-sm">
+  Ver detalhes
+</button>
+
+<!-- Primary Button - Large -->
+<button class="btn-primary btn-lg">
+  Começar agora
+</button>
+
+<!-- Primary Button - Full Width -->
+<button class="btn-primary w-full">
+  Continuar para pagamento
+</button>
+
+<!-- ===== SECONDARY BUTTONS ===== -->
+
+<!-- Secondary Button - Default -->
+<button class="btn-secondary">
+  Cancelar
+</button>
+
+<!-- Secondary Button - With Icon -->
+<button class="btn-secondary">
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 3h6v6"></path>
+    <path d="M10 14 21 3"></path>
+    <path d="M21 13v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"></path>
+  </svg>
+  Ver no mapa
+</button>
+
+<!-- ===== GHOST BUTTONS ===== -->
+
+<!-- Ghost Button - Default -->
+<button class="btn-ghost">
+  Voltar
+</button>
+
+<!-- ===== OUTLINE BUTTONS ===== -->
+
+<!-- Outline Button - Default -->
+<button class="btn-outline">
+  Saiba mais
+</button>
+
+<!-- ===== DESTRUCTIVE BUTTONS ===== -->
+
+<!-- Destructive Button -->
+<button class="btn-destructive">
+  Cancelar inscrição
+</button>
+
+<!-- ===== ICON BUTTONS ===== -->
+
+<!-- Icon Button - Square -->
+<button class="btn-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m18 6-12 12"></path>
+    <path d="m6 6 12 12"></path>
+  </svg>
+</button>
+
+<!-- Icon Button - Rounded -->
+<button class="btn-icon rounded-full">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 12h14"></path>
+    <path d="M12 5v14"></path>
+  </svg>
+</button>
+
+<!-- ===== BUTTON STYLES ===== -->
+<style>
+  /* Base Button Styles */
+  button[class*="btn-"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+    padding: 0.625rem 1rem;
+    border-radius: var(--radius-full);
+    border: var(--border-width-1) solid transparent;
+    transition: all var(--transition-base) var(--ease-out);
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    outline: none;
+  }
+
+  button[class*="btn-"]:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+
+  button[class*="btn-"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background: var(--gradient-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-primary:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    background: white;
+    color: var(--color-neutral-800);
+    border-color: var(--color-neutral-200);
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background: var(--color-neutral-50);
+    border-color: var(--color-neutral-300);
+  }
+
+  .btn-secondary:active:not(:disabled) {
+    background: var(--color-neutral-100);
+  }
+
+  /* Ghost Button */
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-neutral-700);
+    border-color: transparent;
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    background: var(--color-neutral-100);
+    color: var(--color-neutral-900);
+  }
+
+  /* Outline Button */
+  .btn-outline {
+    background: transparent;
+    color: var(--color-primary-600);
+    border-color: var(--color-primary-500);
+  }
+
+  .btn-outline:hover:not(:disabled) {
+    background: var(--color-primary-50);
+    border-color: var(--color-primary-600);
+  }
+
+  /* Destructive Button */
+  .btn-destructive {
+    background: var(--color-error-500);
+    color: white;
+    border-color: transparent;
+  }
+
+  .btn-destructive:hover:not(:disabled) {
+    background: var(--color-error-600);
+  }
+
+  /* Icon Button */
+  .btn-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border-radius: var(--radius-lg);
+    background: white;
+    color: var(--color-neutral-700);
+    border-color: var(--color-neutral-200);
+  }
+
+  .btn-icon:hover:not(:disabled) {
+    background: var(--color-neutral-50);
+    border-color: var(--color-neutral-300);
+  }
+
+  .btn-icon.rounded-full {
+    border-radius: var(--radius-full);
+  }
+
+  /* Button Sizes */
+  .btn-sm {
+    font-size: var(--font-size-xs);
+    padding: 0.5rem 0.75rem;
+  }
+
+  .btn-lg {
+    font-size: var(--font-size-base);
+    padding: 0.875rem 1.5rem;
+  }
+</style>

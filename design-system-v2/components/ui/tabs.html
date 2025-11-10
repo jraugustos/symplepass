@@ -1,0 +1,500 @@
+<!--
+  TABS COMPONENT - shadcn/ui style adapted for Symplepass
+  Accessible tabs implementation with various styles
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../../tailwind.config.js"></script>
+  <link rel="stylesheet" href="../../globals.css">
+</head>
+<body class="p-8 bg-neutral-50">
+
+  <!-- Tabs Component Examples -->
+  <div class="space-y-12 max-w-4xl mx-auto">
+
+    <h2 class="text-2xl font-semibold font-geist">Tabs Component</h2>
+
+    <!-- Default Tabs -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Default Tabs</h3>
+
+      <div class="tabs" data-tabs>
+        <div class="tabs-list">
+          <button class="tabs-trigger tabs-trigger-active" data-tab="overview">
+            Visão Geral
+          </button>
+          <button class="tabs-trigger" data-tab="details">
+            Detalhes
+          </button>
+          <button class="tabs-trigger" data-tab="reviews">
+            Avaliações
+          </button>
+        </div>
+
+        <div class="tabs-content tabs-content-active" data-tab-content="overview">
+          <h4 class="text-lg font-semibold mb-3">Visão Geral do Evento</h4>
+          <p class="text-sm text-neutral-600">
+            O Rock in Rio é um dos maiores festivais de música do mundo, reunindo artistas internacionais
+            e nacionais em um evento único. Com múltiplos palcos e uma estrutura impressionante, o festival
+            oferece uma experiência inesquecível para os fãs de música.
+          </p>
+          <ul class="mt-4 space-y-2">
+            <li class="flex items-center gap-2 text-sm">
+              <svg class="w-4 h-4 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              7 palcos simultâneos
+            </li>
+            <li class="flex items-center gap-2 text-sm">
+              <svg class="w-4 h-4 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              Mais de 100 artistas
+            </li>
+            <li class="flex items-center gap-2 text-sm">
+              <svg class="w-4 h-4 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              Área de alimentação completa
+            </li>
+          </ul>
+        </div>
+
+        <div class="tabs-content" data-tab-content="details">
+          <h4 class="text-lg font-semibold mb-3">Detalhes do Evento</h4>
+          <div class="grid gap-4">
+            <div class="flex justify-between py-2 border-b border-neutral-200">
+              <span class="text-sm text-neutral-600">Data</span>
+              <span class="text-sm font-medium">2-11 de Setembro, 2024</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-neutral-200">
+              <span class="text-sm text-neutral-600">Local</span>
+              <span class="text-sm font-medium">Cidade do Rock, Rio de Janeiro</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-neutral-200">
+              <span class="text-sm text-neutral-600">Horário</span>
+              <span class="text-sm font-medium">16h às 04h</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-neutral-200">
+              <span class="text-sm text-neutral-600">Classificação</span>
+              <span class="text-sm font-medium">16 anos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabs-content" data-tab-content="reviews">
+          <h4 class="text-lg font-semibold mb-3">Avaliações</h4>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-semibold">
+                JA
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="font-medium text-sm">João Alves</span>
+                  <div class="flex gap-0.5">
+                    <svg class="w-4 h-4 fill-amber-400 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    <svg class="w-4 h-4 fill-amber-400 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    <svg class="w-4 h-4 fill-amber-400 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    <svg class="w-4 h-4 fill-amber-400 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    <svg class="w-4 h-4 fill-amber-400 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-sm text-neutral-600">Experiência incrível! A organização estava impecável e os shows foram sensacionais.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabs with Icons -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Tabs with Icons</h3>
+
+      <div class="tabs" data-tabs>
+        <div class="tabs-list">
+          <button class="tabs-trigger tabs-trigger-active" data-tab="tickets">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12h20"></path>
+              <path d="M10 12v8a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-8"></path>
+              <path d="M10 12V4a2 2 0 0 0-2-2h0a2 2 0 0 0-2 2v8"></path>
+              <path d="M14 12V4a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v8"></path>
+            </svg>
+            Ingressos
+          </button>
+          <button class="tabs-trigger" data-tab="location">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Localização
+          </button>
+          <button class="tabs-trigger" data-tab="schedule">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+              <line x1="16" x2="16" y1="2" y2="6"></line>
+              <line x1="8" x2="8" y1="2" y2="6"></line>
+              <line x1="3" x2="21" y1="10" y2="10"></line>
+            </svg>
+            Programação
+          </button>
+        </div>
+
+        <div class="tabs-content tabs-content-active" data-tab-content="tickets">
+          <h4 class="text-lg font-semibold mb-3">Tipos de Ingresso</h4>
+          <div class="grid gap-3">
+            <div class="p-4 border border-neutral-200 rounded-lg hover:border-orange-400 transition-colors cursor-pointer">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h5 class="font-medium">Pista</h5>
+                  <p class="text-sm text-neutral-600 mt-1">Acesso à área da pista</p>
+                </div>
+                <span class="text-lg font-semibold text-orange-600">R$ 350</span>
+              </div>
+            </div>
+            <div class="p-4 border border-neutral-200 rounded-lg hover:border-orange-400 transition-colors cursor-pointer">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h5 class="font-medium">Premium</h5>
+                  <p class="text-sm text-neutral-600 mt-1">Área VIP com open bar</p>
+                </div>
+                <span class="text-lg font-semibold text-orange-600">R$ 850</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabs-content" data-tab-content="location">
+          <h4 class="text-lg font-semibold mb-3">Local do Evento</h4>
+          <div class="bg-neutral-100 rounded-lg h-48 flex items-center justify-center">
+            <span class="text-neutral-500">[Mapa do local]</span>
+          </div>
+          <div class="mt-4">
+            <p class="text-sm font-medium">Cidade do Rock</p>
+            <p class="text-sm text-neutral-600">Av. Salvador Allende, 6555 - Barra da Tijuca</p>
+            <p class="text-sm text-neutral-600">Rio de Janeiro - RJ</p>
+          </div>
+        </div>
+
+        <div class="tabs-content" data-tab-content="schedule">
+          <h4 class="text-lg font-semibold mb-3">Programação Completa</h4>
+          <div class="space-y-3">
+            <div class="flex gap-4 p-3 bg-neutral-50 rounded-lg">
+              <span class="text-sm font-medium text-orange-600">18:00</span>
+              <div>
+                <p class="text-sm font-medium">Abertura dos Portões</p>
+                <p class="text-xs text-neutral-600">Entrada principal e VIP</p>
+              </div>
+            </div>
+            <div class="flex gap-4 p-3 bg-neutral-50 rounded-lg">
+              <span class="text-sm font-medium text-orange-600">19:00</span>
+              <div>
+                <p class="text-sm font-medium">Primeiro Show - Palco Mundo</p>
+                <p class="text-xs text-neutral-600">Banda nacional convidada</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vertical Tabs -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Vertical Tabs</h3>
+
+      <div class="tabs tabs-vertical" data-tabs>
+        <div class="tabs-list tabs-list-vertical">
+          <button class="tabs-trigger tabs-trigger-active" data-tab="profile">
+            Perfil
+          </button>
+          <button class="tabs-trigger" data-tab="security">
+            Segurança
+          </button>
+          <button class="tabs-trigger" data-tab="notifications">
+            Notificações
+          </button>
+          <button class="tabs-trigger" data-tab="billing">
+            Pagamento
+          </button>
+        </div>
+
+        <div class="tabs-content-wrapper">
+          <div class="tabs-content tabs-content-active" data-tab-content="profile">
+            <h4 class="text-lg font-semibold mb-3">Informações do Perfil</h4>
+            <form class="space-y-4 max-w-md">
+              <div>
+                <label class="text-sm font-medium text-neutral-700">Nome completo</label>
+                <input type="text" class="mt-1 w-full px-3 py-2 border border-neutral-300 rounded-lg" value="João Silva">
+              </div>
+              <div>
+                <label class="text-sm font-medium text-neutral-700">Email</label>
+                <input type="email" class="mt-1 w-full px-3 py-2 border border-neutral-300 rounded-lg" value="joao@example.com">
+              </div>
+              <button type="button" class="btn btn-primary">Salvar alterações</button>
+            </form>
+          </div>
+
+          <div class="tabs-content" data-tab-content="security">
+            <h4 class="text-lg font-semibold mb-3">Configurações de Segurança</h4>
+            <p class="text-sm text-neutral-600">Gerencie suas configurações de segurança e privacidade.</p>
+          </div>
+
+          <div class="tabs-content" data-tab-content="notifications">
+            <h4 class="text-lg font-semibold mb-3">Preferências de Notificação</h4>
+            <p class="text-sm text-neutral-600">Escolha como deseja receber notificações.</p>
+          </div>
+
+          <div class="tabs-content" data-tab-content="billing">
+            <h4 class="text-lg font-semibold mb-3">Informações de Pagamento</h4>
+            <p class="text-sm text-neutral-600">Gerencie seus métodos de pagamento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pills Style Tabs -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Pills Style</h3>
+
+      <div class="tabs" data-tabs>
+        <div class="tabs-list tabs-list-pills">
+          <button class="tabs-trigger tabs-trigger-pill tabs-trigger-active" data-tab="all">
+            Todos
+          </button>
+          <button class="tabs-trigger tabs-trigger-pill" data-tab="festivals">
+            Festivais
+          </button>
+          <button class="tabs-trigger tabs-trigger-pill" data-tab="shows">
+            Shows
+          </button>
+          <button class="tabs-trigger tabs-trigger-pill" data-tab="theater">
+            Teatro
+          </button>
+        </div>
+
+        <div class="tabs-content tabs-content-active" data-tab-content="all">
+          <p class="text-sm text-neutral-600">Exibindo todos os eventos disponíveis.</p>
+        </div>
+
+        <div class="tabs-content" data-tab-content="festivals">
+          <p class="text-sm text-neutral-600">Exibindo apenas festivais.</p>
+        </div>
+
+        <div class="tabs-content" data-tab-content="shows">
+          <p class="text-sm text-neutral-600">Exibindo apenas shows.</p>
+        </div>
+
+        <div class="tabs-content" data-tab-content="theater">
+          <p class="text-sm text-neutral-600">Exibindo apenas peças de teatro.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Component Styles -->
+  <style>
+    /* Tabs Container */
+    .tabs {
+      width: 100%;
+    }
+
+    /* Tabs List */
+    .tabs-list {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #EAEAEA;
+      margin-bottom: 1.5rem;
+      gap: 0.25rem;
+    }
+
+    /* Tabs Trigger */
+    .tabs-trigger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      color: #737373;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      cursor: pointer;
+      transition: all 200ms ease;
+      white-space: nowrap;
+    }
+
+    .tabs-trigger:hover {
+      color: #404040;
+    }
+
+    .tabs-trigger-active {
+      color: #FF7A00;
+      border-bottom-color: #FF7A00;
+    }
+
+    /* Tabs Content */
+    .tabs-content {
+      display: none;
+      animation: fadeIn 300ms ease;
+    }
+
+    .tabs-content-active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-0.5rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Vertical Tabs */
+    .tabs-vertical {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .tabs-list-vertical {
+      flex-direction: column;
+      align-items: flex-start;
+      border-bottom: none;
+      border-right: 1px solid #EAEAEA;
+      padding-right: 1rem;
+      min-width: 10rem;
+      margin-bottom: 0;
+    }
+
+    .tabs-list-vertical .tabs-trigger {
+      width: 100%;
+      justify-content: flex-start;
+      border-bottom: none;
+      border-left: 2px solid transparent;
+      margin-bottom: 0;
+      margin-left: -2px;
+      padding-left: 1rem;
+    }
+
+    .tabs-list-vertical .tabs-trigger-active {
+      border-left-color: #FF7A00;
+      background: linear-gradient(to right, rgba(255, 122, 0, 0.05), transparent);
+    }
+
+    .tabs-vertical .tabs-content-wrapper {
+      flex: 1;
+    }
+
+    /* Pills Style */
+    .tabs-list-pills {
+      border-bottom: none;
+      background: #F5F5F5;
+      padding: 0.25rem;
+      border-radius: 0.75rem;
+      gap: 0;
+    }
+
+    .tabs-trigger-pill {
+      border-bottom: none;
+      border-radius: 0.5rem;
+      margin-bottom: 0;
+      padding: 0.5rem 1rem;
+    }
+
+    .tabs-trigger-pill:hover {
+      background: #EAEAEA;
+    }
+
+    .tabs-trigger-pill.tabs-trigger-active {
+      background: white;
+      color: #FF7A00;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .tabs-vertical {
+        flex-direction: column;
+      }
+
+      .tabs-list-vertical {
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid #EAEAEA;
+        padding-right: 0;
+        padding-bottom: 0;
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      .tabs-list-vertical .tabs-trigger {
+        width: auto;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        margin-left: 0;
+        margin-bottom: -1px;
+      }
+
+      .tabs-list-vertical .tabs-trigger-active {
+        border-left-color: transparent;
+        border-bottom-color: #FF7A00;
+        background: transparent;
+      }
+    }
+  </style>
+
+  <!-- JavaScript for Tabs Functionality -->
+  <script>
+    // Tabs functionality
+    document.querySelectorAll('[data-tabs]').forEach(tabGroup => {
+      const triggers = tabGroup.querySelectorAll('.tabs-trigger');
+      const contents = tabGroup.querySelectorAll('.tabs-content');
+
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const tabId = trigger.getAttribute('data-tab');
+
+          // Update triggers
+          triggers.forEach(t => t.classList.remove('tabs-trigger-active'));
+          trigger.classList.add('tabs-trigger-active');
+
+          // Update contents
+          contents.forEach(content => {
+            if (content.getAttribute('data-tab-content') === tabId) {
+              content.classList.add('tabs-content-active');
+            } else {
+              content.classList.remove('tabs-content-active');
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

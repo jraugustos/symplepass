@@ -1,0 +1,546 @@
+<!--
+  CARD COMPONENT - shadcn/ui style adapted for Symplepass
+  Pixel-perfect match with HTML event cards
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../../tailwind.config.js"></script>
+  <link rel="stylesheet" href="../../globals.css">
+</head>
+<body class="p-8 bg-neutral-50">
+
+  <div class="max-w-7xl mx-auto space-y-12">
+
+    <h2 class="text-2xl font-semibold font-geist">Card Component</h2>
+
+    <!-- Basic Card -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Basic Card</h3>
+      <div class="max-w-md">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Card Title</h4>
+            <p class="card-description">Card description goes here.</p>
+          </div>
+          <div class="card-content">
+            <p>This is the card content area where you can place any content.</p>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-secondary w-full">Action</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Card - Grid View (Matching home.html) -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Event Cards - Grid View</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Event Card 1 -->
+        <div class="card-event group">
+          <div class="relative h-56">
+            <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80"
+                 alt="Corrida das Estrelas"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-lg font-semibold tracking-tight font-geist">Corrida das Estrelas 10K</p>
+                <p class="text-sm text-neutral-600 font-geist">São Paulo, SP • Corrida de rua</p>
+              </div>
+              <a href="#" class="inline-flex items-center gap-1.5 text-xs text-white bg-gradient-to-br from-orange-400 to-orange-600 rounded-full px-3 py-1.5 hover:opacity-95 transition">
+                Inscrever-se
+              </a>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1 bg-neutral-100">10K</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1 bg-neutral-100">Sábado</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1 bg-neutral-100">08:30</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="card-event group">
+          <div class="relative h-56">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&q=80"
+                 alt="Beach Tennis"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-lg font-semibold tracking-tight font-geist">Beach Tennis Open</p>
+                <p class="text-sm text-neutral-600 font-geist">Santos, SP • Beach sports</p>
+              </div>
+              <a href="#" class="inline-flex items-center gap-1.5 text-xs text-white bg-gradient-to-br from-orange-400 to-orange-600 rounded-full px-3 py-1.5 hover:opacity-95 transition">
+                Inscrever-se
+              </a>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1 bg-neutral-100">Duplas</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1 bg-neutral-100">Domingo</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1 bg-neutral-100">14:00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="card-event group">
+          <div class="relative h-56">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80"
+                 alt="Triathlon"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-lg font-semibold tracking-tight font-geist">Triathlon Sprint 2025</p>
+                <p class="text-sm text-neutral-600 font-geist">Campinas, SP • Triathlon</p>
+              </div>
+              <a href="#" class="inline-flex items-center gap-1.5 text-xs text-white bg-gradient-to-br from-orange-400 to-orange-600 rounded-full px-3 py-1.5 hover:opacity-95 transition">
+                Inscrever-se
+              </a>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1 bg-neutral-100">Sprint</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1 bg-neutral-100">Sábado</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1 bg-neutral-100">07:00</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Event Card - List View (Matching events-list.html) -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Event Card - List View</h3>
+      <div class="max-w-4xl space-y-4">
+
+        <!-- List Card 1 -->
+        <div class="card-event-list group">
+          <div class="relative h-48">
+            <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80"
+                 alt="Street Run"
+                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t to-transparent from-black/60 via-black/0"></div>
+            <div class="absolute top-4 left-4 flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full backdrop-blur border px-2.5 py-1 text-xs font-geist bg-black/40 border-white/10 text-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <path d="m9 11 3 3L22 4"></path>
+                </svg>
+                Competição
+              </span>
+            </div>
+            <div class="absolute bottom-4 right-4">
+              <span class="text-xs backdrop-blur border rounded-full px-2 py-1 font-geist text-white/90 bg-black/40 border-white/10">
+                14 Abr 2025
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-xl font-semibold tracking-tight font-geist">Street Run 10K</h3>
+              <span class="inline-flex items-center gap-1 text-xs font-geist text-neutral-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Rio de Janeiro, RJ
+              </span>
+            </div>
+            <p class="text-sm font-geist mb-4 text-neutral-600">
+              Prova de rua com altimetria moderada passando pelos principais pontos turísticos da cidade maravilhosa.
+              Hidratação a cada 2km e medalha finisher para todos os participantes.
+            </p>
+            <div class="flex items-center justify-between text-xs mb-4 text-neutral-500">
+              <span class="font-geist inline-flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 8c0 4.5-6 9-6 9s-6-4.5-6-9a6 6 0 0 1 12 0"></path>
+                  <circle cx="12" cy="8" r="2"></circle>
+                  <path d="M8.835 14H5a1 1 0 0 0-.9.7l-2 6c-.1.1-.1.2-.1.3 0 .6.4 1 1 1h18c.6 0 1-.4 1-1 0-.1 0-.2-.1-.3l-2-6a1 1 0 0 0-.9-.7h-3.835"></path>
+                </svg>
+                a partir de R$ 120
+              </span>
+              <span class="font-geist">Presencial</span>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs border rounded-full px-2 py-1 font-geist bg-neutral-100 text-neutral-700 border-neutral-200">
+                Corrida
+              </span>
+              <span class="text-xs border rounded-full px-2 py-1 font-geist bg-neutral-100 text-neutral-700 border-neutral-200">
+                10K
+              </span>
+              <span class="text-xs border rounded-full px-2 py-1 font-geist bg-neutral-100 text-neutral-700 border-neutral-200">
+                Medalha
+              </span>
+            </div>
+            <button class="w-full inline-flex items-center justify-center gap-2 text-sm font-medium border rounded-full px-4 py-2.5 transition font-geist text-neutral-900 bg-white hover:bg-neutral-50 border-neutral-200">
+              Ver detalhes
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Info Cards (Smaller cards) -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Info Cards</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl">
+
+        <!-- Info Card 1 -->
+        <div class="card-info">
+          <div class="card-info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="card-info-content">
+            <p class="card-info-label">Local</p>
+            <p class="card-info-value">Parque Ibirapuera</p>
+          </div>
+        </div>
+
+        <!-- Info Card 2 -->
+        <div class="card-info">
+          <div class="card-info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v4"></path>
+              <path d="M16 2v4"></path>
+              <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+              <path d="M3 10h18"></path>
+            </svg>
+          </div>
+          <div class="card-info-content">
+            <p class="card-info-label">Data</p>
+            <p class="card-info-value">15 Mar 2025</p>
+          </div>
+        </div>
+
+        <!-- Info Card 3 -->
+        <div class="card-info">
+          <div class="card-info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 6v6l4 2"></path>
+            </svg>
+          </div>
+          <div class="card-info-content">
+            <p class="card-info-label">Horário</p>
+            <p class="card-info-value">07:00</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Status Cards -->
+    <section>
+      <h3 class="text-lg font-medium mb-4 font-geist">Status Cards</h3>
+      <div class="max-w-2xl space-y-4">
+
+        <!-- Success Status Card -->
+        <div class="card-status">
+          <div class="card-status-header">
+            <div class="card-status-icon bg-emerald-500/10 text-emerald-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+            </div>
+            <div class="card-status-content">
+              <p class="card-status-title">Barbie Run 2025</p>
+              <p class="card-status-subtitle">21km • São Paulo, SP</p>
+              <p class="card-status-date">15 de março de 2025 • 07:00</p>
+            </div>
+          </div>
+          <div class="card-status-divider"></div>
+          <div class="card-status-footer">
+            <div class="card-status-info">
+              <span class="card-status-label">Status</span>
+              <span class="badge badge-success">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+                Pago
+              </span>
+            </div>
+            <div class="card-status-info">
+              <span class="card-status-label">Valor</span>
+              <span class="card-status-value">R$ 70,00</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Component Styles -->
+  <style>
+    /* Base Card */
+    .card {
+      background: white;
+      border: 1px solid #EAEAEA;
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 300ms ease-out;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.1);
+      border-color: #D4D4D4;
+    }
+
+    .card-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid #EAEAEA;
+    }
+
+    .card-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #171717;
+      font-family: 'Geist', sans-serif;
+    }
+
+    .card-description {
+      font-size: 0.875rem;
+      color: #737373;
+      margin-top: 0.25rem;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+      font-size: 0.875rem;
+      color: #525252;
+    }
+
+    .card-footer {
+      padding: 1.5rem;
+      border-top: 1px solid #EAEAEA;
+    }
+
+    /* Event Card - Grid */
+    .card-event {
+      background: white;
+      border: 1px solid #EAEAEA;
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 300ms ease-out;
+    }
+
+    .card-event:hover {
+      background: #FAFAFA;
+      box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.1);
+      border-color: #D4D4D4;
+      transform: translateY(-2px);
+    }
+
+    /* Event Card - List */
+    .card-event-list {
+      background: white;
+      border: 1px solid #EAEAEA;
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 300ms ease-out;
+    }
+
+    .card-event-list:hover {
+      background: #FAFAFA;
+      box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.1);
+      border-color: #D4D4D4;
+    }
+
+    /* Info Card */
+    .card-info {
+      background: white;
+      border: 1px solid #EAEAEA;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all 250ms ease-out;
+    }
+
+    .card-info:hover {
+      border-color: #D4D4D4;
+      box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.08);
+    }
+
+    .card-info-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: #F5F5F5;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #525252;
+    }
+
+    .card-info-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .card-info-label {
+      font-size: 0.875rem;
+      color: #737373;
+      margin-bottom: 0.125rem;
+    }
+
+    .card-info-value {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #171717;
+      font-family: 'Geist', sans-serif;
+    }
+
+    /* Status Card */
+    .card-status {
+      background: white;
+      border: 1px solid #EAEAEA;
+      border-radius: 1rem;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .card-status-header {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .card-status-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-status-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .card-status-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #171717;
+      margin-bottom: 0.25rem;
+      font-family: 'Geist', sans-serif;
+    }
+
+    .card-status-subtitle,
+    .card-status-date {
+      font-size: 0.875rem;
+      color: #525252;
+    }
+
+    .card-status-divider {
+      height: 1px;
+      background: #EAEAEA;
+    }
+
+    .card-status-footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .card-status-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .card-status-label {
+      font-size: 0.875rem;
+      color: #737373;
+    }
+
+    .card-status-value {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #171717;
+      font-family: 'Geist', sans-serif;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.625rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-radius: 9999px;
+      border: 1px solid;
+    }
+
+    .badge-success {
+      background: rgba(52, 199, 89, 0.1);
+      color: #059669;
+      border-color: rgba(52, 199, 89, 0.2);
+    }
+
+    .badge-warning {
+      background: rgba(245, 158, 11, 0.1);
+      color: #b45309;
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    /* Button Styles (imported from button component) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      font-size: 0.875rem;
+      font-weight: 500;
+      font-family: 'Geist', 'Inter', sans-serif;
+      border-radius: 9999px;
+      padding: 0.5rem 1rem;
+      transition: all 250ms ease-out;
+      cursor: pointer;
+      outline: none;
+      border: 1px solid transparent;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #404040;
+      border-color: #EAEAEA;
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background: #FAFAFA;
+      border-color: #D4D4D4;
+    }
+  </style>
+
+</body>
+</html>

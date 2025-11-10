@@ -1,0 +1,366 @@
+<!--
+  EVENT CARD MOLECULE - Symplepass Design System
+  Card de evento com imagem, badges, título, descrição e CTA
+  Pixel-perfect baseado nos HTMLs originais
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Card - Molecule</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../../tailwind.config.js"></script>
+  <link rel="stylesheet" href="../../globals.css">
+</head>
+<body class="bg-neutral-50">
+
+  <div class="space-y-8">
+
+    <!-- Event Card Variation 1: Compact (Home) -->
+    <section class="p-6">
+      <h3 class="text-lg font-semibold mb-4">Event Card Compacto (Home)</h3>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <!-- Card 1: Default State -->
+        <div class="group overflow-hidden hover:bg-neutral-50 transition-colors bg-white/50 border-neutral-200 border rounded-2xl backdrop-blur">
+
+          <!-- Image with gradient overlay -->
+          <div class="relative h-56">
+            <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80"
+                 alt="Corrida das Estrelas 10K - São Paulo"
+                 class="transition-transform duration-500 group-hover:scale-105 w-full h-full object-cover">
+            <div class="bg-gradient-to-t from-black/20 via-black/0 to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
+          </div>
+
+          <!-- Content -->
+          <div class="pt-5 pr-5 pb-5 pl-5">
+            <div class="flex items-center justify-between">
+              <div class="">
+                <p class="text-lg font-semibold tracking-tight font-geist">Corrida das Estrelas 10K</p>
+                <p class="text-sm text-neutral-600 font-geist">São Paulo, SP • Corrida de rua</p>
+              </div>
+
+              <!-- CTA Button -->
+              <a href="#" class="inline-flex items-center gap-1.5 hover:bg-neutral-100 transition text-xs text-gray-50 bg-gradient-to-br from-orange-400 to-orange-600 border-0 rounded-full pt-1.5 pr-3 pb-1.5 pl-3">
+                Inscrever-se
+              </a>
+            </div>
+
+            <!-- Tags/metadata -->
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1">10K</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1">Dom • 07:00</span>
+              <span class="text-xs text-neutral-700 border-neutral-200 border rounded-full pt-1 pr-2 pb-1 pl-2">Largadas por pelotão</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: With Badge -->
+        <div class="group overflow-hidden hover:bg-neutral-50 transition-colors bg-white/50 border-neutral-200 border rounded-2xl backdrop-blur">
+
+          <!-- Image with badge overlay -->
+          <div class="relative h-56">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80"
+                 alt="CrossFit Games Regional"
+                 class="transition-transform duration-500 group-hover:scale-105 w-full h-full object-cover">
+            <div class="bg-gradient-to-t from-black/20 via-black/0 to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
+
+            <!-- Badge overlay -->
+            <div class="absolute top-4 left-4">
+              <span class="inline-flex items-center gap-1.5 rounded-full backdrop-blur border px-2.5 py-1 text-xs font-geist bg-amber-500/90 border-amber-400 text-white">
+                Últimas vagas
+              </span>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="pt-5 pr-5 pb-5 pl-5">
+            <div class="flex items-center justify-between">
+              <div class="">
+                <p class="text-lg font-semibold tracking-tight font-geist">CrossFit Games Regional</p>
+                <p class="text-sm text-neutral-600 font-geist">Rio de Janeiro, RJ • CrossFit</p>
+              </div>
+
+              <!-- CTA Button -->
+              <a href="#" class="inline-flex items-center gap-1.5 hover:bg-neutral-100 transition text-xs text-gray-50 bg-gradient-to-br from-orange-400 to-orange-600 border-0 rounded-full pt-1.5 pr-3 pb-1.5 pl-3">
+                Ver detalhes
+              </a>
+            </div>
+
+            <!-- Tags/metadata -->
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1">Competição</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1">3 dias</span>
+              <span class="text-xs font-medium text-orange-600 border border-orange-200 bg-orange-50 rounded-full px-2 py-1">R$ 350</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Sold Out State -->
+        <div class="group overflow-hidden hover:bg-neutral-50 transition-colors bg-white/50 border-neutral-200 border rounded-2xl backdrop-blur opacity-70">
+
+          <!-- Image with overlay -->
+          <div class="relative h-56">
+            <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=800&q=80"
+                 alt="Beach Tennis Open"
+                 class="transition-transform duration-500 group-hover:scale-105 w-full h-full object-cover">
+            <div class="bg-gradient-to-t from-black/40 via-black/20 to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
+
+            <!-- Sold out badge -->
+            <div class="absolute top-4 left-4">
+              <span class="inline-flex items-center gap-1.5 rounded-full backdrop-blur border px-2.5 py-1 text-xs font-geist bg-red-500/90 border-red-400 text-white">
+                Esgotado
+              </span>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="pt-5 pr-5 pb-5 pl-5">
+            <div class="flex items-center justify-between">
+              <div class="">
+                <p class="text-lg font-semibold tracking-tight font-geist">Beach Tennis Open</p>
+                <p class="text-sm text-neutral-600 font-geist">Florianópolis, SC • Beach Tennis</p>
+              </div>
+
+              <!-- Disabled Button -->
+              <button disabled class="inline-flex items-center gap-1.5 transition text-xs text-neutral-500 bg-neutral-200 border-0 rounded-full pt-1.5 pr-3 pb-1.5 pl-3 cursor-not-allowed">
+                Esgotado
+              </button>
+            </div>
+
+            <!-- Tags/metadata -->
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1">Duplas</span>
+              <span class="text-xs text-neutral-700 border border-neutral-200 rounded-full px-2 py-1">2 dias</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Event Card Variation 2: Expanded (Events List) -->
+    <section class="p-6">
+      <h3 class="text-lg font-semibold mb-4">Event Card Expandido (Events List)</h3>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <!-- Expanded Card 1 -->
+        <div class="group transition-all duration-300 bg-white border rounded-2xl overflow-hidden backdrop-blur hover:bg-neutral-50 border-neutral-200">
+
+          <!-- Image with badges -->
+          <div class="relative h-48">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80"
+                 alt="Street Run 10K"
+                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t to-transparent from-black/60 via-black/0"></div>
+
+            <!-- Category badge -->
+            <div class="absolute top-4 left-4 flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full backdrop-blur border px-2.5 py-1 text-xs font-geist bg-black/40 border-white/10 text-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                Competição
+              </span>
+            </div>
+
+            <!-- Date badge -->
+            <div class="absolute bottom-4 right-4">
+              <span class="text-xs backdrop-blur border rounded-full px-2 py-1 font-geist text-white/90 bg-black/40 border-white/10">
+                14 Abr 2025
+              </span>
+            </div>
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-xl font-semibold tracking-tight font-geist">Street Run 10K</h3>
+
+              <!-- Location badge -->
+              <span class="inline-flex items-center gap-1 text-xs font-geist text-neutral-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Rio de Janeiro, RJ
+              </span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-sm font-geist mb-4 text-neutral-600">
+              Prova de rua com altimetria moderada, kits exclusivos e premiação por categorias.
+            </p>
+
+            <!-- Metadata row -->
+            <div class="flex items-center justify-between text-xs mb-4 text-neutral-500">
+              <span class="font-geist inline-flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-dollar-sign">
+                  <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path>
+                  <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+                  <path d="M12 18V6"></path>
+                </svg>
+                a partir de R$ 120
+              </span>
+              <span class="font-geist">Presencial</span>
+            </div>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs border rounded-full px-2 py-1 font-geist bg-neutral-100 text-neutral-700 border-neutral-200">Corrida</span>
+              <span class="text-xs border rounded-full px-2 py-1 font-geist bg-neutral-100 text-neutral-700 border-neutral-200">10 km</span>
+              <span class="text-xs border rounded-full px-2 py-1 font-geist bg-emerald-50 text-emerald-700 border-emerald-200">Vagas disponíveis</span>
+            </div>
+
+            <!-- CTA Button -->
+            <button class="w-full inline-flex items-center justify-center gap-2 text-sm font-medium border rounded-full px-4 py-2.5 transition font-geist text-neutral-900 bg-white hover:bg-neutral-50 border-neutral-200">
+              Ver detalhes
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Expanded Card 2: Virtual Event -->
+        <div class="group transition-all duration-300 bg-white border rounded-2xl overflow-hidden backdrop-blur hover:bg-neutral-50 border-neutral-200">
+
+          <!-- Image with badges -->
+          <div class="relative h-48">
+            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&q=80"
+                 alt="Virtual Marathon"
+                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t to-transparent from-black/60 via-black/0"></div>
+
+            <!-- Virtual badge -->
+            <div class="absolute top-4 left-4 flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full backdrop-blur border px-2.5 py-1 text-xs font-geist bg-purple-500/90 border-purple-400 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wifi">
+                  <path d="M5 13a10 10 0 0 1 14 0"></path>
+                  <path d="M8.5 16.5a5 5 0 0 1 7 0"></path>
+                  <path d="M2 8.82a15 15 0 0 1 20 0"></path>
+                  <line x1="12" x2="12.01" y1="20" y2="20"></line>
+                </svg>
+                Virtual
+              </span>
+            </div>
+
+            <!-- Duration badge -->
+            <div class="absolute bottom-4 right-4">
+              <span class="text-xs backdrop-blur border rounded-full px-2 py-1 font-geist text-white/90 bg-black/40 border-white/10">
+                01 Mai - 31 Mai
+              </span>
+            </div>
+          </div>
+
+          <!-- Card Content -->
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-xl font-semibold tracking-tight font-geist">Virtual Marathon Challenge</h3>
+
+              <!-- Online badge -->
+              <span class="inline-flex items-center gap-1 text-xs font-geist text-purple-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" x2="22" y1="12" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                Online
+              </span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-sm font-geist mb-4 text-neutral-600">
+              Complete 42.195 km no seu ritmo, onde e quando quiser durante o mês de maio. Medalha exclusiva inclusa.
+            </p>
+
+            <!-- Metadata row -->
+            <div class="flex items-center justify-between text-xs mb-4 text-neutral-500">
+              <span class="font-geist inline-flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-dollar-sign">
+                  <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path>
+                  <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+                  <path d="M12 18V6"></path>
+                </svg>
+                R$ 89,90
+              </span>
+              <span class="font-geist inline-flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                1.2k inscritos
+              </span>
+            </div>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs border rounded-full px-2 py-1 font-geist bg-purple-50 text-purple-700 border-purple-200">Virtual</span>
+              <span class="text-xs border rounded-full px-2 py-1 font-geist bg-neutral-100 text-neutral-700 border-neutral-200">Maratona</span>
+              <span class="text-xs border rounded-full px-2 py-1 font-geist bg-neutral-100 text-neutral-700 border-neutral-200">30 dias</span>
+            </div>
+
+            <!-- CTA Button -->
+            <button class="w-full inline-flex items-center justify-center gap-2 text-sm font-medium border rounded-full px-4 py-2.5 transition font-geist text-white bg-gradient-to-br from-orange-400 to-orange-600 hover:opacity-90">
+              Inscrever-se agora
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Code Examples -->
+    <section class="px-6 pb-8">
+      <h3 class="text-lg font-semibold mb-4">Estrutura e Estados</h3>
+
+      <div class="grid gap-4">
+        <div class="bg-white rounded-lg border border-neutral-200 p-4">
+          <h4 class="font-medium mb-2">Componentes do Card</h4>
+          <ul class="text-sm space-y-1 text-neutral-600">
+            <li>• <strong>Container:</strong> <code class="bg-neutral-100 px-2 py-0.5 rounded">group overflow-hidden rounded-2xl</code></li>
+            <li>• <strong>Image:</strong> <code class="bg-neutral-100 px-2 py-0.5 rounded">group-hover:scale-105 transition-transform</code></li>
+            <li>• <strong>Gradient:</strong> <code class="bg-neutral-100 px-2 py-0.5 rounded">bg-gradient-to-t from-black/20</code></li>
+            <li>• <strong>Badges:</strong> Posição absoluta com backdrop-blur</li>
+            <li>• <strong>Content:</strong> Padding uniforme, flex layout</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg border border-neutral-200 p-4">
+          <h4 class="font-medium mb-2">Estados do Card</h4>
+          <ul class="text-sm space-y-1 text-neutral-600">
+            <li>• <strong>Default:</strong> Background white/50, border neutral-200</li>
+            <li>• <strong>Hover:</strong> <code class="bg-neutral-100 px-2 py-0.5 rounded">hover:bg-neutral-50</code>, image scale 105</li>
+            <li>• <strong>Disabled/Esgotado:</strong> <code class="bg-neutral-100 px-2 py-0.5 rounded">opacity-70</code>, botão desabilitado</li>
+            <li>• <strong>Loading:</strong> Skeleton com animate-pulse</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg border border-neutral-200 p-4">
+          <h4 class="font-medium mb-2">Badges e Status</h4>
+          <ul class="text-sm space-y-1 text-neutral-600">
+            <li>• <strong>Disponível:</strong> Verde (emerald-50/700)</li>
+            <li>• <strong>Últimas vagas:</strong> Amarelo (amber-500/90)</li>
+            <li>• <strong>Esgotado:</strong> Vermelho (red-500/90)</li>
+            <li>• <strong>Virtual:</strong> Roxo (purple-500/90)</li>
+            <li>• <strong>Competição:</strong> Com ícone zap</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

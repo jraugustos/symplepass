@@ -1,0 +1,305 @@
+<!--
+  INFO CARD MOLECULE - Symplepass Design System
+  Card informativo com ícone, título e descrição
+  Pixel-perfect baseado nos HTMLs originais
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info Card - Molecule</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../../tailwind.config.js"></script>
+  <link rel="stylesheet" href="../../globals.css">
+</head>
+<body class="bg-neutral-50">
+
+  <div class="space-y-8">
+
+    <!-- Info Card Variation 1: Club Benefits (Home) -->
+    <section class="p-6">
+      <h3 class="text-lg font-semibold mb-4">Info Cards - Clube de Benefícios (Home)</h3>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <!-- Benefit Card 1 -->
+        <div class="group sm:p-6 hover:bg-neutral-50 transition-colors rounded-xl pt-4 pr-4 pb-4 pl-4">
+          <div class="flex gap-3 items-start">
+            <!-- Icon container -->
+            <span class="inline-flex items-center justify-center sm:w-12 bg-white w-12 h-10 border-neutral-200 border rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag text-neutral-700">
+                <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path>
+                <circle cx="7" cy="7" r="1"></circle>
+              </svg>
+            </span>
+            <!-- Text content -->
+            <div class="">
+              <p class="font-medium tracking-tight font-geist">Desconto em estabelecimentos</p>
+              <p class="text-sm text-neutral-600 font-geist">Economize em lojas esportivas, nutrição e parceiros.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefit Card 2 -->
+        <div class="group sm:p-6 hover:bg-neutral-50 transition-colors rounded-xl pt-4 pr-4 pb-4 pl-4">
+          <div class="flex gap-3 items-start">
+            <!-- Icon container -->
+            <span class="inline-flex items-center justify-center sm:w-12 bg-white w-12 h-10 border-neutral-200 border rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap text-neutral-700">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </span>
+            <!-- Text content -->
+            <div class="">
+              <p class="font-medium tracking-tight font-geist">Inscrições antecipadas</p>
+              <p class="text-sm text-neutral-600 font-geist">Acesso exclusivo às melhores corridas antes de todos.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefit Card 3 -->
+        <div class="group sm:p-6 hover:bg-neutral-50 transition-colors rounded-xl pt-4 pr-4 pb-4 pl-4">
+          <div class="flex gap-3 items-start">
+            <!-- Icon container -->
+            <span class="inline-flex items-center justify-center sm:w-12 bg-white w-12 h-10 border-neutral-200 border rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar text-neutral-700">
+                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                <path d="M16 2v4"></path>
+                <path d="M8 2v4"></path>
+                <path d="M3 10h18"></path>
+              </svg>
+            </span>
+            <!-- Text content -->
+            <div class="">
+              <p class="font-medium tracking-tight font-geist">Calendário personalizado</p>
+              <p class="text-sm text-neutral-600 font-geist">Receba sugestões de eventos baseadas no seu perfil.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Info Card Variation 2: Event Details (Event Page) -->
+    <section class="p-6">
+      <h3 class="text-lg font-semibold mb-4">Info Cards - Detalhes do Evento (Event Page)</h3>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <!-- Location Card -->
+        <div class="rounded-xl border border-neutral-200 bg-white p-4">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin text-neutral-600">
+              <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <p class="font-medium tracking-tight font-geist">Local</p>
+          </div>
+          <p class="text-sm mt-1 text-neutral-600 font-geist">Parque Ibirapuera</p>
+        </div>
+
+        <!-- Date Card -->
+        <div class="rounded-xl border border-neutral-200 bg-white p-4">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar text-neutral-600">
+              <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+              <path d="M16 2v4"></path>
+              <path d="M8 2v4"></path>
+              <path d="M3 10h18"></path>
+            </svg>
+            <p class="font-medium tracking-tight font-geist">Data</p>
+          </div>
+          <p class="text-sm mt-1 text-neutral-600 font-geist">14 de Abril, 2025</p>
+        </div>
+
+        <!-- Time Card -->
+        <div class="rounded-xl border border-neutral-200 bg-white p-4">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock text-neutral-600">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <p class="font-medium tracking-tight font-geist">Horário</p>
+          </div>
+          <p class="text-sm mt-1 text-neutral-600 font-geist">07:00</p>
+        </div>
+
+        <!-- Distance Card -->
+        <div class="rounded-xl border border-neutral-200 bg-white p-4">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-route text-neutral-600">
+              <circle cx="6" cy="19" r="3"></circle>
+              <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path>
+              <circle cx="18" cy="5" r="3"></circle>
+            </svg>
+            <p class="font-medium tracking-tight font-geist">Percurso</p>
+          </div>
+          <p class="text-sm mt-1 text-neutral-600 font-geist">10 km</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Info Card Variation 3: Feature Highlights -->
+    <section class="p-6">
+      <h3 class="text-lg font-semibold mb-4">Info Cards - Destaques de Recursos</h3>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <!-- Feature Card with Icon Background -->
+        <div class="bg-white rounded-xl border border-neutral-200 p-6 hover:shadow-sm transition-shadow">
+          <div class="flex gap-4 items-start">
+            <!-- Icon with gradient background -->
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trophy">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                <path d="M4 22h16"></path>
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+              </svg>
+            </div>
+            <!-- Content -->
+            <div>
+              <h4 class="font-semibold text-neutral-900 font-geist">Premiação especial</h4>
+              <p class="text-sm text-neutral-600 mt-1 font-geist">Troféus e medalhas para os 3 primeiros colocados de cada categoria.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Card with Icon Background -->
+        <div class="bg-white rounded-xl border border-neutral-200 p-6 hover:shadow-sm transition-shadow">
+          <div class="flex gap-4 items-start">
+            <!-- Icon with gradient background -->
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+              </svg>
+            </div>
+            <!-- Content -->
+            <div>
+              <h4 class="font-semibold text-neutral-900 font-geist">Hidratação garantida</h4>
+              <p class="text-sm text-neutral-600 mt-1 font-geist">Pontos de água a cada 2,5 km e isotônico disponível.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Info Card Variation 4: Stats Cards -->
+    <section class="p-6">
+      <h3 class="text-lg font-semibold mb-4">Info Cards - Estatísticas</h3>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <!-- Stat Card 1 -->
+        <div class="bg-white rounded-xl border border-neutral-200 p-4 text-center hover:border-orange-300 transition-colors">
+          <div class="text-3xl font-bold text-orange-600 font-geist">1.5k</div>
+          <p class="text-sm text-neutral-600 mt-1 font-geist">Participantes</p>
+        </div>
+
+        <!-- Stat Card 2 -->
+        <div class="bg-white rounded-xl border border-neutral-200 p-4 text-center hover:border-orange-300 transition-colors">
+          <div class="text-3xl font-bold text-orange-600 font-geist">10km</div>
+          <p class="text-sm text-neutral-600 mt-1 font-geist">Percurso</p>
+        </div>
+
+        <!-- Stat Card 3 -->
+        <div class="bg-white rounded-xl border border-neutral-200 p-4 text-center hover:border-orange-300 transition-colors">
+          <div class="text-3xl font-bold text-orange-600 font-geist">R$ 89</div>
+          <p class="text-sm text-neutral-600 mt-1 font-geist">1º Lote</p>
+        </div>
+
+        <!-- Stat Card 4 -->
+        <div class="bg-white rounded-xl border border-neutral-200 p-4 text-center hover:border-orange-300 transition-colors">
+          <div class="text-3xl font-bold text-orange-600 font-geist">85%</div>
+          <p class="text-sm text-neutral-600 mt-1 font-geist">Vagas preenchidas</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Info Card Variation 5: List Style -->
+    <section class="p-6">
+      <h3 class="text-lg font-semibold mb-4">Info Cards - Estilo Lista</h3>
+
+      <div class="bg-white rounded-xl border border-neutral-200 p-6 space-y-4">
+
+        <!-- List Item 1 -->
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-600">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm font-medium font-geist">Kit do atleta incluso</p>
+            <p class="text-xs text-neutral-600 font-geist">Camiseta, número de peito e chip</p>
+          </div>
+        </div>
+
+        <!-- List Item 2 -->
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-600">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm font-medium font-geist">Medalha de participação</p>
+            <p class="text-xs text-neutral-600 font-geist">Para todos que completarem a prova</p>
+          </div>
+        </div>
+
+        <!-- List Item 3 -->
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-green-600">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm font-medium font-geist">Seguro atleta</p>
+            <p class="text-xs text-neutral-600 font-geist">Cobertura completa durante o evento</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Code Examples -->
+    <section class="px-6 pb-8">
+      <h3 class="text-lg font-semibold mb-4">Estrutura e Variações</h3>
+
+      <div class="grid gap-4">
+        <div class="bg-white rounded-lg border border-neutral-200 p-4">
+          <h4 class="font-medium mb-2">Estrutura Base</h4>
+          <ul class="text-sm space-y-1 text-neutral-600">
+            <li>• Layout: <code class="bg-neutral-100 px-2 py-0.5 rounded">flex gap-3 items-start</code></li>
+            <li>• Icon container: <code class="bg-neutral-100 px-2 py-0.5 rounded">w-12 h-10 rounded-lg border</code></li>
+            <li>• Typography: <code class="bg-neutral-100 px-2 py-0.5 rounded">font-medium tracking-tight</code></li>
+            <li>• Description: <code class="bg-neutral-100 px-2 py-0.5 rounded">text-sm text-neutral-600</code></li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg border border-neutral-200 p-4">
+          <h4 class="font-medium mb-2">Variações</h4>
+          <ul class="text-sm space-y-1 text-neutral-600">
+            <li>• <strong>Benefit Cards:</strong> Com hover bg-neutral-50</li>
+            <li>• <strong>Event Details:</strong> Compactos com borda</li>
+            <li>• <strong>Feature Cards:</strong> Icon com gradient background</li>
+            <li>• <strong>Stats Cards:</strong> Centralizado com números grandes</li>
+            <li>• <strong>List Style:</strong> Com checkmarks verdes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

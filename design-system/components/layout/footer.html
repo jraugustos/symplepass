@@ -1,0 +1,264 @@
+<!--
+  SYMPLEPASS FOOTER COMPONENT
+  Rodapé do site com links e informações
+-->
+
+<footer class="site-footer">
+  <div class="container-custom">
+    <div class="footer-content">
+      <!-- Brand Column -->
+      <div class="footer-column">
+        <img src="/assets/images/logo-symplepass.svg" alt="Symplepass" class="footer-logo">
+        <p class="footer-description">
+          Encontre e participe dos melhores eventos esportivos perto de você.
+        </p>
+        <form class="footer-newsletter">
+          <input
+            type="email"
+            placeholder="Seu e-mail"
+            class="footer-newsletter-input"
+          >
+          <button type="submit" class="btn-secondary btn-sm">
+            Assinar
+          </button>
+        </form>
+        <p class="footer-newsletter-note">Sem spam. Cancele quando quiser.</p>
+      </div>
+
+      <!-- Eventos Column -->
+      <div class="footer-column">
+        <h3 class="footer-title">Eventos</h3>
+        <nav class="footer-links">
+          <a href="/eventos/corrida" class="footer-link">Corrida de rua</a>
+          <a href="/eventos/cross-training" class="footer-link">Cross training</a>
+          <a href="/eventos/beach-tennis" class="footer-link">Beach tennis</a>
+          <a href="/eventos/ciclismo" class="footer-link">Ciclismo</a>
+          <a href="/eventos" class="footer-link footer-link-highlight">
+            Ver agenda
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v4"></path>
+              <path d="M16 2v4"></path>
+              <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+              <path d="M3 10h18"></path>
+            </svg>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Recursos Column -->
+      <div class="footer-column">
+        <h3 class="footer-title">Recursos</h3>
+        <nav class="footer-links">
+          <a href="/como-funciona" class="footer-link">Como funciona</a>
+          <a href="/guia" class="footer-link">Guia do atleta</a>
+          <a href="/faq" class="footer-link">FAQ</a>
+          <a href="/suporte" class="footer-link">Suporte</a>
+        </nav>
+      </div>
+
+      <!-- Empresa Column -->
+      <div class="footer-column">
+        <h3 class="footer-title">Empresa</h3>
+        <nav class="footer-links">
+          <a href="/sobre" class="footer-link">Sobre</a>
+          <a href="/carreiras" class="footer-link">Carreiras</a>
+          <a href="/contato" class="footer-link">Contato</a>
+          <a href="/imprensa" class="footer-link">Imprensa</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © 2025 Symplepass. Todos os direitos reservados.
+      </p>
+      <nav class="footer-legal">
+        <a href="/termos" class="footer-legal-link">Termos</a>
+        <span class="footer-legal-separator"></span>
+        <a href="/privacidade" class="footer-legal-link">Privacidade</a>
+        <span class="footer-legal-separator"></span>
+        <a href="/cookies" class="footer-legal-link">Cookies</a>
+        <span class="footer-legal-separator"></span>
+        <a href="/status" class="footer-legal-link">
+          Status
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="1"></circle>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- FOOTER STYLES -->
+<style>
+  .site-footer {
+    background: var(--color-surface-secondary);
+    border-top: var(--border-width-1) solid var(--color-neutral-200);
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-content {
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    }
+  }
+
+  /* Footer Column */
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    height: 32px;
+    width: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-600);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .footer-title {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Footer Links */
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .footer-link {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-700);
+    text-decoration: none;
+    transition: color var(--transition-base) var(--ease-out);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    width: fit-content;
+  }
+
+  .footer-link:hover {
+    color: var(--color-neutral-900);
+  }
+
+  .footer-link-highlight {
+    color: var(--color-primary-600);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .footer-link-highlight:hover {
+    color: var(--color-primary-700);
+  }
+
+  /* Newsletter */
+  .footer-newsletter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .footer-newsletter-input {
+    flex: 1;
+    padding: 0.5rem 0.875rem;
+    font-size: var(--font-size-sm);
+    font-family: var(--font-primary);
+    color: var(--color-neutral-900);
+    background: white;
+    border: var(--border-width-1) solid var(--color-neutral-200);
+    border-radius: var(--radius-full);
+    outline: none;
+    transition: all var(--transition-base) var(--ease-out);
+  }
+
+  .footer-newsletter-input::placeholder {
+    color: var(--color-neutral-400);
+  }
+
+  .footer-newsletter-input:focus {
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 3px var(--color-primary-50);
+  }
+
+  .footer-newsletter-note {
+    font-size: var(--font-size-xs);
+    color: var(--color-neutral-500);
+  }
+
+  /* Footer Bottom */
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: var(--border-width-1) solid var(--color-neutral-200);
+  }
+
+  @media (min-width: 768px) {
+    .footer-bottom {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .footer-copyright {
+    font-size: var(--font-size-xs);
+    color: var(--color-neutral-600);
+  }
+
+  .footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-legal-link {
+    font-size: var(--font-size-xs);
+    color: var(--color-neutral-700);
+    text-decoration: none;
+    transition: color var(--transition-base) var(--ease-out);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .footer-legal-link:hover {
+    color: var(--color-neutral-900);
+  }
+
+  .footer-legal-separator {
+    width: 1px;
+    height: 12px;
+    background: var(--color-neutral-200);
+  }
+</style>

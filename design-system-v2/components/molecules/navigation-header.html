@@ -1,0 +1,266 @@
+<!--
+  NAVIGATION HEADER MOLECULE - Symplepass Design System
+  Header com logo, navegação, login e menu mobile
+  Pixel-perfect baseado nos HTMLs originais
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Header - Molecule</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../../tailwind.config.js"></script>
+  <link rel="stylesheet" href="../../globals.css">
+</head>
+<body class="bg-neutral-50">
+
+  <div class="space-y-8">
+
+    <!-- Header Variation 1: Dark/Transparent (Home) -->
+    <section>
+      <h3 class="text-lg font-semibold mb-4 px-6 pt-6">Header Dark/Transparente (Home)</h3>
+      <div class="bg-black relative">
+        <header class="relative">
+          <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+            <div class="flex pt-6 pb-6 items-center justify-between">
+
+              <!-- Logo -->
+              <a href="/" class="inline-flex items-center justify-center bg-center w-[220px] h-[40px] bg-cover rounded">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMjIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cmVjdCB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudCkiLz4NCiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0iR2Vpc3QsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI2MDAiPg0KICAgIFN5bXBsZXBhc3MNCiAgPC90ZXh0Pg0KICA8ZGVmcz4NCiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4NCiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmYjkyM2MiLz4NCiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VhNTgwYyIvPg0KICAgIDwvbGluZWFyR3JhZGllbnQ+DQogIDwvZGVmcz4NCjwvc3ZnPg==" alt="Symplepass">
+              </a>
+
+              <!-- Desktop Navigation -->
+              <nav class="hidden lg:flex gap-8 items-center">
+                <a href="/eventos" class="hover:text-neutral-300 transition text-sm font-normal text-white font-geist">Eventos</a>
+                <a href="/modalidades" class="hover:text-neutral-300 transition text-sm font-normal text-white font-geist">Modalidades</a>
+                <a href="/como-funciona" class="hover:text-neutral-300 transition text-sm font-normal text-white font-geist">Sobre nós</a>
+                <a href="/precos" class="hover:text-neutral-300 transition text-sm font-normal text-white font-geist">Clube de benefícios</a>
+                <a href="/suporte" class="hover:text-neutral-300 transition text-sm font-normal text-white font-geist">Suporte</a>
+
+                <!-- Login Button -->
+                <button class="inline-flex transition hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300 text-sm font-semibold text-neutral-900 font-geist bg-white border-0 rounded-full pt-2 pr-4 pb-2 pl-4">
+                  Entrar
+                </button>
+              </nav>
+
+              <!-- Mobile Menu Button -->
+              <button id="mobile-menu-button-dark" class="lg:hidden inline-flex items-center gap-2 hover:bg-white/10 transition text-sm font-medium text-white font-geist bg-transparent border border-white/20 rounded-full pt-2 pr-3 pb-2 pl-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" id="menu-icon-dark">
+                  <line x1="4" x2="20" y1="12" y2="12"></line>
+                  <line x1="4" x2="20" y1="6" y2="6"></line>
+                  <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden" id="close-icon-dark">
+                  <path d="M18 6 6 18"></path>
+                  <path d="m6 6 12 12"></path>
+                </svg>
+                <span id="menu-text-dark">Menu</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Menu -->
+          <div id="mobile-menu-dark" class="lg:hidden opacity-0 invisible transition-all duration-300">
+            <nav class="bg-white/95 backdrop-blur border-t border-neutral-200">
+              <div class="px-6 py-4 space-y-3">
+                <a href="/eventos" class="block text-sm font-normal text-neutral-900 hover:text-orange-600 transition font-geist py-2">Eventos</a>
+                <a href="/modalidades" class="block text-sm font-normal text-neutral-900 hover:text-orange-600 transition font-geist py-2">Modalidades</a>
+                <a href="/como-funciona" class="block text-sm font-normal text-neutral-900 hover:text-orange-600 transition font-geist py-2">Sobre nós</a>
+                <a href="/precos" class="block text-sm font-normal text-neutral-900 hover:text-orange-600 transition font-geist py-2">Clube de benefícios</a>
+                <a href="/suporte" class="block text-sm font-normal text-neutral-900 hover:text-orange-600 transition font-geist py-2">Suporte</a>
+                <button class="w-full mt-4 inline-flex justify-center transition text-sm font-semibold text-white font-geist bg-gradient-to-br from-orange-400 to-orange-600 border-0 rounded-full pt-2 pr-4 pb-2 pl-4">
+                  Entrar
+                </button>
+              </div>
+            </nav>
+          </div>
+        </header>
+      </div>
+    </section>
+
+    <!-- Header Variation 2: White/Transparent (Events List) -->
+    <section>
+      <h3 class="text-lg font-semibold mb-4 px-6">Header Branco/Transparente (Events List)</h3>
+      <div class="bg-gray-100 relative">
+        <header class="bg-white/90 backdrop-blur sticky top-0 z-50 border-b border-neutral-200">
+          <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+            <div class="flex pt-4 pb-4 items-center justify-between">
+
+              <!-- Logo -->
+              <a href="/" class="inline-flex items-center justify-center bg-center w-[180px] h-[36px] bg-cover rounded">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjM2IiB2aWV3Qm94PSIwIDAgMTgwIDM2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjM2IiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDIpIi8+DQogIDx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkdlaXN0LCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iNjAwIj4NCiAgICBTeW1wbGVwYXNzDQogIDwvdGV4dD4NCiAgPGRlZnM+DQogICAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudDIiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPg0KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZiOTIzYyIvPg0KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZWE1ODBjIi8+DQogICAgPC9saW5lYXJHcmFkaWVudD4NCiAgPC9kZWZzPg0KPC9zdmc+" alt="Symplepass">
+              </a>
+
+              <!-- Desktop Navigation -->
+              <nav class="hidden lg:flex gap-6 items-center">
+                <a href="/eventos" class="hover:text-orange-600 transition text-sm font-normal text-neutral-700 font-geist">Eventos</a>
+                <a href="/modalidades" class="hover:text-orange-600 transition text-sm font-normal text-neutral-700 font-geist">Modalidades</a>
+                <a href="/como-funciona" class="hover:text-orange-600 transition text-sm font-normal text-neutral-700 font-geist">Sobre nós</a>
+                <a href="/precos" class="hover:text-orange-600 transition text-sm font-normal text-neutral-700 font-geist">Clube de benefícios</a>
+                <a href="/suporte" class="hover:text-orange-600 transition text-sm font-normal text-neutral-700 font-geist">Suporte</a>
+
+                <!-- Login Button -->
+                <button class="inline-flex transition hover:opacity-90 text-sm font-semibold text-white font-geist bg-gradient-to-br from-orange-400 to-orange-600 border-0 rounded-full pt-2 pr-4 pb-2 pl-4">
+                  Entrar
+                </button>
+              </nav>
+
+              <!-- Mobile Menu Button -->
+              <button id="mobile-menu-button-white" class="lg:hidden inline-flex items-center gap-2 hover:bg-neutral-100 transition text-sm font-medium text-neutral-700 font-geist bg-white border border-neutral-200 rounded-full pt-2 pr-3 pb-2 pl-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" id="menu-icon-white">
+                  <line x1="4" x2="20" y1="12" y2="12"></line>
+                  <line x1="4" x2="20" y1="6" y2="6"></line>
+                  <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden" id="close-icon-white">
+                  <path d="M18 6 6 18"></path>
+                  <path d="m6 6 12 12"></path>
+                </svg>
+                <span id="menu-text-white">Menu</span>
+              </button>
+            </div>
+          </div>
+        </header>
+      </div>
+    </section>
+
+    <!-- Header Variation 3: Orange Gradient (Event Page) -->
+    <section>
+      <h3 class="text-lg font-semibold mb-4 px-6">Header Gradiente Laranja (Event Page)</h3>
+      <header class="bg-gradient-to-br from-orange-400 to-orange-600">
+        <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+          <div class="flex pt-6 pb-6 items-center justify-between">
+
+            <!-- Logo (White version) -->
+            <a href="/" class="inline-flex items-center justify-center">
+              <svg width="180" height="36" viewBox="0 0 180 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="26" fill="white" font-family="Geist, sans-serif" font-size="24" font-weight="600">
+                  Symplepass
+                </text>
+              </svg>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex gap-8 items-center">
+              <a href="/eventos" class="hover:text-white/80 transition text-sm font-normal text-white font-geist">Eventos</a>
+              <a href="/modalidades" class="hover:text-white/80 transition text-sm font-normal text-white font-geist">Modalidades</a>
+              <a href="/como-funciona" class="hover:text-white/80 transition text-sm font-normal text-white font-geist">Sobre nós</a>
+              <a href="/precos" class="hover:text-white/80 transition text-sm font-normal text-white font-geist">Clube de benefícios</a>
+              <a href="/suporte" class="hover:text-white/80 transition text-sm font-normal text-white font-geist">Suporte</a>
+
+              <!-- User Button (Logged In) -->
+              <button class="inline-flex items-center gap-2 transition hover:bg-white/20 text-sm font-semibold text-white font-geist bg-white/10 backdrop-blur border border-white/20 rounded-full pt-2 pr-4 pb-2 pl-4">
+                <div class="w-6 h-6 rounded-full bg-white/30 flex items-center justify-center text-xs">
+                  JA
+                </div>
+                João
+              </button>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button-gradient" class="lg:hidden inline-flex items-center gap-2 hover:bg-white/20 transition text-sm font-medium text-white font-geist bg-white/10 border border-white/20 rounded-full pt-2 pr-3 pb-2 pl-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+                <line x1="4" x2="20" y1="12" y2="12"></line>
+                <line x1="4" x2="20" y1="6" y2="6"></line>
+                <line x1="4" x2="20" y1="18" y2="18"></line>
+              </svg>
+              <span>Menu</span>
+            </button>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <!-- Code Examples -->
+    <section class="px-6 pb-8">
+      <h3 class="text-lg font-semibold mb-4">Estados e Variações</h3>
+
+      <div class="grid gap-4">
+        <div class="bg-white rounded-lg border border-neutral-200 p-4">
+          <h4 class="font-medium mb-2">Estados dos Links</h4>
+          <ul class="text-sm space-y-1 text-neutral-600">
+            <li>• Default: <code class="bg-neutral-100 px-2 py-0.5 rounded">text-white</code> ou <code class="bg-neutral-100 px-2 py-0.5 rounded">text-neutral-700</code></li>
+            <li>• Hover: <code class="bg-neutral-100 px-2 py-0.5 rounded">hover:text-neutral-300</code> ou <code class="bg-neutral-100 px-2 py-0.5 rounded">hover:text-orange-600</code></li>
+            <li>• Active: Adicionar classe <code class="bg-neutral-100 px-2 py-0.5 rounded">text-orange-600 font-semibold</code></li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg border border-neutral-200 p-4">
+          <h4 class="font-medium mb-2">Variações do Header</h4>
+          <ul class="text-sm space-y-1 text-neutral-600">
+            <li>• <strong>Dark:</strong> Fundo preto/transparente, texto branco</li>
+            <li>• <strong>Light:</strong> Fundo branco/90 com blur, texto escuro</li>
+            <li>• <strong>Gradient:</strong> Fundo gradiente laranja, texto branco</li>
+            <li>• <strong>Sticky:</strong> Adicionar <code class="bg-neutral-100 px-2 py-0.5 rounded">sticky top-0 z-50</code></li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg border border-neutral-200 p-4">
+          <h4 class="font-medium mb-2">Mobile Menu</h4>
+          <ul class="text-sm space-y-1 text-neutral-600">
+            <li>• Toggle classes: <code class="bg-neutral-100 px-2 py-0.5 rounded">opacity-0 invisible</code> ↔ <code class="bg-neutral-100 px-2 py-0.5 rounded">opacity-100 visible</code></li>
+            <li>• Transition: <code class="bg-neutral-100 px-2 py-0.5 rounded">transition-all duration-300</code></li>
+            <li>• Backdrop blur no menu: <code class="bg-neutral-100 px-2 py-0.5 rounded">bg-white/95 backdrop-blur</code></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    // Dark header menu toggle
+    const menuBtnDark = document.getElementById('mobile-menu-button-dark');
+    const menuDark = document.getElementById('mobile-menu-dark');
+    const menuIconDark = document.getElementById('menu-icon-dark');
+    const closeIconDark = document.getElementById('close-icon-dark');
+    const menuTextDark = document.getElementById('menu-text-dark');
+
+    if (menuBtnDark) {
+      menuBtnDark.addEventListener('click', () => {
+        const isOpen = !menuDark.classList.contains('opacity-0');
+
+        if (isOpen) {
+          menuDark.classList.add('opacity-0', 'invisible');
+          menuDark.classList.remove('opacity-100', 'visible');
+          menuIconDark.classList.remove('hidden');
+          closeIconDark.classList.add('hidden');
+          menuTextDark.textContent = 'Menu';
+        } else {
+          menuDark.classList.remove('opacity-0', 'invisible');
+          menuDark.classList.add('opacity-100', 'visible');
+          menuIconDark.classList.add('hidden');
+          closeIconDark.classList.remove('hidden');
+          menuTextDark.textContent = 'Fechar';
+        }
+      });
+    }
+
+    // White header menu toggle
+    const menuBtnWhite = document.getElementById('mobile-menu-button-white');
+    const menuIconWhite = document.getElementById('menu-icon-white');
+    const closeIconWhite = document.getElementById('close-icon-white');
+    const menuTextWhite = document.getElementById('menu-text-white');
+
+    if (menuBtnWhite) {
+      menuBtnWhite.addEventListener('click', () => {
+        const isOpen = menuIconWhite.classList.contains('hidden');
+
+        if (isOpen) {
+          menuIconWhite.classList.remove('hidden');
+          closeIconWhite.classList.add('hidden');
+          menuTextWhite.textContent = 'Menu';
+        } else {
+          menuIconWhite.classList.add('hidden');
+          closeIconWhite.classList.remove('hidden');
+          menuTextWhite.textContent = 'Fechar';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

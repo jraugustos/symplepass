@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo - Symplepass Design System</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Design System Tokens -->
+  <link rel="stylesheet" href="./tokens/tokens.css">
+
+  <style>
+    /* Import component styles */
+    @import url('./components/buttons/buttons.html');
+    @import url('./components/cards/cards.html');
+    @import url('./components/forms/forms.html');
+  </style>
+
+  <!-- Button Styles -->
+  <style>
+    button[class*="btn-"] {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--font-primary);
+      font-weight: var(--font-weight-medium);
+      font-size: var(--font-size-sm);
+      line-height: var(--line-height-sm);
+      padding: 0.625rem 1rem;
+      border-radius: var(--radius-full);
+      border: var(--border-width-1) solid transparent;
+      transition: all var(--transition-base) var(--ease-out);
+      cursor: pointer;
+      white-space: nowrap;
+      text-decoration: none;
+      outline: none;
+    }
+
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--gradient-primary-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--color-neutral-800);
+      border-color: var(--color-neutral-200);
+    }
+
+    .btn-secondary:hover {
+      background: var(--color-neutral-50);
+      border-color: var(--color-neutral-300);
+    }
+
+    /* Card Styles */
+    .card {
+      background: white;
+      border: var(--border-width-1) solid var(--color-neutral-200);
+      border-radius: var(--radius-2xl);
+      padding: 1.5rem;
+      transition: all var(--transition-base) var(--ease-out);
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-neutral-300);
+    }
+
+    /* Form Styles */
+    .form-input {
+      width: 100%;
+      padding: 0.625rem 0.875rem;
+      font-size: var(--font-size-sm);
+      font-family: var(--font-primary);
+      color: var(--color-neutral-900);
+      background: white;
+      border: var(--border-width-1) solid var(--color-neutral-200);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition-base) var(--ease-out);
+      outline: none;
+    }
+
+    .form-input:focus {
+      border-color: var(--color-primary-500);
+      box-shadow: 0 0 0 3px var(--color-primary-50);
+    }
+  </style>
+</head>
+
+<body class="bg-white" style="font-family: 'Inter', sans-serif;">
+
+  <!-- Header -->
+  <header style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #EAEAEA; position: sticky; top: 0; z-index: 20;">
+    <div class="container-custom" style="display: flex; align-items: center; justify-content: space-between; padding-top: 1.5rem; padding-bottom: 1.5rem;">
+      <div style="font-size: 1.5rem; font-weight: 700; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+        Symplepass
+      </div>
+      <nav style="display: flex; gap: 2rem; align-items: center;">
+        <a href="#" style="font-size: 14px; color: var(--color-neutral-700); text-decoration: none;">Eventos</a>
+        <a href="#" style="font-size: 14px; color: var(--color-neutral-700); text-decoration: none;">Modalidades</a>
+        <button class="btn-primary">Entrar</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section style="background: var(--gradient-primary); padding: 4rem 0; color: white;">
+    <div class="container-custom">
+      <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2;">
+        Encontre seu próximo desafio
+      </h1>
+      <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">
+        Descubra eventos esportivos incríveis perto de você
+      </p>
+
+      <!-- Search Bar -->
+      <div style="display: flex; gap: 0.75rem; max-width: 600px;">
+        <input
+          type="search"
+          placeholder="Buscar eventos..."
+          class="form-input"
+          style="flex: 1;"
+        >
+        <button class="btn-primary" style="background: white; color: var(--color-primary-600);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          Buscar
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section style="padding: 4rem 0;">
+    <div class="container-custom">
+      <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem;">
+        Eventos em destaque
+      </h2>
+
+      <!-- Cards Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;">
+
+        <!-- Event Card 1 -->
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&q=80"
+            alt="Evento"
+            style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-xl); margin-bottom: 1rem;"
+          >
+          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">
+            Corrida das Estrelas 10K
+          </h3>
+          <p style="font-size: 0.875rem; color: var(--color-neutral-600); margin-bottom: 0.5rem;">
+            São Paulo, SP • 15 Mar 2025
+          </p>
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <span style="font-size: 0.75rem; padding: 0.25rem 0.625rem; background: var(--color-neutral-100); border-radius: var(--radius-full); color: var(--color-neutral-700);">
+              Corrida
+            </span>
+            <span style="font-size: 0.75rem; padding: 0.25rem 0.625rem; background: var(--color-neutral-100); border-radius: var(--radius-full); color: var(--color-neutral-700);">
+              10K
+            </span>
+          </div>
+          <button class="btn-secondary" style="width: 100%;">
+            Ver detalhes
+          </button>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&q=80"
+            alt="Evento"
+            style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-xl); margin-bottom: 1rem;"
+          >
+          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">
+            Beach Tennis Open
+          </h3>
+          <p style="font-size: 0.875rem; color: var(--color-neutral-600); margin-bottom: 0.5rem;">
+            Santos, SP • 22 Mar 2025
+          </p>
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <span style="font-size: 0.75rem; padding: 0.25rem 0.625rem; background: var(--color-neutral-100); border-radius: var(--radius-full); color: var(--color-neutral-700);">
+              Beach Tennis
+            </span>
+            <span style="font-size: 0.75rem; padding: 0.25rem 0.625rem; background: var(--color-success-50); border-radius: var(--radius-full); color: var(--color-success-700);">
+              Vagas abertas
+            </span>
+          </div>
+          <button class="btn-secondary" style="width: 100%;">
+            Ver detalhes
+          </button>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80"
+            alt="Evento"
+            style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-xl); margin-bottom: 1rem;"
+          >
+          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">
+            Triathlon Sprint 2025
+          </h3>
+          <p style="font-size: 0.875rem; color: var(--color-neutral-600); margin-bottom: 0.5rem;">
+            Campinas, SP • 5 Abr 2025
+          </p>
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+            <span style="font-size: 0.75rem; padding: 0.25rem 0.625rem; background: var(--color-neutral-100); border-radius: var(--radius-full); color: var(--color-neutral-700);">
+              Triathlon
+            </span>
+            <span style="font-size: 0.75rem; padding: 0.25rem 0.625rem; background: var(--color-neutral-100); border-radius: var(--radius-full); color: var(--color-neutral-700);">
+              Sprint
+            </span>
+          </div>
+          <button class="btn-secondary" style="width: 100%;">
+            Ver detalhes
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="background: var(--color-neutral-50); padding: 4rem 0;">
+    <div class="container-custom" style="text-align: center;">
+      <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">
+        Pronto para começar?
+      </h2>
+      <p style="font-size: 1.125rem; color: var(--color-neutral-600); margin-bottom: 2rem;">
+        Crie sua conta e encontre o evento perfeito para você
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <button class="btn-primary" style="padding: 0.875rem 2rem; font-size: 1rem;">
+          Criar conta grátis
+        </button>
+        <button class="btn-secondary" style="padding: 0.875rem 2rem; font-size: 1rem;">
+          Saiba mais
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: var(--color-surface-secondary); border-top: 1px solid var(--color-neutral-200); padding: 3rem 0 1.5rem;">
+    <div class="container-custom">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+        <div>
+          <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            Symplepass
+          </div>
+          <p style="font-size: 0.875rem; color: var(--color-neutral-600);">
+            Encontre e participe dos melhores eventos esportivos
+          </p>
+        </div>
+        <div>
+          <h4 style="font-size: 0.75rem; font-weight: 600; color: var(--color-neutral-500); text-transform: uppercase; margin-bottom: 0.75rem;">
+            Eventos
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <a href="#" style="font-size: 0.875rem; color: var(--color-neutral-700); text-decoration: none;">Corrida</a>
+            <a href="#" style="font-size: 0.875rem; color: var(--color-neutral-700); text-decoration: none;">Ciclismo</a>
+            <a href="#" style="font-size: 0.875rem; color: var(--color-neutral-700); text-decoration: none;">Triathlon</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size: 0.75rem; font-weight: 600; color: var(--color-neutral-500); text-transform: uppercase; margin-bottom: 0.75rem;">
+            Empresa
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <a href="#" style="font-size: 0.875rem; color: var(--color-neutral-700); text-decoration: none;">Sobre</a>
+            <a href="#" style="font-size: 0.875rem; color: var(--color-neutral-700); text-decoration: none;">Contato</a>
+            <a href="#" style="font-size: 0.875rem; color: var(--color-neutral-700); text-decoration: none;">Suporte</a>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid var(--color-neutral-200); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <p style="font-size: 0.75rem; color: var(--color-neutral-600);">
+          © 2025 Symplepass. Todos os direitos reservados.
+        </p>
+        <div style="display: flex; gap: 1rem;">
+          <a href="#" style="font-size: 0.75rem; color: var(--color-neutral-700); text-decoration: none;">Termos</a>
+          <a href="#" style="font-size: 0.75rem; color: var(--color-neutral-700); text-decoration: none;">Privacidade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revise suas informações — Symplepass</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../globals.css">
+
+  <style>
+    .font-geist {
+      font-family: 'Geist', sans-serif !important;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen antialiased overflow-x-hidden text-neutral-900 bg-neutral-50" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';">
+
+  <!-- Header -->
+  <header class="bg-center bg-gradient-to-br from-orange-400 to-orange-600 top-0">
+    <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-8 pl-8">
+      <!-- Navigation -->
+      <div class="flex border-neutral-200/20 border-b pt-4 pb-4 items-center justify-between">
+        <a href="home.html" class="inline-flex items-center justify-center" aria-label="Symplepass - Início">
+          <img src="../assets/symplepass-white.svg" alt="Symplepass" class="w-[200px] h-[34px]">
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="events-list.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Eventos</a>
+          <a href="events-list.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Modalidades</a>
+          <a href="home.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Como funciona</a>
+          <a href="home.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Preços</a>
+          <a href="home.html" class="transition text-sm font-normal text-white/80 hover:text-white font-geist">Suporte</a>
+          <a href="user-panel.html" class="inline-flex gap-2 items-center text-sm font-normal rounded-full px-4 py-2 border-0 text-white hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 font-geist" style="background-image: linear-gradient(to right, rgb(138, 55, 10), rgb(82, 32, 3));">Entrar</a>
+        </nav>
+
+        <button id="mobile-menu-button" class="lg:hidden inline-flex items-center gap-2 text-sm font-normal font-geist rounded-full px-4 py-2 border border-white/10 bg-white/10 text-white/90 hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+          <i data-lucide="x" class="w-5 h-5 hidden" id="close-icon"></i>
+          <span id="menu-text" class="text-white/90 font-geist">Menu</span>
+        </button>
+      </div>
+
+      <!-- Page Title -->
+      <div class="pt-5 pb-8">
+        <h1 class="sm:text-4xl md:text-4xl text-2xl font-semibold text-white tracking-tight font-geist text-center mt-2">Revise suas informações</h1>
+      </div>
+
+      <!-- Mobile menu overlay -->
+      <div id="mobile-menu" class="lg:hidden fixed inset-0 backdrop-blur-xl z-50 opacity-0 invisible transition-all duration-300 ease-out bg-black/95">
+        <div class="flex flex-col h-full pt-6 pb-8 px-6">
+          <div class="flex justify-end mb-8">
+            <button id="mobile-close-button" class="inline-flex rounded-full p-3 border border-white/10 bg-white/10 text-white/90 hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60" aria-label="Fechar menu">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+          <nav class="flex-1">
+            <div class="space-y-6">
+              <a href="events-list.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Eventos</a>
+              <a href="events-list.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Modalidades</a>
+              <a href="home.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Como funciona</a>
+              <a href="home.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Preços</a>
+              <a href="home.html" class="block text-2xl text-white/80 hover:text-white transition font-geist font-semibold">Suporte</a>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/10">
+              <a href="user-panel.html" class="w-full inline-flex items-center justify-center gap-2 text-base font-normal rounded-full px-6 py-3 border-0 text-white hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-300 font-geist" style="background-image: linear-gradient(to right, rgb(138, 55, 10), rgb(82, 32, 3));">Entrar</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pb-40">
+    <div class="lg:px-8 max-w-3xl mx-auto px-5 sm:px-6 pt-8 sm:pt-10">
+
+      <!-- Seus dados -->
+      <section class="mt-8">
+        <h2 class="text-xl sm:text-2xl tracking-tight font-geist font-semibold">Seus dados</h2>
+        <div class="mt-3 rounded-2xl border border-neutral-200 bg-white p-4 sm:p-5">
+          <label class="block text-sm font-semibold text-neutral-700 font-geist">Nome completo</label>
+          <div class="mt-2">
+            <input id="inp-name" type="text" inputmode="text" autocomplete="name" placeholder="Digite seu nome completo" class="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900/10 focus:border-neutral-400 font-geist">
+          </div>
+
+          <label class="block text-sm font-semibold text-neutral-700 font-geist mt-4">E-mail</label>
+          <div class="mt-2">
+            <input id="inp-email" type="email" inputmode="email" autocomplete="email" placeholder="seu@email.com" class="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900/10 focus:border-neutral-400 font-geist">
+          </div>
+
+          <p class="mt-3 text-xs text-neutral-500 font-geist">Sua conta será criada automaticamente com estes dados.</p>
+        </div>
+      </section>
+
+      <!-- Detalhes do evento -->
+      <section class="mt-10">
+        <h2 class="text-xl sm:text-2xl tracking-tight font-geist font-semibold">Detalhes do evento</h2>
+        <div class="mt-3 rounded-2xl border border-neutral-200 bg-white p-4 sm:p-5">
+          <div class="flex items-start gap-3">
+            <div class="h-12 w-12 rounded-xl bg-neutral-100 border border-neutral-200 flex items-center justify-center shrink-0">
+              <i data-lucide="badge-check" class="w-5 h-5 text-neutral-700"></i>
+            </div>
+            <div class="min-w-0 flex-1">
+              <p class="leading-snug font-medium font-geist">Barbie Run 2025</p>
+              <ul class="mt-2 space-y-1.5 text-sm text-neutral-700 font-geist">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="medal" class="w-4 h-4"></i>
+                  <span>10km • Corrida de rua</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="calendar" class="w-4 h-4"></i>
+                  <span>15 Mar 2025</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="map-pin" class="w-4 h-4"></i>
+                  <span>São Paulo, SP</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="users" class="w-4 h-4"></i>
+                  <span>Presencial</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resumo de valores -->
+      <section class="mt-10">
+        <h2 class="text-xl sm:text-2xl tracking-tight font-geist font-semibold">Resumo de valores</h2>
+        <div class="mt-3 rounded-2xl border border-neutral-200 bg-white p-0 overflow-hidden">
+          <div class="px-4 sm:px-5 py-4 flex items-center justify-between">
+            <p class="text-sm text-neutral-700 font-geist">Subtotal</p>
+            <p id="val-subtotal" class="text-sm font-medium font-geist">R$ 65,00</p>
+          </div>
+          <div class="px-4 sm:px-5 py-4 flex items-center justify-between border-t border-neutral-200">
+            <p class="text-sm text-neutral-700 font-geist">Taxa de serviço</p>
+            <p id="val-fee" class="text-sm font-medium font-geist">R$ 5,00</p>
+          </div>
+          <div class="h-px bg-neutral-200"></div>
+          <div class="px-4 sm:px-5 py-4 flex items-center justify-between">
+            <p class="sm:text-lg text-base font-semibold tracking-tight font-geist">Total a pagar</p>
+            <p id="val-total" class="text-base sm:text-lg font-semibold tracking-tight font-geist">R$ 70,00</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Aceite -->
+      <section class="mt-8 space-y-2">
+        <label class="flex items-start gap-3 cursor-pointer select-none">
+          <input id="chk-terms" type="checkbox" class="peer sr-only">
+          <span class="mt-0.5 h-[18px] w-[18px] rounded-md border border-neutral-300 bg-white shadow-sm flex items-center justify-center peer-checked:border-neutral-900 peer-checked:bg-neutral-900 transition">
+            <i data-lucide="check" class="w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition"></i>
+          </span>
+          <span class="text-sm text-neutral-700 font-geist">Confirmo que li e aceito o regulamento do evento.</span>
+        </label>
+        <a href="#" class="inline-block text-sm underline underline-offset-2 text-neutral-600 hover:text-neutral-900 font-geist">Ver regulamento completo</a>
+      </section>
+    </div>
+  </main>
+
+  <!-- Sticky action -->
+  <div class="fixed inset-x-0 bottom-0 z-50 border-t border-neutral-200 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80" style="padding-bottom: env(safe-area-inset-bottom);">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 py-4">
+      <button disabled class="inline-flex gap-2 sm:text-lg transition disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-95 text-base font-medium text-white font-geist w-full rounded-2xl px-5 py-4 items-center justify-center" style="background-image: linear-gradient(to right, rgb(249, 115, 22), rgb(245, 158, 11));" id="btn-pay">
+        Prosseguir para pagamento
+        <i data-lucide="arrow-right" class="w-[18px] h-[18px]"></i>
+      </button>
+      <div class="mt-3 flex items-center justify-center gap-2 text-xs text-neutral-500">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+        <span class="font-geist">Pagamento seguro via Stripe</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Helpers
+    const qs = (s, el = document) => el.querySelector(s);
+
+    // Mobile menu
+    const btnMenu = qs('#mobile-menu-button');
+    const overlayMenu = qs('#mobile-menu');
+    const btnCloseMobile = qs('#mobile-close-button');
+    const iconClose = qs('#close-icon');
+    const textMenu = qs('#menu-text');
+
+    const openMobileMenu = () => {
+      overlayMenu.classList.remove('opacity-0', 'invisible');
+      overlayMenu.classList.add('opacity-100', 'visible');
+      iconClose.classList.remove('hidden');
+      textMenu.textContent = 'Fechar';
+    };
+
+    const closeMobileMenu = () => {
+      overlayMenu.classList.add('opacity-0', 'invisible');
+      overlayMenu.classList.remove('opacity-100', 'visible');
+      iconClose.classList.add('hidden');
+      textMenu.textContent = 'Menu';
+    };
+
+    btnMenu?.addEventListener('click', () => {
+      const isOpen = overlayMenu.classList.contains('visible');
+      isOpen ? closeMobileMenu() : openMobileMenu();
+    });
+    btnCloseMobile?.addEventListener('click', closeMobileMenu);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
+
+    // Values
+    const subtotal = 65.00;
+    const fee = 5.00;
+
+    const formatBRL = (v) =>
+      v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 });
+
+    const elSubtotal = qs('#val-subtotal');
+    const elFee = qs('#val-fee');
+    const elTotal = qs('#val-total');
+
+    const renderTotals = () => {
+      const total = subtotal + fee;
+      if (elSubtotal) elSubtotal.textContent = formatBRL(subtotal);
+      if (elFee) elFee.textContent = formatBRL(fee);
+      if (elTotal) elTotal.textContent = formatBRL(total);
+    };
+    renderTotals();
+
+    // Toggle pay button with validation
+    const chk = qs('#chk-terms');
+    const btn = qs('#btn-pay');
+    const nameInput = qs('#inp-name');
+    const emailInput = qs('#inp-email');
+
+    const isEmail = (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+
+    const validate = () => {
+      const ok = !!nameInput.value.trim() && isEmail(emailInput.value.trim()) && chk.checked;
+      btn.disabled = !ok;
+    };
+
+    ['input', 'change', 'blur'].forEach(evt => {
+      nameInput.addEventListener(evt, validate);
+      emailInput.addEventListener(evt, validate);
+      chk.addEventListener(evt, validate);
+    });
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (btn.disabled) return;
+      window.location.href = 'confirm.html';
+    });
+
+    // Autofill if query params present
+    const params = new URLSearchParams(location.search);
+    const qpName = params.get('nome');
+    const qpEmail = params.get('email');
+    if (qpName) nameInput.value = qpName;
+    if (qpEmail) emailInput.value = qpEmail;
+    validate();
+  </script>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
