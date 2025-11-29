@@ -28,3 +28,33 @@ Thumbs.db
 *.tmp
 *.temp
 
+# ===========================================
+# Legacy directories (kept for reference but not tracked)
+# These were used during initial development/prototyping
+# ===========================================
+
+# Legacy design system prototypes (HTML/Tailwind mockups)
+design-system/
+design-system-v2/
+
+# Legacy static HTML prototypes
+html/
+
+# Legacy placeholder directories
+assets/
+pages/
+scripts/
+docs/
+components/
+
+# Temporary fix/guide files at root level
+*.sql
+CORRECAO-*.md
+CORRIGIR-*.md
+GUIA-*.md
+MELHORIAS*.md
+MELHORIAS*.sql
+STORAGE-*.md
+TROUBLESHOOTING-*.md
+ATUALIZAR_*.sql
+
