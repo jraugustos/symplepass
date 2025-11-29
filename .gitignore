@@ -40,12 +40,12 @@ design-system-v2/
 # Legacy static HTML prototypes
 html/
 
-# Legacy placeholder directories
-assets/
-pages/
-scripts/
-docs/
-components/
+# Legacy placeholder directories (at root level only)
+/assets/
+/pages/
+/scripts/
+/docs/
+/components/
 
 # Temporary fix/guide files at root level
 *.sql
