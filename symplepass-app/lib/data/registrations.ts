@@ -421,14 +421,14 @@ export async function createOrUpdatePartnerProfile(
       .from('profiles')
       .select('id, cpf')
       .eq('email', normalizedEmail)
-      .maybeSingle()
+      .maybeSingle() as { data: { id: string; cpf: string | null } | null }
 
     if (existingProfile?.id) {
       // Update existing profile with partner data only if CPF is not set
       // This prevents overwriting data from a user who already has a complete profile
       if (!existingProfile.cpf) {
-        const { error: updateError } = await adminClient
-          .from('profiles')
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const { error: updateError } = await (adminClient.from('profiles') as any)
           .update({
             full_name: partnerData.name,
             cpf: partnerData.cpf,
@@ -466,8 +466,8 @@ export async function createOrUpdatePartnerProfile(
 
     // Update the profile with additional data (CPF, phone) using admin client
     // The profile is created by the database trigger with just id, email, and full_name
-    const { error: updateError } = await adminClient
-      .from('profiles')
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { error: updateError } = await (adminClient.from('profiles') as any)
       .update({
         cpf: partnerData.cpf,
         phone: partnerData.phone,

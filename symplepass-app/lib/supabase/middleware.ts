@@ -11,7 +11,7 @@ export type MiddlewareSessionResult = {
 
 export async function updateSession(request: NextRequest): Promise<MiddlewareSessionResult> {
   // Create a response that we can modify
-  let response = NextResponse.next({
+  const response = NextResponse.next({
     request: {
       headers: request.headers,
     },

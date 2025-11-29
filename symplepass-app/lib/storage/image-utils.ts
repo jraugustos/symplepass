@@ -154,7 +154,7 @@ export async function getImageDimensions(
 
     reader.onerror = () => {
       console.error('Failed to read file for compression');
-      resolve(file); // Return original file if reading fails
+      reject(new Error('Failed to read file')); // Reject on error
     };
 
     reader.readAsDataURL(file);
@@ -174,7 +174,7 @@ export function fileToBase64(file: File): Promise<string> {
 
     reader.onerror = () => {
       console.error('Failed to read file for compression');
-      resolve(file); // Return original file if reading fails
+      reject(new Error('Failed to read file')); // Reject on error
     };
 
     reader.readAsDataURL(file);

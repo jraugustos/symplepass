@@ -16,8 +16,8 @@ interface AuditLogOptions {
   targetType: TargetType
   targetId?: string
   details?: Record<string, unknown>
-  ipAddress?: string
-  userAgent?: string
+  ipAddress?: string | null
+  userAgent?: string | null
 }
 
 /**
@@ -44,7 +44,8 @@ export async function logAuditAction(options: AuditLogOptions): Promise<boolean>
   try {
     const supabase = createAdminClient()
 
-    const { error } = await supabase.rpc('create_audit_log', {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { error } = await (supabase.rpc as any)('create_audit_log', {
       p_action: options.action,
       p_target_type: options.targetType,
       p_target_id: options.targetId || null,
